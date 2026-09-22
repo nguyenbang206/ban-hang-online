@@ -1,0 +1,3792 @@
+TR
+ƯỜNG ĐẠI HỌC 
+CNTT 
+VÀ
+ TRUYỀN THÔNG
+KHOA CÔNG NGHỆ THÔNG TIN
+BÁO CÁO DỰ ÁN
+HỌC PHẦN 
+ỨNG DỤNG TRÍ TUỆ NHÂN TẠO
+Đề tài:
+HỆ THỐNG QUẢN LÝ BÁN HÀNG CÓ TÍCH HỢP AI
+Tên nhóm:
+NHÓM 01
+Nhóm sinh viên thực hiện:
+1. 
+Nguyễn
+ Đình Bằng
+ (#)
+2. 
+Vàng
+ Thị Dẳm
+Giảng viên:
+Ngô Hữu Huy
+center
+center
+0
+0
+THÁI NGUYÊN, NĂM 
+202
+6
+MỤC LỤC
+ TOC \o "1-3" \h \z \t "1_Chapter_c5,1,2_1_Level2_c2,2,3_1_1_Level3_c3,3" 
+MỤC LỤC
+ PAGEREF _Toc239180275 \h 
+i
+PHÂN CÔNG NHIỆM VỤ
+ PAGEREF _Toc239180276 \h 
+v
+MỞ ĐẦU
+ PAGEREF _Toc239180277 \h 
+vi
+CHƯƠNG 1: CƠ SỞ LÝ THUYẾT
+ PAGEREF _Toc239180278 \h 
+1
+1.1. Tổng quan về hệ thống quản lý bán hàng
+ PAGEREF _Toc239180279 \h 
+1
+1.1.1. Khái niệm về hệ thống quản lý bán hàng
+ PAGEREF _Toc239180280 \h 
+1
+1.1.2. Vai trò của hệ thống quản lý bán hàng
+ PAGEREF _Toc239180281 \h 
+1
+1.1.3. Các nghiệp vụ cơ bản trong quản lý bán hàng
+ PAGEREF _Toc239180282 \h 
+2
+1.2. Tổng quan về trí tuệ nhân tạo
+ PAGEREF _Toc239180283 \h 
+4
+1.2.1. Khái niệm trí tuệ nhân tạo
+ PAGEREF _Toc239180284 \h 
+4
+1.2.2. AI tạo sinh và mô hình ngôn ngữ lớn
+ PAGEREF _Toc239180285 \h 
+4
+1.2.3. Ứng dụng AI trong hệ thống quản lý bán hàng
+ PAGEREF _Toc239180286 \h 
+5
+1.3. Công nghệ sử dụng hệ thống
+ PAGEREF _Toc239180287 \h 
+6
+1.3.1. Công nghệ Backend
+ PAGEREF _Toc239180288 \h 
+7
+1.3.2. Công nghệ Frontend
+ PAGEREF _Toc239180289 \h 
+7
+1.3.3. Công nghệ cơ sở dữ liệu
+ PAGEREF _Toc239180290 \h 
+8
+1.3.4. Công nghệ và dịch vụ AI
+ PAGEREF _Toc239180291 \h 
+8
+1.3.5. Prompt và kiểm soát đầu ra AI
+ PAGEREF _Toc239180292 \h 
+9
+1.3.6. Bảo mật trong hệ thống tích hợp AI
+ PAGEREF _Toc239180293 \h 
+9
+1.4. AI trong vòng đời phát triển phần mềm
+ PAGEREF _Toc239180294 \h 
+10
+1.4.1. AI trong giai đoạn phân tích yêu cầu
+ PAGEREF _Toc239180295 \h 
+10
+1.4.2. AI trong giai đoạn thiết kế hệ thống
+ PAGEREF _Toc239180296 \h 
+10
+1.4.3. AI trong giai đoạn xây dựng chương trình
+ PAGEREF _Toc239180297 \h 
+11
+1.4.4. AI trong giai đoạn kiểm thử
+ PAGEREF _Toc239180298 \h 
+11
+1.4.5. AI trong giai đoạn hoàn thiện và triển khai
+ PAGEREF _Toc239180299 \h 
+12
+1.4.6. Nguyên tắc sử dụng AI có trách nhiệm trong phát triển hệ thống
+ PAGEREF _Toc239180300 \h 
+12
+CHƯƠNG 2: PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG
+ PAGEREF _Toc239180301 \h 
+13
+2.1. Khảo sát và mô tả bài toán
+ PAGEREF _Toc239180302 \h 
+13
+2.1.1. Phương pháp và đối tượng khảo sát
+ PAGEREF _Toc239180303 \h 
+13
+2.1.2. Kết quả và phân tích khảo sát
+ PAGEREF _Toc239180304 \h 
+14
+2.1.3. Thực trạng quản lý bán hàng
+ PAGEREF _Toc239180305 \h 
+21
+2.1.4. Những hạn chế của phương pháp quản lý thủ công
+ PAGEREF _Toc239180306 \h 
+22
+2.1.5. Giải pháp đề xuất
+ PAGEREF _Toc239180307 \h 
+23
+2.1.6. Phạm vi của hệ thống
+ PAGEREF _Toc239180308 \h 
+24
+2.2. Mục tiêu và yêu cầu của hệ thống
+ PAGEREF _Toc239180309 \h 
+25
+2.2.1. Mục tiêu của hệ thống
+ PAGEREF _Toc239180310 \h 
+25
+2.2.2. Yêu cầu chức năng
+ PAGEREF _Toc239180311 \h 
+26
+2.2.3. Yêu cầu phi chức năng
+ PAGEREF _Toc239180312 \h 
+28
+2.2.4. Yêu cầu đối với chức năng AI
+ PAGEREF _Toc239180313 \h 
+30
+2.3. Xác định tác nhân và Use Case
+ PAGEREF _Toc239180314 \h 
+31
+2.3.1. Xác định tác nhân
+ PAGEREF _Toc239180315 \h 
+31
+2.3.2. Biểu đồ Use Case tổng quát
+ PAGEREF _Toc239180316 \h 
+31
+2.3.3. Biểu đồ phân rã cho các tác nhân
+ PAGEREF _Toc239180317 \h 
+34
+2.3.4. Đặc tả chi tiết các Use Case
+ PAGEREF _Toc239180318 \h 
+36
+2.4. Phân tích quy trình nghiệp vụ
+ PAGEREF _Toc239180319 \h 
+46
+2.4.1. Quy trình đăng nhập
+, đăng xuất
+ PAGEREF _Toc239180320 \h 
+46
+2
+.4.2. 
+Quy trình quản lý sản phẩm
+ PAGEREF _Toc239180321 \h 
+48
+2.4.3. Quy trình quản lý khách hàng
+ PAGEREF _Toc239180322 \h 
+49
+2.4.4. Quy trình lập hóa đơn bán hàng
+ PAGEREF _Toc239180323 \h 
+50
+2.4.5. Quy trình nhập hàng và cập nhật tồn kho
+ PAGEREF _Toc239180324 \h 
+51
+2.4.6. Quy trình tìm
+ kiếm, lọc và tra cứu dữ liệu
+ PAGEREF _Toc239180325 \h 
+52
+2.4.7. Quy trình thống
+ kê và báo cáo doanh thu
+ PAGEREF _Toc239180326 \h 
+53
+2.4.8. Quy trình xuất báo cáo
+ PAGEREF _Toc239180327 \h 
+54
+2.4.9. Quy trình AI tư vấn sản phẩm
+ PAGEREF _Toc239180328 \h 
+55
+2.4.10. Quy trình AI phân tích và nhận xét báo cáo doanh thu
+ PAGEREF _Toc239180329 \h 
+56
+2.4.11. Quy trình AI hỏi đáp dữ liệu bán hàng
+ PAGEREF _Toc239180330 \h 
+57
+2.4.12. Quy trình Quản lý tài khoản và phân quyền
+ PAGEREF _Toc239180331 \h 
+58
+2.5. Phân tích và thiết kế hướng đối tượng
+ PAGEREF _Toc239180332 \h 
+59
+2.5.1. Xác định các lớp của hệ thống
+ PAGEREF _Toc239180333 \h 
+59
+2.5.2. Biểu đồ ph
+â
+n tích lớp
+ PAGEREF _Toc239180334 \h 
+60
+2.5.3. Mối quan hệ giữa các lớp
+ PAGEREF _Toc239180335 \h 
+62
+2.5.4. Mô tả chi tiết các lớp chính
+ PAGEREF _Toc239180336 \h 
+64
+2.6. Thiết kế cơ sở dữ liệu
+ PAGEREF _Toc239180337 \h 
+70
+2.6.1. Xác định các thực thể
+ PAGEREF _Toc239180338 \h 
+71
+2.6.2. Biểu đồ thực thể – liên kết (ERD)
+ PAGEREF _Toc239180339 \h 
+72
+2.6.3. Thiết kế các bảng dữ liệu
+ PAGEREF _Toc239180340 \h 
+72
+2.6.4. Khóa chính và khóa ngoại
+ PAGEREF _Toc239180341 \h 
+75
+2.6.5. Các ràng buộc dữ liệu
+ PAGEREF _Toc239180342 \h 
+76
+2.6.6. Thiết kế dữ liệu phục vụ chức năng AI
+ PAGEREF _Toc239180343 \h 
+78
+2.7. Thiết kế kiến trúc hệ thống
+ PAGEREF _Toc239180344 \h 
+78
+2.7.1. Kiến trúc tổng thể
+ PAGEREF _Toc239180345 \h 
+78
+2.7.2. Kiến trúc Frontend – Backend – Database
+ PAGEREF _Toc239180346 \h 
+78
+2.7.3. Thiết kế API
+ PAGEREF _Toc239180347 \h 
+78
+2.7.4. Luồng dữ liệu giữa các thành phần
+ PAGEREF _Toc239180348 \h 
+78
+2.8. Thiết kế giao diện
+ (chờ web hoàn thành r chụp ảnh của web làm giao diện)
+ PAGEREF _Toc239180349 \h 
+78
+2.8.1. Giao diện đăng nhập và đăng xuất
+ PAGEREF _Toc239180350 \h 
+78
+2.8.2. Giao diện quản lý sản phẩm
+ PAGEREF _Toc239180351 \h 
+78
+2.8.3. Giao diện quản lý khách hàng
+ PAGEREF _Toc239180352 \h 
+78
+2.8.4. Giao diện lập và quản lý hóa đơn
+ PAGEREF _Toc239180353 \h 
+79
+2.8.5. Giao diện quản lý nhập hàng và tồn kho
+ PAGEREF _Toc239180354 \h 
+79
+2.8.6. Giao diện tìm kiếm, lọc và tra cứu dữ liệu
+ PAGEREF _Toc239180355 \h 
+79
+2.8.7. Giao diện thống kê và báo cáo doanh thu
+ PAGEREF _Toc239180356 \h 
+79
+2.8.8. Giao diện xuất báo cáo
+ PAGEREF _Toc239180357 \h 
+79
+2.8.9. Giao diện AI tư vấn sản phẩm
+ PAGEREF _Toc239180358 \h 
+79
+2.8.10. Giao diện AI phân tích và nhận xét báo cáo doanh thu
+ PAGEREF _Toc239180359 \h 
+79
+2.8.11. Giao diện AI hỏi đáp dữ liệu bán hàng
+ PAGEREF _Toc239180360 \h 
+79
+2.8.12. Giao diện quản lý người dùng và phân quyền
+ PAGEREF _Toc239180361 \h 
+79
+2.9. Thiết kế chức năng AI
+ PAGEREF _Toc239180362 \h 
+79
+2.9.1. Kiến trúc tích hợp AI
+ PAGEREF _Toc239180363 \h 
+79
+2.9.2. Luồng dữ liệu hệ thống – AI
+ PAGEREF _Toc239180364 \h 
+79
+2.9.3. Thiết kế Prompt Template
+ PAGEREF _Toc239180365 \h 
+79
+2.9.4. AI tư vấn sản phẩm
+ PAGEREF _Toc239180366 \h 
+79
+2.9.5. AI phân tích doanh thu
+ PAGEREF _Toc239180367 \h 
+79
+2.9.6. AI hỏi đáp dữ liệu
+ PAGEREF _Toc239180368 \h 
+79
+2.9.7. Kiểm soát dữ liệu đầu vào
+ PAGEREF _Toc239180369 \h 
+79
+2.9.8. Xử lý lỗi và giới hạn API
+ PAGEREF _Toc239180370 \h 
+79
+2.9.9. Bảo mật dữ liệu AI
+ PAGEREF _Toc239180371 \h 
+79
+2.10. Thiết kế phân quyền và bảo mật
+ PAGEREF _Toc239180372 \h 
+79
+2.10.1. Phân quyền Admin
+ PAGEREF _Toc239180373 \h 
+79
+2.10.2. Phân quyền Nhân viên
+ PAGEREF _Toc239180374 \h 
+79
+2.10.3. Phân quyền Quản lý
+ PAGEREF _Toc239180375 \h 
+79
+2.10.4. Phân quyền Khách hàng
+ PAGEREF _Toc239180376 \h 
+79
+2.10.5. Bảo vệ API và dữ liệu nhạy cảm
+ PAGEREF _Toc239180377 \h 
+79
+CHƯƠNG 3. XÂY DỰNG CHƯƠNG TRÌNH
+ PAGEREF _Toc239180378 \h 
+80
+3.1. Môi trường và công cụ phát triển
+ PAGEREF _Toc239180379 \h 
+80
+3.2. Xây dựng cơ sở dữ liệu
+ PAGEREF _Toc239180380 \h 
+80
+3.3. Xây dựng Backend
+ PAGEREF _Toc239180381 \h 
+80
+3.4. Xây dựng giao diện
+ PAGEREF _Toc239180382 \h 
+80
+3.5. Tích hợp chức năng AI
+ PAGEREF _Toc239180383 \h 
+80
+3.5.1. Cấu hình kết nối AI API
+ PAGEREF _Toc239180384 \h 
+80
+3.5.2. Xây dựng Prompt Temlate
+ PAGEREF _Toc239180385 \h 
+80
+3.5.3. Xây dựng chức năng AI tư vấn sản phẩm
+ PAGEREF _Toc239180386 \h 
+80
+3.5.4. Xây dựng chức năng AI phân tích và nhận xét báo cáo
+ PAGEREF _Toc239180387 \h 
+80
+3.5.5. Xây dựng chức năng AI hỏi đáp dữ liệu bán hàng
+ PAGEREF _Toc239180388 \h 
+80
+3.5.6. Kiểm soát dữ liệu và xử lý lỗi AI
+ PAGEREF _Toc239180389 \h 
+80
+3.6. Kiểm thử hệ thống
+ PAGEREF _Toc239180390 \h 
+80
+3.6.1. Kiểm thử chức năng nghiệp vụ
+ PAGEREF _Toc239180391 \h 
+80
+3.6.2. Kiểm thử phân quyền
+ PAGEREF _Toc239180392 \h 
+80
+3.6.3. Kiểm thử chức năng AI
+ PAGEREF _Toc239180393 \h 
+80
+3.6.4. Kiểm thử xử lý lỗi
+ PAGEREF _Toc239180394 \h 
+80
+3.7. Triển khai và hướng dẫn sử dụng
+ PAGEREF _Toc239180395 \h 
+80
+3
+.7.1. Cấu hình môi trường
+ PAGEREF _Toc239180396 \h 
+80
+3.7.2. Cấu hình biến môi trường và API Key
+ PAGEREF _Toc239180397 \h 
+80
+3.7.3. Khởi chạy hệ thống
+ PAGEREF _Toc239180398 \h 
+80
+3.7.4. Hướng dẫn sử dụng theo từng vai trò
+ PAGEREF _Toc239180399 \h 
+80
+3.8. Kết quả thực nghiệm
+ PAGEREF _Toc239180400 \h 
+80
+KẾT LUẬN
+ PAGEREF _Toc239180401 \h 
+81
+TÀI LIỆU THAM KHẢO
+ PAGEREF _Toc239180402 \h 
+81
+PHÂN CÔNG NHIỆM VỤ
+Phân công nhiệm vụ theo tiến độ thực hiện:
+STT
+Tên nhiệm vụ
+Người thực hiện
+1
+Phân tích nghiệp vụ và thiết kế hệ thống
+2
+Phát triển chức năng quản lý cốt lõi (CRUD) và báo cáo
+3
+Tích hợp và quản lý chức năng AI
+4
+Cấu hình bảo mật, phân quyền và xử lý lỗi
+5
+Thiết kế giao diện, trải nghiệm người dùng (UI/UX)
+6
+Kiểm thử, đảm vảo chất lượng và review code
+7
+Theo dõi và minh chứng ứng dụng AI trong quy trình phát triển 
+8
+Đóng gói sản phẩm, báo cáo và demo
+Phân công nhiệm vụ theo 
+thành viên
+ thực hiện:
+Stt
+Thành Viên
+Nhiệm vụ
+Chữ
+ ký
+Nguyễn
+ Đình Bằng
+Vàng
+ Thị Dẳm
+MỞ ĐẦU
+Ngày nay, công nghệ thông tin phát triển mạnh mẽ, đồng nghĩa với việc các phần mềm ứng dụng ngày càng được sử dụng rộng rãi trong nhiều lĩnh vực của đời sống và sản xuất. Đặc biệt, trong lĩnh vực kinh doanh bán lẻ, việc ứng dụng công nghệ thông tin vào quản lý sản phẩm, khách hàng, hóa đơn, doanh thu và tồn kho giúp doanh nghiệp giảm thiểu các thao tác thủ công, hạn chế sai sót và nâng cao hiệu quả hoạt động.
+Bên cạnh các chức năng quản lý truyền thống, sự phát triển của trí tuệ nhân tạo (AI) đang mở ra nhiều khả năng mới trong việc phân tích và khai thác dữ liệu. AI có thể hỗ trợ tư vấn sản phẩm, phân tích doanh thu, sinh báo cáo và trả lời các câu hỏi về tình hình kinh doanh bằng ngôn ngữ tự nhiên. Việc kết hợp giữa hệ thống quản lý bán hàng và AI vì vậy có thể mang lại nhiều tiện ích cho cả nhân viên bán hàng và người quản lý.
+Xuất phát từ nhu cầu thực tế đó, nhóm lựa chọn đề tài 
+“Hệ thống quản lý bán hàng có tích hợp AI”
+ nhằm xây dựng một hệ thống hỗ trợ quản lý các nghiệp vụ bán hàng một cách tập trung và hiệu quả. Hệ thống hướng đến việc quản lý sản phẩm, khách hàng, hóa đơn, nhập hàng, tồn kho và doanh thu; đồng thời tích hợp AI để hỗ trợ tư vấn sản phẩm, phân tích dữ liệu, sinh báo cáo và giải đáp các câu hỏi liên quan đến hoạt động kinh doanh.
+ quá trình thực hiện đề tài, nhóm cũng ứng dụng AI vào các giai đoạn của quy trình phát triển phần mềm như phân tích yêu cầu, thiết kế cơ sở dữ liệu, xây dựng chức năng, kiểm thử, phát hiện lỗi và hoàn thiện tài liệu. Qua đó, đề tài không chỉ giúp nhóm vận dụng các kiến thức về phân tích, thiết kế và phát triển phần mềm mà còn tạo cơ hội tìm hiểu và áp dụng AI vào một bài toán thực tế.
+Do thời gian thực hiện và kiến thức còn hạn chế, báo cáo khó tránh khỏi những thiếu sót. Nhóm rất mong nhận được những ý kiến đóng góp của giảng viên để có thể hoàn thiện sản phẩm và nâng cao kiến thức trong quá trình học tập.
+Em xin chân thành cảm ơn!
+CHƯƠNG 
+1:
+ 
+CƠ SỞ LÝ THUYẾT
+1.1. Tổng quan về hệ thống quản lý bán hàng
+1.1.1. Khái niệm về hệ thống quản lý bán hàng
+Trong hoạt động kinh doanh bán lẻ, các nghiệp vụ như quản lý sản phẩm, quản lý khách hàng, lập hóa đơn, nhập hàng, theo dõi tồn kho và thống kê doanh thu diễn ra thường xuyên với số lượng dữ liệu ngày càng lớn. Nếu các nghiệp vụ này được thực hiện thủ công hoặc quản lý bằng nhiều bảng tính riêng biệt, doanh nghiệp có thể gặp phải các vấn đề như dữ liệu bị trùng lặp, sai lệch số lượng tồn kho, khó kiểm soát doanh thu và mất nhiều thời gian cho việc tổng hợp báo cáo.
+Hệ thống quản lý bán hàng là một hệ thống phần mềm được xây dựng nhằm hỗ trợ tự động hóa và tập trung các nghiệp vụ liên quan đến quá trình bán hàng và quản lý hoạt động kinh doanh. Hệ thống cho phép lưu trữ, cập nhật, tra cứu và xử lý các thông tin phát sinh trong quá trình kinh doanh trên một nền tảng thống nhất.
+Về cơ bản, một hệ thống quản lý bán hàng thường bao gồm các nhóm chức năng chính như quản lý sản phẩm, quản lý khách hàng, quản lý hóa đơn, quản lý nhập hàng và tồn kho, tìm kiếm và tra cứu dữ liệu, thống kê doanh thu và xuất báo cáo.
+Đối với đề tài 
+“Hệ thống quản lý bán hàng có tích hợp AI”
+, hệ thống không chỉ thực hiện các nghiệp vụ quản lý truyền thống mà còn tích hợp trí tuệ nhân tạo nhằm hỗ trợ người dùng khai thác dữ liệu và đưa ra thông tin có giá trị. AI được sử dụng trong các chức năng như tư vấn sản phẩm, phân tích và nhận xét báo cáo doanh thu, cũng như hỏi đáp dữ liệu bán hàng bằng ngôn ngữ tự nhiên.
+Như vậy, hệ thống được xây dựng theo hướng kết hợp giữa 
+quản lý dữ liệu nghiệp vụ
+ và 
+khả năng hỗ trợ ra quyết định bằng trí tuệ nhân tạo
+, góp phần nâng cao hiệu quả quản lý và khai thác dữ liệu kinh doanh.
+1.1.2. Vai trò của hệ thống quản lý bán hàng
+Hệ thống quản lý bán hàng có vai trò quan trọng trong việc tổ chức và kiểm soát các hoạt động kinh doanh. Việc ứng dụng phần mềm giúp thay thế 
+nhiều thao tác thủ công bằng các quy trình xử lý tự động, đồng thời tạo ra nguồn dữ liệu tập trung phục vụ hoạt động quản lý.
+Thứ nhất, hỗ trợ quản lý sản phẩm.
+ 
+Hệ thống cho phép lưu trữ các thông tin như mã sản phẩm, tên sản phẩm, nhóm hàng, giá nhập, giá bán, số lượng tồn kho và trạng thái sản phẩm. Người dùng có thể thêm, sửa, xóa, tìm kiếm và cập nhật thông tin sản phẩm một cách thuận tiện.
+Thứ hai, hỗ trợ quản lý khách hàng.
+ 
+Thông tin khách hàng được lưu trữ tập trung, bao gồm các thông tin liên hệ, nhóm khách hàng và lịch sử mua hàng. Điều này giúp nhân viên dễ dàng tra cứu thông tin và hỗ trợ khách hàng trong quá trình bán hàng.
+Thứ ba, tự động hóa nghiệp vụ bán hàng
+.
+ 
+Khi lập hóa đơn, hệ thống có thể tự động tính thành tiền, tổng tiền, áp dụng giảm giá, ghi nhận phương thức thanh toán và cập nhật số lượng tồn kho sau khi giao dịch hoàn tất. Việc tự động hóa giúp giảm sai sót trong quá trình nhập liệu và tính toán.
+Thứ tư, kiểm soát nhập hàng và tồn kho
+.
+ 
+Hệ thống theo dõi số lượng sản phẩm nhập vào, số lượng đã bán và số lượng tồn hiện tại. Thông tin này giúp người quản lý phát hiện những sản phẩm sắp hết hàng hoặc tồn kho lâu ngày để có kế hoạch nhập hàng phù hợp.
+Thứ năm, hỗ trợ thống kê và báo cáo
+.
+ 
+Dữ liệu từ các hóa đơn và hoạt động nhập hàng được tổng hợp để tạo ra các báo cáo doanh thu theo ngày, tháng, nhóm hàng hoặc sản phẩm. Người quản lý có thể dựa trên các báo cáo này để đánh giá tình hình kinh doanh.
+Thứ sáu, hỗ trợ ra quyết định bằng AI.
+ 
+Đây là điểm mở rộng quan trọng của hệ thống trong đề tài. Thay vì chỉ hiển thị dữ liệu dưới dạng bảng hoặc biểu đồ, hệ thống có thể cung cấp dữ liệu cho AI để phân tích, nhận xét và trả lời các câu hỏi bằng ngôn ngữ tự nhiên. Qua đó, người quản lý có thể tiếp cận thông tin kinh doanh nhanh chóng và trực quan hơn.
+1.1.3. Các nghiệp vụ cơ bản trong quản lý bán hàng
+Một hệ thống quản lý bán hàng cần phản ánh tương đối đầy đủ các hoạt động nghiệp vụ của cửa hàng. Trong phạm vi đề tài, các nghiệp vụ chính được xác định như sau:
+Quản lý sản phẩm:
+ Admin, Nhân viên bán hàng và Quản lý có thể thực hiện các thao tác thêm, sửa, xóa, xem và tìm kiếm thông tin sản phẩm theo phạm 
+vi được phân quyền. Các thông tin quan trọng gồm mã sản phẩm, tên sản phẩm, danh mục, thương hiệu, giá bán, thông tin kỹ thuật, trạng thái và số lượng tồn kho.
+Quản lý khách hàng:
+ Hệ thống lưu trữ và quản lý thông tin khách hàng nhằm phục vụ hoạt động bán hàng và chăm sóc khách hàng. Nhân viên và Quản lý có thể thêm, sửa và tra cứu thông tin khách hàng; khách hàng có thể đăng nhập và xem thông tin cá nhân, lịch sử mua hàng trong phạm vi được cho phép.
+Lập và quản lý hóa đơn:
+ Nhân viên lựa chọn khách hàng, sản phẩm và số lượng cần bán. Hệ thống kiểm tra tồn kho, tính thành tiền và tổng tiền, ghi nhận phương thức thanh toán và lưu thông tin hóa đơn. Sau khi hóa đơn được xác nhận, số lượng tồn kho được cập nhật tương ứng.
+Quản lý nhập hàng và tồn kho: 
+Nhân viên hoặc Quản lý lập phiếu nhập, lựa chọn nhà cung cấp, sản phẩm, số lượng và giá nhập. Hệ thống lưu phiếu nhập và cập nhật số lượng tồn kho, qua đó hỗ trợ kiểm soát tình trạng hàng hóa.
+Tìm kiếm, lọc và tra cứu dữ liệu:
+ Nhân viên, Quản lý và các đối tượng được cấp quyền có thể tìm kiếm và lọc sản phẩm, khách hàng, hóa đơn và các dữ liệu liên quan theo từ khóa, thời gian, trạng thái hoặc các tiêu chí phù hợp.
+Thống kê và báo cáo doanh thu:
+ Hệ thống tổng hợp dữ liệu từ các hóa đơn để tính tổng doanh thu, số lượng đơn hàng, sản phẩm bán ra, doanh thu theo thời gian và hỗ trợ xác định các sản phẩm bán chạy hoặc bán chậm.
+Xuất báo cáo:
+ Các dữ liệu thống kê và báo cáo có thể được xuất thành các định dạng phù hợp như PDF, Excel hoặc CSV nhằm phục vụ lưu trữ, chia sẻ và quản lý.
+Quản lý tài khoản và phân quyền:
+ Hệ thống cho phép Admin quản lý tài khoản người dùng, thiết lập vai trò và phân quyền truy cập. Các vai trò người dùng gồm Admin, Nhân viên bán hàng, Quản lý và Khách hàng. Mỗi vai trò được cấp quyền sử dụng các chức năng phù hợp với phạm vi hoạt động. AI Service là dịch vụ bên ngoài, không phải tài khoản người dùng và không tham gia phân quyền.
+Tư vấn sản phẩm bằng AI:
+ Nhân viên hoặc Quản lý có thể nhập nhu cầu của khách hàng. Hệ thống tra cứu thông tin sản phẩm và tồn kho, sau đó cung cấp dữ liệu phù hợp cho AI Service để phân tích và đề xuất tối đa ba sản phẩm phù hợp.
+Phân tích và nhận xét báo cáo doanh thu bằng AI:
+ Quản lý cung cấp hoặc yêu cầu hệ thống phân tích dữ liệu doanh thu. Hệ thống cung cấp cho AI Service các dữ liệu phù hợp về doanh thu, tồn kho, sản phẩm bán chạy và bán chậm. AI phân tích dữ liệu, sinh nhận xét về tình hình kinh doanh và đưa ra các khuyến nghị tham khảo cho người quản lý.
+Hỏi đáp dữ liệu bán hàng bằng AI:
+ Quản lý có thể đặt câu hỏi bằng ngôn ngữ tự nhiên, chẳng hạn như: “Tháng này mặt hàng nào bán chậm?”. Hệ thống xác định dữ liệu cần thiết, truy vấn cơ sở dữ liệu và cung cấp dữ liệu liên quan cho AI Service để tạo câu trả lời.
+1.2. Tổng quan về trí tuệ nhân tạo
+1.2.1. Khái niệm trí tuệ nhân tạo
+Trí tuệ nhân tạo (Artificial Intelligence – AI) là lĩnh vực thuộc khoa học máy tính nghiên cứu các phương pháp và kỹ thuật giúp máy tính có khả năng thực hiện những nhiệm vụ thường đòi hỏi trí thông minh của con người.
+Các khả năng thường được đề cập trong AI bao gồm học từ dữ liệu, nhận dạng mẫu, xử lý ngôn ngữ tự nhiên, suy luận, dự đoán, phân loại và hỗ trợ ra quyết định.
+AI có thể được chia thành nhiều hướng nghiên cứu khác nhau như học máy (Machine Learning), học sâu (Deep Learning), xử lý ngôn ngữ tự nhiên (Natural Language Processing), thị giác máy tính (Computer Vision) và AI tạo sinh (Generative AI).
+Trong các hệ thống phần mềm hiện đại, AI ngày càng được sử dụng để chuyển dữ liệu thành thông tin có ý nghĩa, tự động hóa các tác vụ có tính lặp lại và hỗ trợ người dùng tương tác với hệ thống bằng ngôn ngữ tự nhiên.
+Đối với hệ thống quản lý bán hàng, AI có thể được sử dụng để phân tích hành vi mua hàng, dự đoán nhu cầu, đề xuất sản phẩm, phát hiện xu hướng doanh thu và hỗ trợ người quản lý khai thác dữ liệu kinh doanh.
+1.2.2. AI tạo sinh và mô hình ngôn ngữ lớn
+AI tạo sinh (Generative AI) là nhóm công nghệ AI có khả năng tạo ra nội dung mới dựa trên dữ liệu và yêu cầu đầu vào. Nội dung được tạo có thể là văn bản, hình ảnh, âm thanh, mã nguồn hoặc các dạng dữ liệu khác.
+Một trong những thành phần quan trọng của AI tạo sinh hiện nay là mô hình ngôn ngữ lớn (Large Language Model – LLM). LLM được huấn luyện trên lượng dữ liệu văn bản lớn và có khả năng xử lý, hiểu ngữ cảnh tương đối phức tạp, từ đó tạo ra văn bản phù hợp với yêu cầu của người dùng.
+Trong hệ thống quản lý bán hàng, LLM có thể được sử dụng để:
+Phân tích yêu cầu của khách hàng.
+Đề xuất sản phẩm dựa trên nhu cầu và dữ liệu được cung cấp.
+Tóm tắt và nhận xét tình hình doanh thu.
+Phân tích sản phẩm bán chạy và bán chậm.
+Trả lời câu hỏi về dữ liệu kinh doanh bằng ngôn ngữ tự nhiên.
+Đưa ra các khuyến nghị hỗ trợ người quản lý.
+Tuy nhiên, LLM có thể tạo ra nội dung không chính xác nếu được cung cấp dữ liệu không đầy đủ hoặc nếu yêu cầu không được kiểm soát. Vì vậy, trong hệ thống, AI không được phép tự tạo dữ liệu sản phẩm, doanh thu hoặc tồn kho. Dữ liệu nghiệp vụ phải được lấy từ cơ sở dữ liệu của hệ thống trước khi gửi cho AI.
+ 
+Ví dụ, khi người dùng yêu cầu:
+ 
+“Tháng này sản phẩm nào bán chậm nhất?”
+Hệ thống không nên yêu cầu AI tự suy đoán câu trả lời. Thay vào đó, hệ thống cần truy vấn dữ liệu hóa đơn và doanh số, xác định các sản phẩm tương ứng, sau đó cung cấp dữ liệu cho AI để phân tích và diễn giải.
+Cách tiếp cận này giúp phân biệt rõ hai thành phần:
+ 
+Hệ thống quản lý dữ liệu:
+ chịu trách nhiệm cung cấp dữ liệu chính xác từ cơ sở dữ liệu.
+AI:
+ chịu trách nhiệm phân tích, diễn giải và tạo câu trả lời dễ hiểu dựa trên dữ liệu được cung cấp.
+1.2.3. Ứng dụng AI trong hệ thống quản lý bán hàng
+AI có thể được tích hợp vào nhiều nghiệp vụ của hệ thống quản lý bán hàng. Trong phạm vi đề tài, AI được tập trung vào ba chức năng chính.
+AI tư vấn sản 
+phẩm
+: 
+Nhân viên bán hàng hoặc Quản lý nhập nhu cầu của khách hàng, ví dụ:
+ 
+“Khách hàng cần tai nghe dưới 500.000 đồng, pin lâu và còn hàng.”
+. 
+Hệ thống sẽ tra cứu danh sách sản phẩm phù hợp dựa trên giá, mô tả và số lượng tồn kho. Những dữ liệu cần thiết được gửi cho AI để phân tích. AI sau đó đề xuất tối đa ba sản phẩm và giải thích ngắn gọn lý do lựa chọn.
+Chức năng này giúp nhân viên giảm thời gian tìm kiếm sản phẩm và có thể đưa ra tư vấn phù hợp hơn cho khách hàng.
+AI phân tích và nhận xét báo cáo doanh 
+thu
+: 
+Dữ liệu doanh thu thường được thể hiện dưới dạng bảng hoặc biểu đồ. Tuy nhiên, người quản lý vẫn cần thời gian để phân tích các con số và xác định xu hướng.
+AI có thể nhận dữ liệu tổng hợp từ hệ thống như:
+Tổng doanh thu.
+Số lượng sản phẩm bán ra.
+Doanh thu theo thời gian.
+Sản phẩm bán chạy.
+Sản phẩm bán chậm.
+Tình trạng tồn kho.
+Từ những dữ liệu này, AI có thể sinh nhận xét ngắn gọn và đưa ra khuyến nghị. Ví dụ, nếu một sản phẩm có doanh số tăng liên tục nhưng tồn kho thấp, AI có thể đề xuất người quản lý xem xét nhập thêm sản phẩm.
+Các nhận xét của AI chỉ mang tính hỗ trợ. Quyết định kinh doanh cuối cùng vẫn thuộc về người quản lý.
+AI hỏi đáp dữ liệu bán 
+hàng
+: 
+Đây là hình thức tương tác tự nhiên giữa người dùng và hệ thống. Thay vì phải mở nhiều màn hình và tự lọc dữ liệu, Quản lý có thể đặt câu hỏi trực tiếp bằng ngôn ngữ tự nhiên.
+ 
+Ví dụ:
+ 
+“Tháng này mặt hàng nào bán chậm?”
+, 
+“Doanh thu của nhóm phụ kiện trong tháng này là bao nhiêu?”
+, 
+“Sản phẩm nào có số lượng tồn kho thấp?”
+Quy trình xử lý gồm các bước: tiếp nhận câu hỏi, xác định loại dữ liệu cần thiết, truy vấn cơ sở dữ liệu, cung cấp dữ liệu cho AI, phân tích và trả về câu trả lời.
+Để hạn chế tình trạng AI tự tạo thông tin, hệ thống phải đảm bảo AI chỉ trả lời dựa trên dữ liệu do hệ thống cung cấp. Khi dữ liệu không đủ, AI phải thông báo rõ thay vì tự suy đoán.
+1.3. Công nghệ sử dụng hệ thống
+Việc lựa chọn công nghệ có ảnh hưởng trực tiếp đến khả năng triển khai, bảo trì và mở rộng hệ thống. Trong phạm vi đề tài, hệ thống được xây dựng dựa trên kiến trúc ứng dụng web với các thành phần chính gồm giao diện người dùng, máy chủ xử lý nghiệp vụ, cơ sở dữ liệu và dịch vụ AI.
+1.3.1. Công nghệ Backend
+Backend là thành phần chịu trách nhiệm xử lý nghiệp vụ, xác thực người dùng, quản lý dữ liệu và cung cấp API cho giao diện.
+Đề tài có thể sử dụng Python kết hợp với một framework web như 
+FastAPI, Flask hoặc Django
+. Python có cú pháp tương đối đơn giản, hệ sinh thái thư viện phong phú và đặc biệt phù hợp với các dự án có tích hợp AI.
+Backend thực hiện các nhiệm vụ chính:
+Xác thực và phân quyền người dùng.
+Xử lý nghiệp vụ sản phẩm, khách hàng và hóa đơn.
+Quản lý nhập hàng và tồn kho.
+Thực hiện truy vấn và tổng hợp dữ liệu.
+Cung cấp API cho frontend.
+Gọi API của dịch vụ AI.
+Kiểm soát dữ liệu trước khi gửi đến AI.
+Xử lý lỗi, timeout và phản hồi không hợp lệ từ AI.
+1.3.2. Công nghệ Frontend
+Frontend là thành phần trực tiếp tương tác với người dùng. Giao diện cần đảm bảo đơn giản, rõ ràng và phù hợp với từng vai trò.
+Có thể sử dụng HTML, CSS, JavaScript hoặc các framework như React, Vue. Đối với hệ thống quản lý bán hàng, giao diện cần cung cấp các màn hình như:
+Đăng nhập.
+Dashboard.
+Quản lý sản phẩm.
+Quản lý khách hàng.
+Lập hóa đơn.
+Quản lý nhập hàng và tồn kho.
+Tra cứu dữ liệu.
+Thống kê doanh thu.
+Xuất báo cáo.
+AI tư vấn sản phẩm.
+AI phân tích báo cáo.
+AI hỏi đáp dữ liệu.
+Giao diện AI cần phân biệt rõ giữa 
+dữ liệu thực tế của hệ thống
+ và 
+nội dung do AI sinh ra
+, giúp người dùng hiểu được nguồn gốc của thông tin.
+1.3.3. Công nghệ cơ sở dữ liệu
+Cơ sở dữ liệu có nhiệm vụ lưu trữ tập trung và bảo đảm tính nhất quán của dữ liệu nghiệp vụ.
+Trong bản demo, hệ thống có thể sử dụng SQLite do có cấu hình đơn giản và thuận tiện cho triển khai local. Khi triển khai hệ thống có quy mô lớn hơn, có thể sử dụng MySQL hoặc PostgreSQL.
+Các nhóm dữ liệu chính của hệ thống gồm:
+Người dùng.
+Vai trò.
+Sản phẩm.
+Danh mục sản phẩm.
+Khách hàng.
+Hóa đơn.
+Chi tiết hóa đơn.
+Phiếu nhập.
+Chi tiết phiếu nhập.
+Tồn kho.
+Việc tổ chức dữ liệu theo các thực thể có quan hệ rõ ràng giúp hạn chế dữ liệu trùng lặp và tạo cơ sở cho việc thống kê, báo cáo và tích hợp AI.
+1.3.4. Công nghệ và dịch vụ AI
+Hệ thống có thể tích hợp một mô hình AI thông qua API như OpenAI API, Gemini API, Claude API hoặc sử dụng mô hình chạy cục bộ thông qua Ollama.
+Trong kiến trúc của hệ thống, AI được xem như một dịch vụ bên ngoài. Backend chịu trách nhiệm chuẩn bị dữ liệu và gửi yêu cầu đến AI Service, sau đó tiếp nhận và kiểm tra kết quả trước khi hiển thị cho người dùng.
+Quy trình cơ bản:
+Cách tổ chức này giúp kiểm soát dữ liệu trước khi gửi ra dịch vụ AI và hạn chế việc AI truy cập trực tiếp vào cơ sở dữ liệu.
+1.3.5. Prompt và kiểm soát đầu ra AI
+Prompt là nội dung hướng dẫn được sử dụng để xác định vai trò, nhiệm vụ và giới hạn của AI.
+Đối với đề tài, prompt cần quy định rõ AI phải sử dụng dữ liệu được cung cấp và không được tự tạo dữ liệu khi thiếu thông tin.
+Ví dụ:
+ 
+System Prompt:
+Bạn là trợ lý AI cho hệ thống quản lý bán hàng. Chỉ tư vấn và phân tích dựa trên dữ liệu sản phẩm, doanh thu và tồn kho được cung cấp. Nếu dữ liệu không đủ để trả lời, hãy thông báo rõ rằng dữ liệu chưa đủ. Không tự tạo sản phẩm, giá bán, số lượng tồn kho hoặc doanh thu.
+Prompt được tách riêng khỏi mã nguồn chính, có thể lưu trong thư mục prompts/. Cách tổ chức này giúp dễ dàng thay đổi, thử nghiệm và so sánh nhiều phiên bản prompt.
+1.3.6. Bảo mật trong hệ thống tích hợp AI
+Khi tích hợp AI, hệ thống cần chú ý đến vấn đề bảo mật dữ liệu. API key của dịch vụ AI không được viết trực tiếp trong mã nguồn mà phải được lưu trong biến môi trường hoặc file .env.
+Ngoài ra, hệ thống cần hạn chế gửi những thông tin không cần thiết đến AI. Các dữ liệu nhạy cảm của khách hàng như số điện thoại đầy đủ hoặc thông tin thanh toán không nên được gửi cho AI nếu chức năng không yêu cầu.
+Một số nguyên tắc bảo mật cần áp dụng:
+Không đưa API key trực tiếp vào mã nguồn.
+Sử dụng file .env và cung cấp .env.example.
+Phân quyền người dùng theo vai trò.
+Chỉ gửi dữ liệu cần thiết cho AI.
+Kiểm tra dữ liệu trước khi gửi.
+Kiểm tra và xử lý phản hồi từ AI.
+Có cơ chế xử lý timeout và lỗi kết nối.
+Không coi kết quả AI là dữ liệu nghiệp vụ gốc.
+1.4. AI trong vòng đời phát triển phần mềm
+Trí tuệ nhân tạo không chỉ được sử dụng như một chức năng bên trong sản phẩm mà còn có thể hỗ trợ quá trình phát triển phần mềm (Software Development Life Cycle – SDLC).
+Trong đề tài này, AI được sử dụng xuyên suốt các giai đoạn từ phân tích yêu cầu, thiết kế, lập trình, kiểm thử đến hoàn thiện và triển khai hệ thống.
+1.4.1. AI trong giai đoạn phân tích yêu cầu
+Ở giai đoạn đầu, AI được sử dụng để hỗ trợ phân tích bài toán quản lý bán hàng, xác định các đối tượng tham gia và xây dựng danh sách yêu cầu chức năng.
+ 
+AI có thể hỗ trợ:
+Phân tích quy trình bán hàng.
+Xác định Actor.
+Xác định Use Case.
+Phân loại yêu cầu chức năng và phi chức năng.
+Phân tích nghiệp vụ nhập hàng và tồn kho.
+Đề xuất các chức năng AI phù hợp.
+Tuy nhiên, kết quả do AI đề xuất cần được người phát triển kiểm tra và điều chỉnh theo yêu cầu thực tế của đề tài.
+1.4.2. AI trong giai đoạn thiết kế hệ thống
+AI có thể hỗ trợ thiết kế kiến trúc hệ thống, mô hình dữ liệu và giao diện.
+ 
+Các nhiệm vụ có thể sử dụng AI gồm:
+Đề xuất kiến trúc hệ thống.
+Thiết kế ERD.
+Xác định các bảng và thuộc tính.
+Đề xuất khóa chính và khóa ngoại.
+Sinh Use Case Diagram.
+Sinh Sequence Diagram.
+Đề xuất giao diện quản lý.
+Đề xuất cấu trúc thư mục dự án.
+Trong đề tài, AI hỗ trợ người phát triển xây dựng các mô hình ban đầu, sau đó các thiết kế được kiểm tra và hoàn thiện trước khi triển khai.
+1.4.3. AI trong giai đoạn xây dựng chương trình
+Trong giai đoạn lập trình, AI có thể hỗ trợ sinh mã nguồn, giải thích mã, phát hiện lỗi và đề xuất phương án xử lý.
+ 
+Đối với hệ thống quản lý bán hàng, AI có thể hỗ trợ:
+Sinh API CRUD.
+Sinh Model và Schema.
+Sinh các truy vấn cơ sở dữ liệu.
+Sinh giao diện quản lý.
+Viết hàm tính tổng hóa đơn.
+Xử lý cập nhật tồn kho.
+Viết chức năng gọi AI API.
+Xử lý lỗi và ngoại lệ.
+Hỗ trợ debug chương trình.
+Việc sử dụng AI trong lập trình không đồng nghĩa với việc sử dụng nguyên trạng toàn bộ mã nguồn được sinh ra. Người phát triển cần kiểm tra, hiểu và điều chỉnh mã nguồn để bảo đảm tính đúng đắn, bảo mật và phù hợp với kiến trúc của hệ thống.
+1.4.4. AI trong giai đoạn kiểm thử
+AI có thể hỗ trợ tạo các trường hợp kiểm thử dựa trên yêu cầu của hệ thống.
+ 
+Các nhóm kiểm thử chính gồm:
+Kiểm thử hóa đơn:
+ 
+Kiểm tra tính tiền, giảm giá, thanh toán và cập nhật tồn kho.
+Kiểm thử tồn kho:
+ 
+Kiểm tra trường hợp nhập hàng, bán hàng, sản phẩm hết hàng và số lượng không hợp lệ.
+Kiểm thử báo cáo:
+ 
+Kiểm tra doanh thu theo ngày, tháng, nhóm hàng và sản phẩm.
+Kiểm thử chức năng AI:
+ 
+Kiểm tra AI có đề xuất đúng sản phẩm còn hàng hay không, có sử dụng đúng dữ liệu được cung cấp hay không và có thông báo khi thiếu dữ liệu hay không.
+Đặc biệt, đối với chức năng AI, cần kiểm thử khả năng chống lại việc AI tự tạo thông tin không có trong dữ liệu nguồn.
+1.4.5. AI trong giai đoạn hoàn thiện và triển khai
+Ở giai đoạn cuối, AI có thể hỗ trợ:
+Review mã nguồn.
+Kiểm tra cấu trúc dự án.
+Viết README.
+Viết tài liệu hướng dẫn sử dụng.
+Kiểm tra cấu hình môi trường.
+Hỗ trợ Docker hóa hệ thống.
+Việc sử dụng AI trong toàn bộ vòng đời phát triển giúp rút ngắn thời gian thực hiện một số công việc, đồng thời hỗ trợ sinh viên tiếp cận phương pháp phát triển phần mềm hiện đại.
+Tuy nhiên, AI chỉ đóng vai trò 
+công cụ hỗ trợ
+, không thay thế hoàn toàn vai trò của người phát triển. Các quyết định về kiến trúc, nghiệp vụ, bảo mật, dữ liệu và chất lượng sản phẩm vẫn cần được con người kiểm tra và chịu trách nhiệm.
+1.4.6. Nguyên tắc sử dụng AI có trách nhiệm trong phát triển hệ thống
+Để bảo đảm chất lượng của sản phẩm, việc sử dụng AI trong quá trình phát triển cần tuân thủ một số nguyên tắc.
+Thứ nhất, 
+kiểm chứng kết quả AI
+. Mọi nội dung hoặc mã nguồn do AI sinh ra cần được kiểm tra trước khi sử dụng.
+Thứ hai, 
+không cung cấp dữ liệu nhạy cảm không cần thiết
+ cho các dịch vụ AI bên ngoài.
+Thứ ba, 
+không để AI tự quyết định dữ liệu nghiệp vụ gốc
+. Đối với doanh thu, tồn kho, giá bán và thông tin hóa đơn, dữ liệu chính thức phải được lấy từ cơ sở dữ liệu của hệ thống.
+Thứ tư, 
+phân biệt giữa dữ liệu và nội dung sinh bởi AI
+. AI có nhiệm vụ phân tích và diễn giải dữ liệu, không thay thế cơ sở dữ liệu nghiệp vụ.
+Thứ năm, 
+lưu lại minh chứng sử dụng AI
+. Các prompt quan trọng, kết quả AI và quá trình chỉnh sửa có thể được lưu trữ để chứng minh vai trò của AI trong quá trình phát triển sản phẩm.
+CHƯƠNG 
+2:
+ PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG
+2.1. Khảo sát và mô tả bài 
+toán
+2.
+1.1. 
+Phương pháp và đối tượng khảo sát
+a. Phương pháp khảo sát
+Để thu thập thông tin phục vụ quá trình phân tích và thiết kế hệ thống, đề tài sử dụng phương pháp nghiên cứu định lượng kết hợp với khảo sát trực tuyến thông qua nền tảng Google Forms.
+Phiếu khảo sát được thiết kế gồm các câu hỏi đóng, câu hỏi lựa chọn và câu hỏi đánh giá mức độ, tập trung vào các nhóm nội dung chính:
+Nghiệp vụ bán hàng:
+ Khảo sát quy trình quản lý sản phẩm, khách hàng, lập hóa đơn và thanh toán.
+Quản lý nhập hàng và tồn kho:
+ Tìm hiểu quy trình nhập hàng, cập nhật tồn kho và nhu cầu cảnh báo khi số lượng sản phẩm xuống thấp.
+Báo cáo và quản trị:
+ Khảo sát nhu cầu theo dõi doanh thu, sản phẩm bán chạy/bán chậm và xuất báo cáo.
+Tài khoản và phân quyền:
+ Tìm hiểu nhu cầu sử dụng hệ thống theo từng vai trò và phạm vi quyền hạn.
+Nhu cầu ứng dụng AI:
+ Khảo sát nhu cầu tư vấn sản phẩm, phân tích báo cáo doanh thu và hỏi đáp dữ liệu bán hàng bằng ngôn ngữ tự nhiên.
+b. Đối tượng khảo sát
+Đối tượng khảo sát được lựa chọn dựa trên các nhóm người dùng và thành phần tham gia vào hoạt động của hệ thống, gồm:
+Nhân viên bán hàng:
+ Trực tiếp quản lý thông tin sản phẩm, khách hàng, lập hóa đơn, tra cứu dữ liệu và sử dụng AI để hỗ trợ tư vấn sản phẩm.
+Quản lý:
+ Theo dõi hoạt động kinh doanh, quản lý nhập hàng và tồn kho, xem thống kê – báo cáo và sử dụng các chức năng AI để phân tích, hỏi đáp dữ liệu bán hàng.
+Admin:
+ Quản lý tài khoản, phân quyền người dùng và cấu hình các chức năng quản trị hệ thống.
+Khách hàng:
+ Cung cấp thông tin và nhu cầu mua hàng, đồng thời có thể sử dụng tài khoản để truy cập các chức năng được hệ thống cho phép.
+Đối với AI Service, đây là tác nhân hệ thống bên ngoài được tích hợp nhằm xử lý các yêu cầu tư vấn sản phẩm, phân tích báo cáo và hỏi đáp dữ liệu. AI Service không phải là người dùng trực tiếp mà đóng vai trò cung cấp dịch vụ trí tuệ nhân tạo cho hệ thống.
+c. Quy mô mẫu và quy trình thu thập
+Phiếu khảo sát được gửi đến các đối tượng thuộc các nhóm người dùng của hệ thống và thu được 21 lượt phản hồi hợp lệ.
+Kết quả khảo sát được sử dụng làm cơ sở để xác định yêu cầu chức năng, yêu cầu phi chức năng, nhu cầu ứng dụng AI và thiết kế các quy trình nghiệp vụ của hệ thống. Dữ liệu khảo sát đồng thời được đối chiếu với mục tiêu đề tài nhằm đảm bảo các chức năng được xây dựng phù hợp với nhu cầu thực tế.
+2.1.2. 
+Kết quả và phân tích khảo sát
+STT
+Câu hỏi
+Trả lời
+Ghi chú
+1
+Trong cửa hàng, nhân viên bán hàng có được phép chỉnh sửa giá bán hoặc áp dụng mức giảm giá tùy ý khi lập hóa đơn không?
+38,1% cho rằng nhân viên chỉ được áp dụng mức giảm giá trong khung quy định sẵn; 33,3% yêu cầu phải có phê duyệt từ quản 
+lý
+, 
+admin; 28,6% cho phép chỉnh sửa tự do.
+Cần
+ phân quyền và giới hạn giảm giá.
+2
+Bạn muốn hệ thống quản lý và phân loại nhóm khách hàng dựa trên tiêu chí nào?
+42,1% chọn tổng số tiền đã mua; 31,6% chọn tần suất mua hàng; 26,3% chọn thông tin 
+ 
+cơ bản.
+Ưu tiên phân nhóm theo giá trị mua hàng.
+3
+Khi số lượng tồn kho của một sản phẩm xuống dưới mức nào thì hệ thống cần tự động phát cảnh báo “sắp hết hàng”?
+52,4% muốn cho phép quản lý tự cấu hình hạn mức cảnh báo riêng cho từng loại hàng; 23,8% chọn dưới 5 sản phẩm và 23,8% chọn dưới 10 sản phẩm.
+Cho
+ phép cấu hình ngưỡng tồn kho.
+4
+Hệ thống bán hàng cần hỗ trợ các phương thức thanh toán nào khi lập hóa đơn?
+50% chọn tiền mặt và chuyển khoản ngân hàng (QR Code); 35% chọn tiền mặt, chuyển khoản và thẻ POS; 15% lựa chọn phương thức khác.
+Hỗ trợ tiền mặt, chuyển khoản và có khả năng mở rộng POS.
+5
+Mức độ chu kỳ báo cáo doanh thu nào mà người quản lý cần theo dõi thường xuyên nhất?
+55% muốn theo dõi theo nhóm hàng/sản phẩm bán chạy; 30% theo ngày/ca làm việc; 15% theo tuần/tháng.
+Ưu tiên phân theo sản phẩm và nhóm hàng.
+6
+Bạn thường cần xuất tệp báo cáo dưới định dạng nào để phục vụ lưu trữ hoặc nộp báo cáo?
+66,7% chọn cả PDF và Excel/CSV; 19% chọn Excel (.xlsx)/CSV; 14,3% chọn PDF
+Hỗ
+ trợ PDF, Excel và CSV.
+7
+Khi nhân viên nhập nhu cầu khách hàng, ngoài yếu tố “Còn hàng trong kho”, AI cần ưu tiên tiêu chí nào khác?
+40% ưu tiên sản phẩm có mức chiết khấu/lợi nhuận cao nhất; 35% ưu tiên sản phẩm thuộc nhóm bán chạy nhất; 25% ưu tiên sản phẩm tồn kho lâu ngày.
+AI
+ cân nhắc tồn kho, lợi nhuận và khả năng bán.
+8
+Bạn kỳ vọng AI hiển thị thông tin tư vấn như thế nào trên màn hình bán hàng?
+71,4% muốn danh sách sản phẩm so sánh chi tiết tính năng giữa các sản phẩm; 14,3% muốn tối đa 3 sản phẩm kèm lý do; 14,3% muốn dạng Card có nút “Thêm nhanh vào hóa đơn”.
+Ưu
+ tiên giao diện so sánh sản phẩm
+9
+Trong báo cáo doanh thu, bạn muốn AI đưa ra nhóm nhận 
+xét
+, 
+khuyến nghị nào?
+52,4% chọn tất cả các nhóm: cảnh báo sản phẩm bán chậm/tồn kho cao, gợi ý nhập thêm sản phẩm bán 
+chạy và dự báo tồn kho; 23,8% ưu tiên cảnh báo bán chậm/tồn kho cao.
+AI
+ phân tích doanh thu, tồn kho và đưa khuyến nghị.
+10
+Kiểu câu hỏi bằng ngôn ngữ tự nhiên nào người quản lý dự kiến sẽ hỏi AI nhiều nhất?
+42,9% chọn câu hỏi dạng “Doanh thu nhóm hàng X so với tháng trước tăng hay giảm?”; 28,6% hỏi sản phẩm bán chậm nhất; 28,6% hỏi khách hàng VIP mua hàng
+AI hỗ trợ hỏi đáp và so sánh dữ liệu kinh doanh.
+11
+Để tránh hiện tượng AI ảo giác hoặc lộ thông tin, bạn đồng ý với quy tắc bảo mật nào?
+47,6% chọn cả hai quy tắc: AI chỉ trả lời dựa trên dữ liệu hệ thống cung cấp và dữ liệu khách hàng phải được ẩn danh trước khi gửi AI.
+AI chỉ dùng dữ liệu được cung cấp và bảo vệ dữ liệu khách hàng.
+12
+Thời gian phản hồi tối đa chấp nhận được đối với chức năng hỏi đáp AI/tư vấn AI là bao lâu?
+45% chấp nhận tối đa 10 giây; 40% chấp nhận 3–5 giây; 15% yêu cầu dưới 3 giây.
+Mục tiêu phản hồi AI khoảng 3 – 10 giây.
+Từ việc phân tích tổng hợp 21 lượt phản hồi thực tế thu thập từ phiếu khảo sát, nhóm phát triển rút ra các kết luận then chốt làm cơ sở định hình các yêu cầu chức năng, phi chức năng và thiết kế kiến trúc hệ 
+thống. Kết quả khảo sát đã cung cấp đầy đủ luận cứ thực tiễn khẳng định tính cần thiết của việc xây dựng Hệ thống Quản lý Bán hàng tích hợp AI. Đây là cơ sở cốt lõi để nhóm tiến hành mô hình hóa yêu cầu (Use Case Diagram), thiết kế kiến trúc 3 tầng và triển khai các chức năng phần mềm ở các chương tiếp theo. 
+Về quản trị nghiệp vụ bán hàng & tồn kho:
+Phân quyền & Kiểm soát giá
+:
+ Hệ thống bắt buộc phải thiết lập cơ chế phân quyền chặt chẽ. Nhân viên bán hàng không được chỉnh sửa giá tự do mà chỉ được áp dụng mức chiết khấu trong khung quy định ( chiếm 38,1%) hoặc phải qua sự phê duyệt của Quản lý/Admin (chiếm 33,3%). 
+Linh hoạt trong quản lý tồn kho:
+ Thay vì áp dụng một con số cố định, 52,4% người dùng yêu cầu hệ thống cung cấp tính năng cho phép quản lý tự cấu hình hạn mức cảnh báo "sắp hết hàng" linh hoạt theo từng loại sản phẩm. 
+Thanh toán & Xuất báo cáo:
+ Hệ thống cần hỗ trợ đa dạng phương thức thanh toán (ưu tiên Tiền mặt và QR Code ngân hàng chiếm 50%) và hỗ trợ xuất báo cáo đa định dạng (66,7% yêu cầu cả PDF lẫn Excel/CSV). 
+Về định hướng tích hợp Trợ lý AI thông minh:
+Tư vấn bán hàng tối ưu:
+ AI không chỉ dừng lại ở việc tìm kiếm sản phẩm còn hàng mà phải ưu tiên gợi ý các mặt hàng có lợi nhuận cao (40%) hoặc bán chạy nhất (35%). Đồng thời, giao diện tư vấn AI phải hiển thị dạng so sánh chi tiết tính năng giữa các sản phẩm (71,4% mong muốn) để nhân viên dễ dàng tư vấn cho khách. 
+Hỗ trợ quản trị thông minh:
+ Trợ lý AI phải đóng vai trò là một công cụ phân tích dữ liệu toàn diện (52,4%), có khả năng tự động đưa ra cảnh báo hàng bán chậm/tồn kho cao, gợi ý kế hoạch nhập hàng và trả lời các truy vấn báo cáo so sánh doanh thu bằng ngôn ngữ tự nhiên. 
+Về yêu cầu kỹ thuật, hiệu năng và bảo mật:
+Bảo mật dữ liệu nghiêm ngặt:
+ Đa số người dùng (47,6%) đặt ra yêu cầu AI chỉ được phép trả lời dựa trên dữ liệu chuẩn xác do hệ thống cung cấp (tránh hiện tượng ảo giác AI) và bắt buộc phải ẩn danh toàn bộ thông tin cá nhân khách hàng (SĐT, Họ tên) trước khi truyền sang AI Service. 
+Tốc độ phản hồi:
+ Hệ thống cần đảm bảo thời gian phản hồi của tính năng AI không vượt quá 10 giây (kèm icon/thanh chờ loading) để duy trì trải nghiệm mượt mà cho người dùng. 
+Khả năng duy trì vận hành (Fallback):
+ Khi dịch vụ AI gặp sự cố mất kết nối hoặc quá tải, hệ thống phải có cơ chế xử lý lỗi an toàn (42,9% muốn hỗ trợ gửi lại yêu cầu và 28,6% yêu cầu tự động chuyển sang chế độ lọc/tìm kiếm thủ công truyền thống), đảm bảo hoạt động bán hàng tại cửa hàng không bị gián đoạn. 
+2.1.
+3
+. Thực trạng quản lý bán hàng
+Trong hoạt động kinh doanh bán lẻ, việc quản lý sản phẩm, khách hàng, hóa đơn, nhập hàng, tồn kho và doanh thu là những nghiệp vụ diễn ra thường 
+xuyên. Đối với các cửa hàng có số lượng sản phẩm và giao dịch ngày càng tăng, việc quản lý chính xác các thông tin này có vai trò quan trọng trong việc duy trì hoạt động kinh doanh và hỗ trợ người quản lý đưa ra quyết định.
+Trên thực tế, nhiều cửa hàng quy mô nhỏ và vừa vẫn sử dụng sổ sách, bảng tính Excel hoặc các phần mềm quản lý đơn giản để lưu trữ dữ liệu. Các phương pháp này có thể đáp ứng nhu cầu ở quy mô nhỏ nhưng bắt đầu bộc lộ nhiều hạn chế khi số lượng sản phẩm và giao dịch tăng lên.
+Nhân viên bán hàng phải thực hiện nhiều thao tác thủ công như tìm kiếm sản phẩm, kiểm tra tồn kho, lập hóa đơn và cập nhật số lượng hàng hóa. Người quản lý phải tổng hợp dữ liệu từ nhiều nguồn để theo dõi doanh thu, sản phẩm bán chạy, sản phẩm bán chậm và tình hình tồn kho.
+Bên cạnh đó, dữ liệu bán hàng được lưu trữ nhưng chưa được khai thác hiệu quả. Người quản lý thường phải tự xem bảng thống kê và phân tích số liệu để đưa ra nhận xét hoặc quyết định nhập hàng. Điều này làm tăng thời gian xử lý và phụ thuộc nhiều vào kinh nghiệm của người quản lý.
+Sự phát triển của trí tuệ nhân tạo, đặc biệt là các mô hình ngôn ngữ lớn và AI tạo sinh, tạo ra khả năng mở rộng hệ thống quản lý bán hàng truyền thống. AI có thể được sử dụng để tư vấn sản phẩm dựa trên nhu cầu của khách hàng, phân tích báo cáo doanh thu, sinh nhận xét và hỗ trợ người quản lý hỏi đáp dữ liệu bằng ngôn ngữ tự nhiên.
+Do đó, đề tài hướng đến việc xây dựng một hệ thống quản lý bán hàng kết hợp giữa 
+quản lý nghiệp vụ truyền thống
+ và 
+các chức năng hỗ trợ bằng AI
+, giúp nâng cao hiệu quả quản lý và khai thác dữ liệu bán hàng.
+2.1.
+4
+. Những hạn chế của phương pháp quản lý thủ công
+Phương pháp quản lý bằng sổ sách hoặc bảng tính rời rạc tồn tại một số hạn chế chính như sau:
+Thứ nhất, khó kiểm soát dữ liệu sản phẩm và tồn 
+kho
+.
+ Khi nhập hoặc bán hàng, nhân viên phải cập nhật số lượng thủ công. Nếu quên cập nhật hoặc nhập sai số lượng, số liệu tồn kho có thể không phản ánh đúng tình trạng thực tế.
+Thứ hai, việc lập và quản lý hóa đơn mất nhiều thời gian.
+ Nhân viên phải tìm kiếm sản phẩm, kiểm tra giá, số lượng tồn kho, tính tiền và cập nhật dữ liệu. Khi số lượng giao dịch lớn, khả năng xảy ra sai sót tăng lên.
+Thứ ba, dữ liệu khách hàng khó được quản lý tập trung.
+ Thông tin khách hàng, lịch sử mua hàng và nhóm khách hàng có thể nằm ở nhiều file hoặc nhiều vị trí khác nhau, gây khó khăn khi tra cứu.
+Thứ tư, việc tổng hợp doanh thu còn thủ công.
+ Người quản lý phải thực hiện nhiều bước lọc, tính toán và tổng hợp dữ liệu để biết doanh thu theo ngày, tháng, nhóm hàng hoặc sản phẩm.
+Thứ năm, khó khai thác dữ liệu để hỗ trợ ra quyết định.
+ Các bảng số liệu chỉ cung cấp thông tin thống kê mà chưa trực tiếp đưa ra nhận xét hoặc khuyến nghị. Người quản lý phải tự phân tích dữ liệu để xác định sản phẩm bán chạy, bán chậm hoặc cần nhập thêm.
+Thứ sáu, thiếu khả năng tương tác bằng ngôn ngữ tự nhiên.
+ Người dùng không thể đơn giản đặt câu hỏi như “Tháng này sản phẩm nào bán chậm?” và nhận được câu trả lời trực tiếp từ dữ liệu hệ thống.
+Những hạn chế trên cho thấy cần xây dựng một hệ thống quản lý tập trung, trong đó các nghiệp vụ được tự động hóa và dữ liệu được khai thác hiệu quả hơn thông qua AI.
+2.1.
+5
+. Giải pháp đề xuất
+Đề tài đề xuất xây dựng Hệ thống quản lý bán hàng có tích hợp AI, trong đó hệ thống được chia thành hai nhóm chức năng chính: chức năng quản lý nghiệp vụ và chức năng AI hỗ trợ phân tích, tư vấn.
+Đối với nhóm chức năng quản lý nghiệp vụ, hệ thống cho phép:
+Đăng nhập, đăng 
+xuất
+.
+Quản lý và phân quyền người dùng.
+Quản lý sản phẩm.
+Quản lý khách hàng.
+Lập và quản lý hóa đơn.
+Quản lý nhập hàng và tồn kho.
+Tìm kiếm, lọc và tra cứu dữ liệu.
+Thống kê và báo cáo doanh thu.
+Xuất báo cáo dưới dạng PDF, Excel hoặc CSV.
+Các chức năng trên tương ứng với các Use Case UC01 đến UC08 và UC12, được thực hiện theo quyền hạn của từng vai trò trong hệ thống gồm Admin, Nhân viên bán hàng, Quản lý và Khách hàng.
+Đối với nhóm chức năng AI, hệ thống cung cấp ba chức năng:
+AI tư vấn sản phẩm: tiếp nhận nhu cầu của khách hàng, kết hợp với dữ liệu sản phẩm và tồn kho để đề xuất tối đa ba sản phẩm phù hợp.
+AI phân tích và sinh nhận xét báo cáo doanh thu: phân tích doanh thu, tồn kho, sản phẩm bán chạy và bán chậm để sinh nhận xét và khuyến nghị.
+AI hỏi đáp dữ liệu bán hàng: cho phép Quản lý đặt câu hỏi bằng ngôn ngữ tự nhiên và nhận câu trả lời dựa trên dữ liệu thực tế của hệ thống.
+Đối với các chức năng AI, AI Service được xem là một tác nhân bên ngoài của hệ thống, không phải là người dùng trực tiếp. AI Service chỉ thực hiện xử lý khi hệ thống gửi yêu cầu và dữ liệu phù hợp.
+Một nguyên tắc quan trọng của hệ thống là AI không được tự ý tạo dữ liệu nghiệp vụ. Các thông tin được cung cấp cho AI phải được lấy từ dữ liệu thực tế của hệ thống. Nếu dữ liệu không đầy đủ, AI phải thông báo rõ thay vì tự suy đoán.
+Mô hình hoạt động tổng quát của hệ thống được thực hiện theo quy trình:
+Trong đó, AI Service đóng vai trò là thành phần hỗ trợ, còn dữ liệu nghiệp vụ chính vẫn được quản lý và kiểm soát bởi hệ thống.
+2.1.
+6
+. Phạm vi của hệ thống
+Phạm vi của đề tài tập trung vào việc xây dựng Hệ thống quản lý bán hàng có tích hợp AI ở quy mô cửa hàng bán lẻ. Hệ thống hỗ trợ các nghiệp vụ quản lý bán hàng cơ bản, đồng thời tích hợp AI để tư vấn sản phẩm, phân tích báo cáo và hỏi đáp dữ liệu bán hàng.
+Phạm vi
+Nội dung
+Đăng nhập và đăng xuất
+Xác thực tài khoản và cho phép người dùng đăng nhập, đăng xuất.
+Quản lý sản phẩm
+Thêm, sửa, xóa, xem, tìm kiếm và cập nhật sản phẩm.
+Quản lý khách hàng
+Quản lý thông tin và lịch sử mua hàng của khách hàng.
+Lập và quản lý hóa đơn
+Lập hóa đơn, tính tiền, thanh toán và cập nhật tồn kho.
+Quản lý nhập hàng và tồn kho
+Quản lý phiếu nhập, nhà cung cấp và số lượng tồn kho.
+Tìm kiếm, lọc và tra cứu
+Tìm kiếm, lọc sản phẩm, khách hàng, hóa đơn và dữ liệu liên quan.
+Thống kê và báo cáo doanh thu
+Thống kê doanh thu, đơn hàng và sản phẩm bán 
+chạy
+ hay 
+bán chậm.
+Xuất báo cáo
+Xuất dữ liệu, báo cáo dưới dạng PDF, Excel hoặc CSV.
+AI tư vấn sản phẩm
+Phân tích nhu cầu và đề xuất tối đa 3 sản phẩm phù hợp.
+AI phân tích và nhận xét báo cáo
+Phân tích doanh thu và sinh nhận xét, khuyến nghị.
+AI hỏi đáp dữ liệu bán hàng
+Trả lời câu hỏi về tình hình kinh doanh dựa trên dữ liệu hệ thống.
+Quản lý người dùng và phân quyền
+Quản lý tài khoản và quyền truy cập theo vai trò.
+Hệ thống được tổ chức theo 12 Use Case, tương ứng với các nhóm chức 
+năng
+. 
+Đối tượng sử dụng hệ thống gồm Admin, Nhân viên bán hàng, Quản lý và Khách hàng. Mỗi đối tượng được cấp quyền truy cập vào các chức năng phù hợp với vai trò của mình. Ngoài ra, AI Service được xem là một tác nhân/hệ thống bên ngoài, thực hiện xử lý AI khi được hệ thống gọi và không trực tiếp quản lý dữ liệu nghiệp vụ.
+Đề tài không tập trung vào các nghiệp vụ chuyên sâu như kế toán tài chính, quản lý nhân sự, quản lý vận chuyển hoặc quản lý chuỗi cung ứng. Các chức năng AI cũng được giới hạn trong phạm vi dữ liệu do hệ thống cung cấp và quyền truy cập của người dùng. AI không được tự ý tạo hoặc thay đổi dữ liệu nghiệp vụ; khi dữ liệu không đầy đủ hoặc không có thông tin phù hợp, hệ thống phải thông báo rõ cho người dùng.
+2.2. Mục tiêu và yêu cầu của hệ thống
+2.2.1. Mục tiêu của hệ thống
+a. Mục tiêu tổng quát
+Xây dựng một hệ thống quản lý bán hàng có khả năng quản lý tập trung các nghiệp vụ sản phẩm, khách hàng, hóa đơn, nhập hàng, tồn kho và doanh thu; đồng thời tích hợp AI nhằm hỗ trợ tư vấn sản phẩm, phân tích báo cáo và hỏi đáp dữ liệu bán hàng.
+b. Mục tiêu cụ thể
+Hệ thống hướng đến các mục tiêu cụ thể:
+Quản lý tập trung dữ liệu sản phẩm và khách hàng.
+Hỗ trợ nhân viên lập hóa đơn nhanh chóng và chính xác.
+Tự động cập nhật tồn kho khi nhập hàng và bán hàng.
+Hỗ trợ tìm kiếm và tra cứu dữ liệu nhanh chóng.
+Cung cấp thống kê doanh thu theo nhiều tiêu chí.
+Cho phép xuất báo cáo phục vụ quản lý.
+Hỗ trợ AI tư vấn sản phẩm dựa trên dữ liệu thực tế.
+Sử dụng AI để phân tích và sinh nhận xét báo cáo doanh thu.
+Cho phép Quản lý hỏi đáp dữ liệu bán hàng bằng ngôn ngữ tự nhiên.
+Kiểm soát dữ liệu đầu vào cho AI nhằm hạn chế tình trạng AI tạo ra thông tin không có trong hệ thống.
+Áp dụng AI trong các giai đoạn của vòng đời phát triển phần mềm như phân tích yêu cầu, thiết kế, lập trình, kiểm thử và hoàn thiện tài liệu.
+2.2.2. Yêu cầu chức năng
+Dựa trên kết quả khảo sát và phân tích bài toán, hệ thống được xác định gồm 12 Use Case, được chia thành hai nhóm chính: nhóm quản lý nghiệp vụ và nhóm chức năng AI. Hệ thống có 5 tác nhân gồm Admin, Nhân viên bán hàng, Quản lý, Khách hàng và AI Service.
+Nhóm quản lý nghiệp vụ bao gồm các chức năng cốt lõi phục vụ hoạt động quản lý, bán hàng, nhập hàng, quản lý tồn kho, tra cứu và báo cáo.
+UC01 – Đăng nhập và đăng xuất:
+ Cho phép Admin, Nhân viên bán hàng, Quản lý và Khách hàng đăng nhập, đăng xuất khỏi hệ thống. Hệ thống xác thực thông tin tài khoản và kiểm tra quyền truy cập của người dùng.
+UC02 – Quản lý sản phẩm:
+ Cho phép Admin và Nhân viên bán hàng thêm, sửa, xóa, xem và tìm kiếm thông tin sản phẩm như mã sản phẩm, tên sản phẩm, danh mục, thương hiệu, thông tin kỹ thuật, giá bán và trạng thái.
+UC03 – Quản lý khách hàng:
+ Cho phép Admin và Nhân viên bán hàng quản lý thông tin khách hàng như họ tên, số điện thoại, email, địa chỉ và lịch sử mua hàng.
+UC04 – Lập và quản lý hóa đơn:
+ Cho phép Admin và Nhân viên bán hàng lập hóa đơn, lựa chọn khách hàng, sản phẩm và số lượng, tính tổng tiền, ghi nhận phương thức thanh toán và cập nhật tồn kho.
+UC05 – Quản lý nhập hàng và tồn kho:
+ Cho phép Admin, Nhân viên bán hàng và Quản lý thực hiện nghiệp vụ nhập hàng, lập phiếu nhập, quản lý nhà cung cấp và theo dõi số lượng tồn kho.
+UC06 – Tìm kiếm, lọc và tra cứu dữ liệu:
+ Cho phép Admin, Nhân viên bán hàng và Quản lý tìm kiếm, lọc và tra cứu sản phẩm, khách hàng, hóa đơn và các dữ liệu liên quan.
+UC07 – Thống kê và báo cáo doanh thu:
+ Cho phép Admin và Quản lý xem các thống kê về doanh thu, số lượng đơn hàng, sản phẩm bán ra và xác định sản phẩm bán chạy hoặc bán chậm.
+UC08 – Xuất báo cáo:
+ Cho phép Admin và Quản lý xuất dữ liệu thống kê và báo cáo dưới các định dạng như PDF, Excel hoặc CSV.
+UC12 – Quản lý người dùng và phân quyền:
+ Cho phép Admin quản lý tài khoản người dùng, tạo, cập nhật, khóa tài khoản và thiết lập vai trò, quyền truy cập phù hợp cho từng người dùng.
+Nhóm chức năng AI là nhóm chức năng mở rộng, sử dụng AI Service để khai thác dữ liệu nghiệp vụ của hệ thống, hỗ trợ tư vấn sản phẩm, phân tích hoạt động kinh doanh và tương tác với người quản lý bằng ngôn ngữ tự nhiên.
+UC09 – AI tư vấn sản phẩm:
+ Cho phép Nhân viên bán hàng và Quản lý nhập nhu cầu của khách hàng. Hệ thống tra cứu thông tin sản phẩm và tồn kho phù hợp, sau đó cung cấp dữ liệu cho AI Service để phân tích và đề xuất tối đa ba sản phẩm phù hợp.
+UC10 – AI phân tích và sinh nhận xét báo cáo doanh thu:
+ Cho phép Quản lý sử dụng AI Service để phân tích dữ liệu doanh thu, tồn kho, sản phẩm 
+bán chạy và bán chậm. AI sinh nhận xét và đưa ra các khuyến nghị tham khảo dựa trên dữ liệu được cung cấp.
+UC11 – AI hỏi đáp dữ liệu bán hàng:
+ Cho phép Quản lý đặt câu hỏi về tình hình kinh doanh bằng ngôn ngữ tự nhiên. Hệ thống xác định dữ liệu liên quan, truy vấn cơ sở dữ liệu, cung cấp dữ liệu phù hợp cho AI Service và hiển thị câu trả lời cho Quản lý.
+Trong các chức năng AI, AI Service là tác nhân bên ngoài, chịu trách nhiệm xử lý yêu cầu AI khi hệ thống gửi dữ liệu đến. AI không trực tiếp quản lý dữ liệu nghiệp vụ và không được tự ý thay đổi dữ liệu trong cơ sở dữ liệu.
+2.2.3. Yêu cầu phi chức năng
+Để bảo đảm tính toàn vẹn
+ dữ liệu
+, khả năng mở rộng
+ kiến trúc
+ và tối ưu hóa trải nghiệm người dùng, 
+n
+goài các chức năng nghiệp vụ
+ 
+hệ thống được thiết kế 
+tuân
+ thủ theo các 
+tiêu chuẩn chất lượng phần mềm theo chuẩn 
+ISO/IEC 25010 
+đáp ứng các yêu cầu phi chức năng sau:
+a. 
+An toàn và bảo mật thông tin
+Xác thực và Mã hóa
+: Yêu cầu xác thực bắt buộc trước khi truy cập tài nguyên. Mật khẩu người dùng được mã hóa băm một ở tầng dữ liệu, tuyệt đối không lưu trữ dưới dạng văn bản 
+thuần.
+Kiểm soát 
+t
+ruy cập tầng
+:
+ 
+Áp dụng mô hình Phân quyền dựa trên Vai trò cho 03 nhóm người dùng (Admin, Manager, Staff). Mọi yêu cầu truy xuất tài nguyên đều phải đi qua lớp kiểm soát quyền 
+truy.
+Bảo mật API Key & Tích hợp AI:
+ Các chuỗi khóa xác thực phải được lưu trữ nghiêm ngặt trong biến môi trường 
+.env, 
+không đưa trực tiếp vào mã nguồn.
+Tối thiểu hóa 
+d
+ữ liệu 
+n
+hạy 
+cảm:
+ 
+Thực thi chính sách bảo mật thông tin khách hàng, hóa đơn, giá nhập và biên lợi nhuận. Khi tương tác với dịch vụ AI bên thứ ba, hệ thống chủ động lọc bỏ các dữ liệu định danh cá nhân và dữ liệu tài chính nhạy cảm, chỉ cung cấp đúng ngữ cảnh dữ liệu tối thiểu cần thiết.
+b. 
+Hiệu 
+nă
+ng
+ và tối ưu hóa tài nguyên
+Thời gian 
+p
+hản hồi
+: Đảm bảo độ trễ phản hồi hệ thống đối với các tác vụ thời gian thực (Đăng nhập, Tìm kiếm sản phẩm/khách hàng, Lập hóa đơn, 
+CRUD) duy trì trong khoảng 1 – 3 giây. Các báo cáo tổng hợp Dashboard được xử lý trong thời gian tối ưu không quá 5 giây.
+Tối ưu hóa 
+t
+ruy vấn 
+c
+ơ sở 
+dữ
+ 
+liệu:
+ 
+Thiết lập chỉ 
+mục, 
+tối ưu hóa câu lệnh SQL/NoSQL và áp dụng kỹ thuật phân 
+trang 
+đối với các tập tập dữ liệu lớn nhằm giảm thiểu chi phí truy xuất không cần thiết.
+c. 
+Tính chính 
+xác
+ và toàn vẹn dữ liệu
+Toàn vẹn 
+g
+iao dịch 
+t
+ài 
+chính:
+ 
+Đảm bảo tính toán chính xác 100% đối với tổng tiền hóa đơn, công nợ và báo cáo doanh thu dựa trên dữ liệu giao dịch thực tế.
+Nhất quán 
+t
+ồn 
+kho
+: Thiết lập các ràng buộc toàn vẹn ở tầng Cơ sở dữ liệu và Transaction Management nhằm đảm bảo tính nhất quán tuyệt đối giữa dữ liệu nhập/
+xuấ
+t kho và số lượng tồn kho thực tế khi tạo, chỉnh sửa hoặc hủy hóa đơn.
+AI có sơ sở thực tế
+:
+ Kết quả phản hồi từ Trợ lý AI phải dựa trên ngữ cảnh dữ liệu thực tế do hệ thống cung, hạn chế tối đa hiện tượng ảo giác AI (Hallucination).
+d. 
+Tính sẵn sàng
+ và cơ chế phục hồi
+Chỉ số độ sẵn sàng:
+ Hệ thống đảm bảo hoạt động ổn định 24/7 đối với các phân hệ nghiệp vụ cốt lõi (Bán hàng, Quản lý kho, Khách hàng, Hóa đơn).
+Cơ chế 
+s
+ao lưu và 
+p
+hục hồi:
+ Tự động hóa quá trình sao lưu định kỳ dữ liệu người dùng, giao dịch, kho và doanh thu. Các bản sao lưu được lưu trữ độc lập, đảm bảo phục hồi về trạng thái nhất quán gần nhất khi xảy ra thảm họa dữ liệu.
+e. 
+Khả năng bảo trì
+Mã nguồn cần được tổ chức theo các module rõ 
+ràng
+, giúp tối ưu chi phó bảo trì, phát hiện lỗi và phát triển tính năng mới
+. Prompt AI được tách riêng trong thư mục prompts/ để thuận tiện chỉnh sửa và thử nghiệm.
+f. 
+Khả năng mở rộng
+ và tích hợp
+Kiến trúc hệ thống cần cho phép thay đổi cơ sở dữ liệu, AI Service hoặc mở rộng thêm các chức năng trong tương lai
+ hoặc tích hợp thêm phân hệ mới thông qua chuẩn giao tiếp
+ mà không phải thay đổi toàn bộ hệ thống.
+g. 
+Trải
+ nghiệm người dùng và tương tác
+Tối ưu hóa 
+luồng b
+án 
+hàng:
+ 
+Giao diện thiết kế theo hướng trực quan, tối giản hóa các bước thao tác cho Nhân viên bán hàng (Tìm kiếm 
+→
+ Chọn số lượng 
+→
+ Tính tiền 
+→
+ Thanh toán 
+→
+ Xuất hóa đơn).
+Trực quan hóa 
+d
+ữ liệu:
+ Dashboard tích hợp các biểu đồ trực quan, hiển thị rõ ràng chỉ số doanh thu, tồn kho và danh mục sản phẩm biến động (bán chạy/bán chậm).
+Giao diện 
+t
+ương thích & 
+p
+hản hồi 
+r
+õ 
+ràng:
+ 
+Tương thích tốt trên các thiết bị Máy tính/Laptop và sẵn sàng mở rộng cho thiết bị Di động. Hệ thống đưa ra các phản hồi, cảnh báo và thông báo lỗi rõ ràng, dễ hiểu cho người dùng cuối.
+2.2.4. Yêu cầu đối với chức năng AI
+ 
+Nhằm phát huy tối đa vai trò đặc trưng của AI trong đề tài, việc xác lập các tiêu chí kỹ thuật riêng biệt cho phân hệ này là điều kiện bắt buộc để đảm bảo hiệu năng và độ tin cậy của toàn bộ hệ thống.
+Đối với AI tư vấn sản phẩm
+Dựa trên dữ liệu sản phẩm được hệ thống cung cấp.
+Kiểm tra thông tin tồn kho.
+Ưu tiên sản phẩm còn hàng.
+Đề xuất tối đa 3 sản phẩm.
+Giải thích ngắn gọn lý do lựa chọn.
+Không tự tạo mã sản phẩm, tên sản phẩm hoặc giá sản phẩm.
+Đối với AI phân tích báo cáo
+Phân tích dữ liệu doanh thu thực tế.
+Nhận xét xu hướng doanh thu.
+Phân tích sản phẩm bán chạy và bán chậm.
+Có thể đưa ra khuyến nghị nhập hàng khi có đủ dữ liệu.
+Thông báo rõ khi dữ liệu không đầy đủ.
+Không tự tạo số liệu doanh thu.
+Đối với AI hỏi đáp
+Nhận câu hỏi bằng ngôn ngữ tự nhiên.
+Chỉ sử dụng dữ liệu mà hệ thống cung cấp.
+Trả lời dựa trên dữ liệu bán hàng thực tế.
+Yêu cầu người dùng làm rõ nếu câu hỏi chưa đủ thông tin.
+Thông báo khi không có dữ liệu phù hợp.
+Không tự suy đoán số liệu.
+2.3. Xác định tác nhân và Use Case
+2.3.1. Xác định tác nhân
+Dựa trên kết quả phân tích quy trình nghiệp vụ và mô hình hóa hệ thống, 
+05 tác nhân (Actors)
+ tham gia tương tác với hệ thống được xác định gồm: 
+Admin, Nhân viên bán hàng, Quản lý, Khách hàng và AI Service
+.
+Admin:
+ Có quyền quản trị hệ thống, bao gồm đăng nhập, quản lý sản phẩm, khách hàng, hóa đơn, nhập hàng, tra cứu, thống kê, xuất báo cáo và quản lý tài khoản, phân quyền người dùng.
+Nhân viên bán hàng:
+ Thực hiện các nghiệp vụ bán hàng trực tiếp như quản lý sản phẩm, quản lý khách hàng, lập và quản lý hóa đơn, nhập hàng, tra cứu dữ liệu và sử dụng AI để tư vấn sản phẩm cho khách hàng.
+Quản lý:
+ Theo dõi và quản lý hoạt động kinh doanh, quản lý nhập hàng và tồn kho, xem thống kê và báo cáo, xuất báo cáo, đồng thời sử dụng AI để tư vấn sản phẩm, phân tích báo cáo và hỏi đáp dữ liệu bán hàng.
+Khách hàng:
+ Đăng nhập và sử dụng các chức năng được hệ thống cung cấp cho khách hàng, đồng thời cung cấp nhu cầu về sản phẩm để Nhân viên bán hàng hoặc hệ thống hỗ trợ tư vấn phù hợp.
+AI Service:
+ Là hệ thống bên ngoài được tích hợp với hệ thống quản lý bán hàng. AI Service tiếp nhận dữ liệu do hệ thống cung cấp để thực hiện tư vấn sản phẩm, phân tích báo cáo và trả lời các câu hỏi về dữ liệu bán hàng. AI Service không trực tiếp quản lý hoặc thay đổi dữ liệu nghiệp vụ trong cơ sở dữ liệu.
+2.3.2. Biểu đồ Use Case tổng quát
+ 
+Biểu đồ Use Case tổng quát mô tả toàn cảnh các chức năng của Hệ thống quản lý bán hàng có tích hợp AI, thể hiện mối quan hệ giữa 05 tác nhân gồm Admin, Nhân viên bán hàng, Quản lý, Khách hàng và AI Service với 12 Use Case chính của hệ thống. Trong đó, ranh giới hệ thống được xác định rõ nhằm phân biệt các chức năng thuộc hệ thống với các tác nhân bên ngoài tương tác với hệ thống.
+ 
+Hệ thống bao gồm:
+UC01:
+ Đăng nhập và đăng xuất.
+UC02:
+ Quản lý sản phẩm.
+UC03:
+ Quản lý khách hàng.
+UC04:
+ Lập và quản lý hóa đơn.
+UC05:
+ Quản lý nhập hàng và tồn kho.
+UC06:
+ Tìm kiếm, lọc và tra cứu dữ liệu.
+UC07:
+ Thống kê và báo cáo doanh thu.
+UC08:
+ Xuất báo cáo.
+UC09:
+ AI tư vấn sản phẩm.
+UC10:
+ AI phân tích và sinh nhận xét báo cáo doanh thu.
+UC11:
+ AI hỏi đáp dữ liệu bán hàng.
+UC12:
+ Quản lý người dùng và phân quyền.
+Trong đó, Admin, Nhân viên bán hàng, Quản lý và Khách hàng là các tác nhân người dùng tương tác trực tiếp với hệ thống. AI Service là tác nhân bên ngoài, được hệ thống gọi khi thực hiện các chức năng AI tại UC09, UC10 và UC11.
+2.3.3. Biểu đồ phân rã cho các tác nhân
+2.3.
+4
+. Đặc tả chi tiết các Use Case
+Phần này trình bày chi tiết 
+luông
+ xử lý của từng Use Case, bao gồm tác nhân, điều kiện kích hoạt, điều kiện tiên quyết, luồng sự kiện chính, luồng sự 
+kiện
+Mã Use 
+C
+ase
+UC0
+1
+Tên Use case
+Đăng nhập, đăng xuất 
+Tác nhân
+Admin
+, Nhân viên bán hàng, Quản 
+lý, Khách hàng
+Mô tả
+Cho phép người dùng đăng nhập vào hệ thống bằng tài khoản được cấp và đăng xuất khi kết thúc phiên làm việc. Hệ thống xác thực tài khoản và áp dụng quyền tương ứng với vai trò đã được cấu hình.
+Sự kiện kích hoạt
+Người dùng truy cập vào hệ thống và thực hiện đăng nhập.
+Tên điều kiện
+Người dùng đã có tài khoản hợp lệ và hệ thống đang hoạt động.
+Luồng sự kiện chính (Thành công)
+STT
+Thực hiện bởi
+Hành động
+1
+Người
+ dùng
+Nhập 
+tên
+ đăng nhập và mật khẩu.
+2
+Hệ thống
+Tiếp
+ nhận và 
+k
+iểm
+ tra 
+thông tin
+ tài khoản.
+3
+Hệ
+ thống
+Xác
+ định vai trò của người dùng.
+4
+Hệ thống
+Cấp
+ quyền truy cập chức năng tương ứng.
+5
+Người
+ dùng
+Sử
+ dụng hệ thống theo quyền được cấp.
+Luồng sự kiện thay thế
+STT
+Thực hiện bởi
+Hành động
+3a
+Hệ thống
+Nếu
+ tài khoản hoặc mật khẩu không chính xác, thông báo lỗi và yêu cầu đăng nhập lại.
+3b
+Hệ
+ thống
+Nếu
+ tài khoản bị khóa, từ chối đăng nhập và thông báo cho người dùng.
+Hậu điều kiện
+Người dùng đăng nhập thành công và được truy cập các chức năng đúng với quyền được cấp.
+Mã Use 
+C
+ase
+UC02
+Tên Use case
+Quản lý sản phẩm.
+Tác nhân
+Admin
+, Nhân 
+viên, Quản lý
+Mô tả
+Cho phép người dùng quản lý thông tin sản phẩm bao gồm: mã, tên, nhóm hàng, giá bán, giá nhập, tồn kho và trạng thái.
+Sự kiện kích hoạt
+Người dùng chọn chức năng Quản lý sản phẩm.
+Tên điều kiện
+Người dùng đã đăng nhập và có quyền quản lý sản phẩm.
+Luồng sự kiện chính (Thành công)
+STT
+Thực hiện bởi
+Hành động
+1
+Người
+ dùng
+Mở
+ chức năng quản lý sản phẩm.
+2
+Hệ thống
+Hiển
+ thị danh sách sản phẩm.
+3
+Người
+ dùng
+Chọn
+ thêm, sửa, xóa, xem hoặc tìm kiếm sản phẩm.
+4
+Người
+ dùng
+Nhập
+ hoặc chỉnh sửa thông tin sản phẩm.
+5
+Hệ
+ thống
+Kiểm
+ tra tính hợp lệ của dữ liệu.
+6
+Hệ
+ thống
+Lưu
+ thông tin sản phẩm vào sơ sở dữ liệu.
+7
+Hệ
+ thống
+Hiển
+ thị kết quả cập nhật.
+Luồng sự kiện thay thế
+STT
+Thực hiện bởi
+Hành động
+5a
+Hệ thống
+Nếu
+ dữ liệu không hợp lệ, thông báo lỗi và yêu cầu nhập lại.
+5b
+Hệ
+ thống
+Nếu
+ mã sản phẩm đã tồn tại, yêu cầu người dùng nhập mã khác.
+Hậu điều kiện
+Thông tin sản phẩm được thêm hoặc cập nhật chính xác trong hệ thống.
+Mã Use 
+C
+ase
+UC03
+Tên Use case
+Quản lý khách hàng
+Tác nhân
+Admin
+, Nhân viên bán 
+hàng, Quản lý
+Mô tả
+Cho phép quản lý thông tin liên hệ, nhóm khách hàng và lịch sử mua hàng của khách hàng.
+Sự kiện kích hoạt
+Người dùng chọn chức năng Quản lý khách hàng.
+Tên điều kiện
+Người dùng đã đăng nhập và có quyền quản lý khách hàng.
+Luồng sự kiện chính (Thành công)
+STT
+Thực hiện bởi
+Hành động
+1
+Người
+ dùng
+Mở
+ chức năng quản lý khách hàng.
+2
+Hệ thống
+Hiển
+ thị danh sách khách hàng.
+3
+Người
+ dùng
+Chọn
+ thêm, sửa, xem hoặc tìm kiếm khách hàng.
+4
+Người
+ dùng
+Nhập
+ hoặc cập nhật thông tin khách hàng.
+5
+Hệ
+ thống
+Kiểm
+ tra dữ liệu.
+6
+Hệ
+ thống
+Lưu
+ thông tin khách hàng.
+7
+Hệ
+ thống
+Hiển
+ thị kết quả.
+Luồng sự kiện thay thế
+STT
+Thực hiện bởi
+Hành động
+5a
+Hệ thống
+Nếu
+ thông tin hợp lệ, yêu cầu người dùng nhập lại.
+5b
+Hệ
+ thống
+Nếu
+ không tìm thấy khách hàng, thông báo không có dữ liệu phù hợp.
+Hậu điều kiện
+Thông tin khách hàng được lưu hoặc cập nhật thành công.
+Mã Use 
+C
+ase
+UC04
+Tên Use case
+Lập lịch và quản lý hóa đơn.
+Tác nhân
+Admin
+, Nhân viên bán 
+hàng, Quản lý
+Mô tả
+Nhân viên lập hóa đơn bán hàng, tính tổng tiền, áp dụng giảm giá, ghi nhận phương thức thanh toán và lưu hóa đơn
+Sự kiện kích hoạt
+Admin/Nhân viên/ Quản lý 
+chọn chức năng Lập hóa đơn.
+Tên điều kiện
+Người dùng đã đăng 
+nhập
+, sản phẩm tồn tại và có đủ số lượng trong kho.
+.
+Luồng sự kiện chính (Thành công)
+STT
+Thực hiện bởi
+Hành động
+1
+Nhân
+ viên
+Chọn
+ chức năng lập hóa đơn.
+2
+Hệ thống
+Hiển
+ thị màn hình lập hóa đơn.
+3
+Nhân
+ viên
+Chọn
+ khách hàng và sản phẩm cần bán.
+4
+Nhân
+ viên
+Nhập
+ số lượng sản phẩm.
+5
+Hệ
+ thống
+Kiểm
+ tra số lượng tồn kho.
+6
+Hệ
+ thống
+Tính
+ thành tiền và tổng tiền hóa đơn.
+7
+Nhân
+ viên
+Nhập
+ giảm giá và chọn phương thức thanh toán
+8
+Hệ
+ thống
+Tính
+ tổng tiền cuối cùng.
+9
+Nhân
+ viên
+Xác
+ nhận thanh toán.
+10
+Hệ
+ thống
+Lưu
+ hóa đơn và cập nhật tồn kho. 
+11
+Hệ
+ thống
+Hiện
+ thị hóa đơn đã lập.
+Luồng sự kiện thay thế
+STT
+Thực hiện bởi
+Hành động
+5a
+Hệ thống
+Nếu
+ sản phẩm không đủ tồn kho, thông báo và yêu cầu điều chỉnh số lượng..
+9a
+Nhân
+ viên
+Hủy
+ thao tác lập hóa đơn. Hệ thống không lưu hóa đơn.
+10a
+Hệ
+ thống
+Nếu xảy ra lỗi khi lưu, thông báo và không thực hiện cập nhật dữ liệu không hoàn 
+chỉnh
+.
+Hậu điều kiện
+Hóa đơn được lưu thành công và số lượng tồn kho được cập nhật.
+Mã Use 
+C
+ase
+UC05
+Tên Use case
+Quản lý nhập hàng và tồn kho.
+Tác nhân
+Admin
+, Nhân viên bán hàng, Quản lý
+Mô tả
+Cho
+ phép thực hiện nhập hàng, lập phiếu nhập và theo dõi số lượng tồn kho của sản phẩm.
+Sự kiện kích hoạt
+Người dùng chọn chức năng Nhập hàng 
+và t
+ồn kho.
+Tên điều kiện
+Người
+ dùng đã đăng nhập và có quyền thực hiện nghiệp vụ.
+Luồng sự kiện chính (Thành công)
+STT
+Thực hiện bởi
+Hành động
+1
+Người
+ dùng
+Chọn
+ chức năng nhập hàng hoặc quản lý tồn 
+kho.
+2
+Hệ thống
+Hiển
+ thị danh sách sản phẩm và số lượng tồn.
+3
+Người
+ dùng
+Chọn
+ sản phẩm và nhập số lượng, giá nhập.
+4
+Người
+ dùng
+Xác
+ nhận phiếu nhập.
+5
+Hệ
+ thống
+Lưu
+ phiếu nhập.
+6
+Hệ
+ thống
+Cộng
+ số lượng nhập vào tồn kho.
+7
+Hệ
+ thống
+Hiển
+ thị số lượng tồn kho mới.
+Luồng sự kiện thay thế
+STT
+Thực hiện bởi
+Hành động
+3a
+Hệ thống
+Nếu
+ sản phẩm không tồn tại, yêu cầu chọn hoặc tạo sản phẩm hợp lệ.
+4a
+Người
+ dùng
+Hủy
+ phiếu nhập, hệ thống không cập nhật tồn kho
+6a
+Hệ
+ thống
+Nếu
+ xảy ra lỗi cập nhật, thông báo và đảm bảo dữ liệu không bị cập nhật sai.
+Hậu điều kiện
+Phiếu nhập được lưu trữ và số lượng tồn kho được cập nhật chính xác.
+Mã Use 
+C
+ase
+UC06
+Tên Use case
+Tìm kiếm, lọc và tra cứu dữ liệu.
+Tác nhân
+Admin
+, Nhân viên bán hàng, Quản 
+lý, Khách hàng
+Mô tả
+Cho
+ phép người dùng tìm kiếm và lọc sản phẩm, khách hàng và hóa đơn theo các tiêu chí khác nhau.
+Sự kiện kích hoạt
+Người dùng nhập từ khóa hoặc lựa chọn các điều kiện 
+lọc, lọc và tra cứu dữ liệu
+.
+Tên điều kiện
+Người
+ dùng đã đăng nhập và có quyền tra cứu dữ liệu.
+Luồng sự kiện chính (Thành công)
+STT
+Thực hiện bởi
+Hành động
+1
+Người
+ dùng
+Chọn
+ chức năng tìm kiếm hoặc tra cứu.
+2
+Người
+ dùng
+Nhập
+ từ kháo hoặc chọn điều kiện lọc.
+3
+Hệ
+ thống
+Tiếp
+ nhận yêu cầu tìm kiếm.
+4
+Hệ
+ thống
+Truy
+ vấn cơ sở dữ liệu.
+5
+Hệ
+ thống
+Hiển
+ thị danh sách kết quả phù hợp.
+6
+Người
+ dùng
+Chọn
+ kết quả để xem chi tiết nếu được phép.
+Luồng sự kiện thay thế
+STT
+Thực hiện bởi
+Hành động
+5a
+Hệ thống
+Nếu
+ không có dữ liệu phù hợp, thông báo “Thông tìm thấy kết quả”.
+2a
+Người
+ dùng
+Xóa
+ bộ lọc và thực hiện tìm kiếm lại.
+Hậu điều kiện
+Người dùng nhận được kết quả tra cứu theo điều kiện đã chọn.
+Mã Use 
+C
+ase
+UC07
+Tên Use case
+Thống kê và báo cáo doanh thu.
+Tác nhân
+Admin
+, Quản lý
+Mô tả
+Hệ
+ thống tổng hợp doanh thu và các chỉ số bán hàng theo ngày, tháng, nhóm hàng và sản phẩm nhằm hỗ trợ quản lý hoạt động kinh doanh.
+Sự kiện kích hoạt
+Người dùng chọn chức năng Thống kê/ Báo cáo
+Tên điều kiện
+Người dùng đã đăng 
+nhập
+, và có quyền xem báo cáo.
+Luồng sự kiện chính (Thành công)
+STT
+Thực hiện bởi
+Hành động
+1
+Người
+ dùng
+Chọn
+ khoảng thời gian cần thống kê.
+2
+Hệ thống
+Truy
+ vấn dữ liệu hóa đơn và bán hàng.
+3
+Hệ
+ thống
+Tính
+ tổng doanh thu và số lượng bán.
+4
+Hệ
+ thống 
+Phân
+ tích doanh thu theo ngày, 
+tháng.
+5
+Hệ
+ thống
+Xác
+ định sản phẩm bán chạy và bán chậm.
+6
+Hệ
+ thống
+Hiển
+ thị kết quả dưới dạng bảng hoặc tiêu đề.
+Luồng sự kiện thay thế
+STT
+Thực hiện bởi
+Hành động
+2a
+Hệ thống
+Nếu
+ không có dữ liệu trong khoảng thời gian được chọn, thông báo không có dữ liệu.
+3a
+Hệ
+ thống
+Nếu
+ dữ liệu không hợp lệ, thông báo và không tạo báo cáo.
+Hậu điều kiện
+Báo cáo thống kê được hiển thị chính xác theo khoảng thời gian và điều kiện được chọn.
+Mã Use 
+C
+ase
+UC08
+Tên Use case
+Xuất báo cáo.
+Tác nhân
+Admin
+, Quản lý
+Mô tả
+Cho
+ phép người dùng xuất báo cáo doanh thu hoặc danh sách hóa đơn thành các tệp PDF, Excel hoặc CSV.
+Sự kiện kích hoạt
+Người dùng chọn chức năng Xuất báo cáo.
+Tên điều kiện
+Người dùng đã đăng 
+nhập
+, và có dữ liệu cần xuất.
+Luồng sự kiện chính (Thành công)
+STT
+Thực hiện bởi
+Hành động
+1
+Người
+ dùng
+Chọn
+ loại báo cáo cần xuất.
+2
+Người
+ dùng
+Chọn
+ khoảng thời gian và điều kiện lọc
+3
+Hệ
+ thống
+Tổng
+ hợp dữ liệu báo cáo.
+4
+Người
+ dùng
+Chọn
+ định dạng PDF, Excel hoặc CSV.
+5
+Hệ
+ thống
+Tạo
+ tệp báo cáo.
+6
+Hệ
+ thống
+Cung
+ cấp tệp để người dùng lưu về máy.
+Luồng sự kiện thay thế
+STT
+Thực hiện bởi
+Hành động
+3a
+Hệ thống
+Nếu không có dữ liệu, thông báo và yêu cầu chọn điều kiện 
+khác
+.
+5a
+Hệ
+ thống
+Nếu tạo tệp thất bại, thông báo lỗi và cho phép thực hiện 
+lại
+.
+Hậu điều kiện
+Báo cáo được tạo thành công dưới định dạng người dùng lựa chọn.
+Mã Use 
+C
+ase
+UC09
+Tên Use case
+AI tư vấn sản phẩm
+Tác nhân
+Nhân
+ viên bán hàng, Quản lý, AI 
+Service, Khách hàng
+Mô tả
+Hệ thống sử dụng AI để hỗ trợ nhân 
+viên
+, 
+q
+uản lý
+ hoặc khách hàng
+ tư vấn sản phẩm cho khách hàng dựa trên nhu cầu, thông tin sản phẩm và số lượng tồn kho. AI đề xuất tối đa 3 sản phẩm phù hợp và ưu tiên sản phẩm đang còn 
+hàng
+.
+Sự kiện kích hoạt
+Khách
+ hàng, Nhân viên hoặc Quản ý yêu cầu tư vấn sản phẩm.
+Tên điều kiện
+Người dùng đã đăng nhập; hệ thống có dữ liệu sản phẩm và tồn kho; AI Service có thể kết nối.
+Luồng sự kiện chính (Thành công)
+STT
+Thực hiện bởi
+Hành động
+1
+Người dùng
+Nhập nhu cầu 
+hoặc
+ tiêu chí sản phẩm
+.
+2
+Hệ thống
+Tiếp nhận và phân tích yêu cầu tư vấn.
+3
+Hệ thống
+Tra cứu danh sách sản phẩm, giá bán, mô tả và số lượng tồn kho.
+4
+Hệ thống
+Gửi nhu cầu và dữ liệu sản phẩm phù hợp cho AI Service.
+5
+AI Service
+Phân tích nhu cầu và so sánh với dữ liệu sản phẩm được cung cấp.
+6
+AI Service
+Đề xuất tối đa 3 sản phẩm phù hợp và giải thích ngắn gọn.
+7
+Hệ
+ thống
+Kiểm
+ tra lại thông tin và tình trạng tồn kho.
+8
+Hệ thống
+Kiểm tra kết quả và hiển thị các sản phẩm được AI đề xuất.
+Luồng sự kiện thay thế
+STT
+Thực hiện bởi
+Hành động
+3a
+Hệ thống
+Nếu không có sản phẩm phù hợp hoặc còn hàng, thông báo cho người dùng.
+5a
+AI Service
+Nếu dữ liệu sản phẩm không đủ, AI thông báo không đủ dữ liệu để tư vấn.
+6a
+AI Service
+Nếu không tìm được sản phẩm phù hợp, AI thông báo và không tự tạo sản phẩm.
+7
+a
+Hệ thống
+Nếu sản phẩm được đề xuất đã hết hàng, hệ thống cảnh báo và loại khỏi kết quả tư vấn.
+Hậu điều kiện
+Người dùng nhận được danh sách sản phẩm phù hợp dựa trên dữ liệu thực tế của hệ thống.
+Mã Use 
+C
+ase
+UC10
+Tên Use case
+AI phân tích và nhận xét báo cáo doanh thu
+Tác nhân
+Quản lý, AI Service
+Mô tả
+Hệ thống sử dụng AI để phân tích dữ liệu doanh thu, tồn kho, sản phẩm bán chạy và bán chậm. AI sinh nhận xét về tình hình kinh doanh và đưa ra khuyến nghị hỗ trợ
+ 
+Quản lý ra quyết định.
+Sự kiện kích hoạt
+Quản lý yêu cầu AI phân tích báo cáo doanh thu theo khoảng thời gian
+Tên điều kiện
+Người dùng đã đăng nhập và có quyền xem báo cáo; hệ thống có dữ liệu doanh thu, sản phẩm và tồn kho.
+Luồng sự kiện chính (Thành công)
+STT
+Thực hiện bởi
+Hành động
+1
+Quản lý
+Chọn chức năng phân tích báo cáo bằng AI.
+2
+Quản
+ lý
+Chọn khoảng thời gian cần phân tích.
+3
+Hệ thống
+Truy vấn dữ liệu doanh thu, tồn kho, sản phẩm bán chạy và bán chậm.
+4
+Hệ thống
+Tổng hợp dữ liệu và gửi cho AI Service.
+5
+AI Service
+Phân tích dữ liệu được cung cấp.
+6
+AI Service
+Sinh nhận xét về tình hình doanh thu và hoạt động kinh doanh.
+7
+AI Service
+Đưa ra khuyến nghị như nhập thêm sản phẩm bán chạy hoặc chú ý sản phẩm bán chậm.
+8
+Hệ thống
+Hiển thị kết quả phân tích và nhận xét AI cho Quản lý.
+Luồng sự kiện thay thế
+STT
+Thực hiện bởi
+Hành động
+3a
+Hệ thống
+Nếu không có dữ liệu trong khoảng thời gian được chọn, thông báo không đủ dữ liệu để phân tích.
+5a
+AI Service
+Nếu dữ liệu không đầy đủ, AI thông báo rõ phần dữ liệu còn thiếu.
+5b
+AI Service
+Nếu xảy ra lỗi kết nối hoặc quá thời gian phản hồi, hệ thống thông báo lỗi.
+7a
+AI Service
+Nếu không đủ cơ sở đưa ra khuyến nghị, AI chỉ sinh nhận xét dựa trên dữ liệu hiện có.
+Hậu điều kiện
+Báo cáo được bổ sung nhận xét và khuyến nghị từ AI dựa trên dữ liệu kinh doanh thực tế của hệ thống.
+Mã Use 
+C
+ase
+UC11
+Tên Use case
+AI hỏi đáp dữ liệu bán hàng
+Tác nhân
+Quản lý, AI Service
+Mô tả
+Hệ thống cho phép Quản lý đặt câu hỏi về tình hình kinh doanh bằng ngôn ngữ tự nhiên. AI phân tích dữ liệu bán hàng được hệ thống cung cấp và trả lời câu hỏi.
+Sự kiện kích hoạt
+Quản lý nhập câu hỏi vào chức năng hỏi đáp dữ liệu bán hàng.
+Tên điều kiện
+Người dùng đã đăng nhập và có quyền sử dụng chức năng AI; hệ thống có dữ liệu liên quan đến câu hỏi.
+Luồng sự kiện chính (Thành công)
+STT
+Thực hiện bởi
+Hành động
+1
+Quản lý
+Nhập câu hỏi, ví dụ: “Tháng này mặt hàng nào bán chậm?”.
+2
+Hệ thống
+Tiếp nhận và phân tích câu hỏi.
+3
+Hệ thống
+Xác định dữ liệu cần thiết để trả lời câu 
+hỏi
+.
+4
+Hệ thống
+Truy vấn dữ liệu doanh thu, sản phẩm, hóa đơn và tồn kho.
+5
+Hệ thống
+Gửi câu hỏi và dữ liệu liên quan cho AI Service.
+6
+AI Service
+Phân tích dữ liệu và tạo câu trả lời.
+7
+Hệ thống
+Hiển thị câu trả lời cho Quản lý.
+Luồng sự kiện thay thế
+STT
+Thực hiện bởi
+Hành động
+3a
+Hệ thống
+Nếu không xác định được dữ liệu cần thiết, yêu cầu người dùng đặt câu hỏi rõ hơn.
+4a
+Hệ thống
+Nếu không có dữ liệu liên quan, thông báo không đủ dữ liệu để trả lời.
+6a
+AI Service
+Nếu AI không thể xử lý câu hỏi, trả về thông báo lỗi.
+7a
+Hệ
+ thống
+Nếu AI không phản hồi hoặc xảy ra timeout, thông báo lỗi và cho phép gửi lại câu hỏi.
+Hậu điều kiện
+Quản lý nhận được câu trả lời dựa trên dữ liệu bán hàng thực tế của hệ thống.
+Mã Use 
+C
+ase
+UC12
+Tên Use case
+Quản lý người dùng và phân quyền
+Tác nhân
+Admin 
+Mô tả
+Hệ thống cho phép Quản lý đặt câu hỏi về tình hình kinh doanh bằng ngôn ngữ tự nhiên. AI phân tích dữ liệu bán hàng được hệ thống cung cấp và trả lời câu hỏi.
+Sự kiện kích hoạt
+Admin
+ chọn chức năng quản lý người dùng và phân quyền
+Tên điều kiện
+Người dùng đã đăng nhập và có quyền sử dụng chức năng AI; hệ thống có dữ liệu liên quan đến câu hỏi.
+Luồng sự kiện chính (Thành công)
+STT
+Thực hiện bởi
+Hành động
+1
+Admin
+Chọn
+ chức năng Quản lý người dùng và phân quyền.
+2
+Hệ thống
+Hiển
+ thị danh sách tài khoản người dùng.
+3
+Admin
+Chọn
+ thêm, sửa, khóa/mở tài khoản hoặc phân quyền.
+4
+Admin
+Cập
+ nhật thông tin tài khoản.
+5
+Admin
+Chọn
+ vai trò và quyền truy cập.
+6
+Hệ thống
+Kiểm
+ tra tính hợp lệ của thông tin và quyền.
+7
+Hệ thống
+Lưu
+ thông tin tài khoản và quyền.
+8
+Hệ thống
+Thông
+ báo kết quả thành công.
+Luồng sự kiện thay thế
+STT
+Thực hiện bởi
+Hành động
+3a
+Admin
+Nếu
+ Admin hủy thao tác hệ thống sẽ quay lại danh sách người dùng và không thay đổi dữ liệu
+4a
+Hệ thống
+Nếu
+ hệ thống thông báo tài khoản đã tồn tại thì admin sẽ nhập lại thông tin.
+4b
+Hệ thống
+Nếu
+ hệ thống thông báo lỗi thông tin không hợp lệ thì admin sẽ chỉnh sửa lại thông tin.
+5a
+Hệ
+ thống
+Vai
+ trò/quyền không hợp lệ hệ thống yêu cầu Admin lựa chọn lại.
+7a
+Hệ
+ thống
+Hệ
+ thống thông báo lỗi và không cập nhật thông tin thay đổi.
+Hậu điều kiện
+Quản lý nhận được câu trả lời dựa trên dữ liệu bán hàng thực tế của hệ thống.
+2.4. Phân tích quy trình nghiệp vụ
+2.4.1. Quy trình đăng 
+nhập
+, đăng xuất
+ 
+2
+.4.
+2
+. 
+Quy trình quản lý sản phẩm
+2.4.3. Quy trình quản lý khách hàng
+2.4.4. Quy trình lập hóa đơn bán hàng
+2.4.5. Quy trình nhập hàng và cập nhật tồn kho
+2.4.6. Quy trình 
+tìm
+ kiếm, lọc và tra cứu dữ liệu
+2.4.7. Quy trình 
+thống
+ kê và báo cáo doanh thu
+2.4.8. Quy trình xuất báo cáo
+ 
+2.4.9. Quy trình AI 
+tư vấn sản phẩm
+2.4.10. Quy trình AI phân tích và nhận xét báo cáo doanh thu
+2.4.11. Quy trình AI hỏi đáp dữ liệu bán hàng
+2.4.12. Quy trình Quản lý tài khoản và phân quyền
+2.5. Phân tích và thiết kế hướng đối tượng
+Biểu đồ lớp phân tích được xây dựng dựa trên các Use Case và quy trình nghiệp vụ nhằm xác định các lớp chính của Hệ thống quản lý bán hàng có tích hợp AI. Các lớp được xác định dựa trên những đối tượng và nghiệp vụ thực tế như tài khoản người dùng, sản phẩm, khách hàng, hóa đơn, nhập hàng, tồn kho, nhà cung cấp và báo cáo doanh thu.
+Bên cạnh các lớp nghiệp vụ, hệ thống còn có các lớp hỗ trợ chức năng AI nhằm thực hiện tư vấn sản phẩm, phân tích báo cáo doanh thu và hỏi đáp dữ liệu bán hàng. Các lớp AI khai thác dữ liệu nghiệp vụ từ hệ thống và gửi yêu cầu đến AI Service để xử lý, sau đó trả kết quả về cho người dùng.
+Biểu đồ lớp thể hiện các thuộc tính, phương thức và mối quan hệ giữa các lớp, là cơ sở để chuyển kết quả phân tích nghiệp vụ sang thiết kế cơ sở dữ liệu, xây dựng API và triển khai chương trình.
+2.5.1. Xác định các lớp của hệ thống
+UserAccount 
+(Tài khoản người dùng) – Quản lý thông tin tài khoản, thông tin cá nhân, vai trò và trạng thái hoạt động của người dùng trong hệ thống. 
+Category
+ (Danh mục sản phẩm)
+ 
+– Quản lý các nhóm sản phẩm được kinh doanh trong hệ thống, chẳng hạn như laptop văn phòng, laptop gaming, laptop đồ họa,...
+Product 
+(Sản phẩm) – Quản lý thông tin các sản phẩm laptop được kinh doanh như tên sản phẩm, thương hiệu, cấu hình, giá nhập, giá bán và số lượng tồn kho. 
+Customer 
+(Khách hàng) – Quản lý thông tin khách hàng, thông tin liên hệ, nhóm khách hàng và lịch sử mua hàng
+. 
+Invoice 
+(Hóa đơn) –
+ Quản lý thông tin chung của hóa đơn bán hàng, bao gồm khách hàng, nhân viên lập hóa đơn, ngày lập, tổng tiền, giảm giá và phương thức thanh toán. 
+InvoiceDetail 
+(Chi tiết hóa đơn)
+ – Lưu thông tin từng sản phẩm trong hóa đơn, bao gồm sản phẩm, số lượng, đơn giá và thành tiền. 
+ImportReceipt 
+(Phiếu nhập hàng)
+ – Quản lý thông tin các phiếu nhập hàng từ nhà cung cấp, người lập phiếu, ngày nhập và tổng tiền nhập. 
+ImportDetail 
+(Chi tiết nhập hàng) –
+ Quản lý danh sách sản phẩm được nhập trong từng phiếu nhập, số lượng, đơn giá nhập và thành tiền. 
+Inventory 
+(Tồn kho) –
+ Theo dõi số lượng tồn kho của từng sản phẩm, mức tồn kho tối thiểu và thời điểm cập nhật, đồng thời hỗ trợ cảnh báo khi sản phẩm sắp hết hàng. 
+Supplier 
+(Nhà cung cấp) –
+ Quản lý thông tin các nhà cung cấp sản phẩm laptop phục vụ cho nghiệp vụ nhập hàng. 
+SalesReport 
+(Báo cáo doanh thu) – Tổng 
+hợp dữ liệu bán hàng, doanh thu, số lượng đơn hàng và tình hình sản phẩm bán chạy hoặc bán chậm theo khoảng thời gian. 
+AiQuery 
+(Truy vấn AI)
+ – Quản lý các yêu cầu gửi đến AI, bao gồm loại yêu cầu, nội dung câu hỏi, dữ liệu đầu vào, kết quả AI và lịch sử truy vấn. 
+Permission 
+(Phân quyền) – Quản
+ lý các quyền truy cập của hệ thống và hỗ trợ việc gán, kiểm tra quyền sử dụng chức năng theo từng vai trò.
+2.5.2. Biểu đồ phân tích lớp
+ (VẼ LẠI DỰA TRÊN CÁC BẢNG CHI TIẾT)
+2.5.3. Mối quan hệ giữa các lớp
+Quan hệ tài khoản người dùng:
+ Lớp UserAccount quản lý thông tin tài khoản, thông tin cá nhân, vai trò và trạng thái hoạt động của người dùng trong hệ thống. Lớp Permission được sử dụng để quản lý và kiểm tra các quyền truy cập tương ứng với vai trò của người dùng.
+Quan hệ quản lý danh mục và sản phẩm:
+ Một Category có thể chứa nhiều Product, trong khi mỗi Product thuộc về một Category. Quan hệ này cho phép hệ thống phân loại và quản lý các sản phẩm theo từng nhóm danh mục.
+Quan hệ quản lý tồn kho:
+ Mỗi Product được theo dõi số lượng tồn kho thông qua lớp Inventory. Thông tin tồn kho được cập nhật khi sản phẩm được nhập thêm hoặc bán ra, đồng thời hỗ trợ kiểm tra và cảnh báo khi số lượng tồn kho xuống dưới mức tối thiểu.
+Quan hệ quản lý khách hàng và hóa đơn: 
+Một Customer có thể có 0 hoặc nhiều Invoice, trong khi mỗi Invoice được lập cho một Customer. Quan hệ này cho phép hệ thống lưu trữ và tra cứu lịch sử mua hàng của khách hàng.
+Quan hệ lập hóa đơn:
+ Mỗi Invoice được lập bởi một UserAccount là nhân viên thực hiện giao dịch. Một UserAccount có thể lập 0 hoặc nhiều Invoice trong quá trình bán hàng.
+Quan hệ chi tiết hóa đơn:
+ Một Invoice phải có ít nhất một InvoiceDetail và có thể có nhiều InvoiceDetail. Mỗi InvoiceDetail thuộc về một Invoice và lưu thông tin sản phẩm, số lượng, đơn giá bán và thành tiền của từng sản phẩm trong hóa đơn.
+Quan hệ sản phẩm và chi tiết hóa đơn:
+ Một Product có thể xuất hiện trong 0 hoặc nhiều InvoiceDetail. Mỗi InvoiceDetail chỉ tham chiếu đến một Product, qua đó xác định sản phẩm được bán, số lượng và đơn giá tại thời điểm giao dịch.
+Quan hệ nhà cung cấp và phiếu nhập:
+ Một Supplier có thể cung cấp hàng cho 0 hoặc nhiều ImportReceipt, trong khi mỗi ImportReceipt được lập cho một Supplier. Quan hệ này phục vụ việc quản lý nguồn hàng nhập vào hệ thống.
+Quan hệ phiếu nhập và chi tiết nhập:
+ Một ImportReceipt phải có ít nhất một ImportDetail và có thể có nhiều ImportDetail. Mỗi ImportDetail thuộc về một ImportReceipt, đồng thời xác định sản phẩm, số lượng và giá nhập.
+Quan hệ sản phẩm và chi tiết nhập:
+ Một Product có thể xuất hiện trong 0 hoặc nhiều ImportDetail. Mỗi ImportDetail tham chiếu đến một Product, giúp xác định sản phẩm được nhập từ nhà cung cấp.
+Quan hệ thống kê và báo cáo
+: Lớp SalesReport sử dụng dữ liệu từ các Invoice và InvoiceDetail đã hoàn tất để tổng hợp doanh thu, số lượng hóa đơn và tình hình sản phẩm bán chạy hoặc bán chậm theo khoảng thời gian.
+Quan hệ truy vấn AI
+: Lớp AiQuery lưu trữ các yêu cầu được gửi đến dịch vụ AI, bao gồm câu hỏi, kết quả trả về và thời điểm thực hiện. AiQuery có thể tham chiếu đến UserAccount để xác định người thực hiện truy vấn.
+Quan hệ AI tư vấn sản phẩm:
+ AI sử dụng thông tin từ Product, đặc biệt là tên sản phẩm, thương hiệu, cấu hình và giá bán, để phân tích nhu cầu khách hàng và đưa ra danh sách sản phẩm phù hợp. Kết quả tư vấn ưu tiên các sản phẩm đang còn hàng trong Inventory.
+Quan hệ AI phân tích báo cáo
+: AI sử dụng dữ liệu từ SalesReport, kết hợp với dữ liệu bán hàng và tồn kho, để phân tích doanh thu, nhận diện sản phẩm bán chạy/bán chậm và đưa ra nhận xét, đề xuất hỗ trợ người quản lý.
+Bảng tóm tắt mối quan hệ giữa các lớp
+Lớp nguồn
+Quan hệ
+Lớp đích
+Bản số
+Diễn giải
+nghiệp vụ
+UserAccount
+Được phân quyền bởi
+Permission
+n – n*
+Người dùng có thể được gán các quyền phù hợp với vai trò.
+Category
+Chứa
+Product
+1 – n
+Một danh mục có thể chứa nhiều sản phẩm.
+Product
+Được theo dõi bởi
+Inventory
+1 – 1
+Mỗi sản phẩm có thông tin tồn kho tương ứng.
+Customer
+Có 
+Invoice
+1 – n
+Một khách hàng có thể có nhiều hóa đơn.
+Invoice
+Được lập bởi
+UserAccount
+n – 1
+Một nhân viên có thể lập nhiều hóa đơn.
+Invoice
+Bao gồm
+InvoiceDetail
+1 – n
+Một hóa đơn gồm một hoặc nhiều chi tiết hóa 
+đơn
+.
+InvoiceDetail
+Tham chiếu
+Product
+n – 1
+Mỗi chi tiết hóa đơn gắn với một sản phẩm.
+Supplier
+Cung cấp
+ImportReceipt
+1 – n
+Một nhà cung cấp có thể có nhiều phiếu nhập.
+ImportReceipt
+Bao gồm
+ImportDetail
+1 – n
+Một phiếu nhập gồm một hoặc nhiều chi tiết 
+nhập
+.
+ImportDetail
+Tham chiếu
+Product
+n – 1
+Mỗi chi tiết nhập xác định một sản phẩm được nhập
+SalesReport
+Tổng hợp từ
+Invoice
+1 – n
+Báo cáo doanh thu được tổng hợp từ nhiều hóa đơn.
+AiQuery
+Được thực hiện bởi
+UserAccount
+n – 1
+Một người dùng có thể thực hiện nhiều truy vấn 
+AI
+.
+AiQuery
+Truy vấn dữ liệu
+Product, Invoice, Inventory
+–
+AI sử dụng dữ liệu hệ thống để trả lời yêu cầu.
+SalesReport
+Được phân tích bởi
+AiQuery
+1
+ – n
+AI có thể sử dụng báo cáo để tạo nhận xét và phân tích.
+2.5.4. Mô tả 
+chi tiết 
+các lớp chính
+1. 
+Bảng UserAccount – Tài khoản người dùng
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+UserID
+INT
+Mã tài khoản, khóa chính
+2
+Username
+VARCHAR(50)
+Tên đăng nhập
+3
+PasswordHash
+VARCHAR(255)
+Mật khẩu đã mã hóa
+4
+FullName
+NVARCHAR(100)
+Họ và tên người dùng
+5
+Email
+VARCHAR(100)
+Địa chỉ email
+6
+Phone
+VARCHAR(15)
+Số điện thoại
+7
+Role
+VARCHAR(30)
+Vai trò: Admin, Nhân 
+viên
+...
+8
+Status
+BIT
+Trạng thái hoạt động
+9
+CreatedAt
+DATETIME
+Thời điểm tạo tài khoản
+Bảng phương thức
+STT
+Phương thức
+Mô tả
+1
+DangKy()
+Tạo tài khoản mới cho người dùng được phép đăng ký.
+2
+DangNhap()
+Kiểm tra tên
+ 
+tài khoản
+ và mật khẩu để xác thực người dùng.
+3
+DangXuat()
+Kết thúc phiên đăng nhập của người dùng.
+4
+KiemTraTaiKhoan()
+Kiểm tra trạng thái và thông tin tài khoản.
+5
+CapNhatThongTin()
+Cập nhật thông tin cá nhân của tài khoản.
+6
+DoiMatKhau()
+Thay đổi mật khẩu tài khoản.
+2. Bảng Category – Danh mục sản phẩm
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+CategoryID
+INT
+Mã danh mục, khóa chính
+2
+CategoryName
+NVARCHAR(100)
+Tên danh mục
+3
+Description
+NVARCHAR(255)
+Mô tả danh mục
+4
+Status
+BIT
+Trạng thái sử dụng
+Bảng phương thức
+STT
+Phương thức
+Mô tả
+1
+ThemDanhMuc
+()
+Thêm
+ danh mục sản phẩm mới.
+2
+SuaDanhMuc
+()
+Cập
+ nhật thông tin danh mục sản phẩm mới.
+3
+XoaDanhMuc
+()
+Xóa
+ hoặc ngừng sử dụng danh mục.
+4
+TimKiemDanhMuc
+()
+Tìm
+ kiếm danh mục sản phẩm.
+5
+LayDanhSachDanhMuc
+()
+Lấy
+ danh sách các danh mục sản phẩm
+3. Bảng Product – Sản phẩm
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+ProductID
+INT
+Mã sản phẩm, khóa chính
+2
+CategoryID
+INT
+Mã danh mục, khóa ngoại
+3
+ProductName
+NVARCHAR(150)
+Tên sản phẩm
+4
+Brand
+NVARCHAR(50)
+Thương hiệu
+5
+CPU
+NVARCHAR(100)
+Thông tin CPU
+6
+RAM
+NVARCHAR(50)
+Dung lượng RAM
+7
+Storage
+NVARCHAR(100)
+Thông tin ổ lưu trữ
+8
+GPU
+NVARCHAR(
+100
+)
+Thông tin card đồ họa
+9
+Screen
+NVARCHAR(100)
+Thông tin màn hình
+10
+Price
+DECIMAL(18,2)
+Giá bán
+11
+Description
+NVARCHAR(500)
+Mô tả sản phẩm
+12
+ImageURL
+VARCHAR(255)
+Đường dẫn hình ảnh
+13
+Status
+BIT
+Trạng thái kinh doanh
+Bảng phương thức
+STT
+Phương thức
+Mô tả
+1
+ThemSanPham()
+Thêm sản 
+phẩm
+.
+2
+SuaSanPham()
+Cập nhật thông tin
+ sản phẩm.
+3
+XoaSanPham()
+Xóa sản 
+phẩm
+.
+4
+TimKiemSanPham()
+Tìm kiếm sản 
+phẩm
+.
+5
+CapNhatGia()
+Cập nhật giá bán
+ của sản phẩm.
+6
+KiemTraTonKho()
+Kiểm tra số lượng tồn
+ kho của sản phẩm.
+4. Bảng Customer – Khách hàng
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+CustomerID
+INT
+Mã khách hàng, khóa chính
+2
+CustomerName
+NVARCHAR(100)
+Tên khách hàng
+3
+Phone
+VARCHAR(15)
+Số điện thoại
+4
+Email
+VARCHAR(100)
+Email khách hàng
+5
+Address
+NVARCHAR(255)
+Địa chỉ
+6
+CreatedAt
+DATETIME
+Ngày tạo tông tin
+Bảng phương thức
+STT
+Phương thức
+Mô tả
+1
+ThemKhachHang()
+Thêm khách 
+hàng
+.
+2
+SuaKhachHang()
+Cập nhật thông 
+tin
+.
+3
+XoaKhachHang()
+Xóa khách 
+hàng
+.
+4
+TimKiemKhachHang()
+Tìm kiếm khách 
+hàng
+.
+5
+XemLichSuMuaHang()
+Xem lịch sử giao 
+dịch
+.
+5. Bảng 
+Invoice
+ 
+– Hóa đơn/đơn hàng
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+OrderID
+INT
+Mã đơn hàng, khóa chính
+2
+CustomerID
+INT
+Khách hàng, khóa ngoại
+3
+UserID
+INT
+Nhân viên lập đơn, khóa ngoại
+4
+OrderDate
+DATETIME
+Thời điểm lập đơn
+5
+TotalAmount
+DECIMAL(18,2)
+Tổng giá trị đơn hàng
+6
+PaymentMethod
+VARCHAR(30)
+Phương thức thanh toán
+7
+OrderStatus
+VARCHAR(30)
+Trạng thái đơn hàng
+Bảng phương thức
+STT
+Phương thức
+Mô tả
+1
+TaoHoaDon()
+Tạo hóa 
+đơn
+.
+2
+ThemChiTietHoaDon
+()
+Thêm 
+chi
+ tiết thông tin hóa đơn.
+3
+TinhTongTien()
+Tính tổng 
+tiền
+.
+4
+ThanhToan()
+Ghi nhận thanh 
+toán
+.
+5
+HuyHoaDon()
+Hủy hóa 
+đơn
+.
+6. Bảng
+ Invoice
+Detail – Chi tiết đơn hàng
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+OrderDetailID
+INT
+Mã chi tiết, khóa chính
+2
+OrderID
+INT
+Mã đơn hàng, khóa ngoại
+3
+ProductID
+INT
+Mã sản phẩm, khóa ngoại
+4
+Quantity
+INT
+Số lượng sản phẩm
+5
+UnitPrice
+DECIMAL(18,2)
+Đơn giá tại thời điểm bán
+6
+SubTotal
+DECIMAL(18,2)
+Thành tiền
+Bảng phương thức
+STT
+Phương thức
+Mô tả
+1
+ThemChiTiet()
+Thêm sản phẩm vào hóa 
+đơn
+.
+2
+CapNhatSoLuong()
+Cập nhật số 
+lượng
+.
+3
+TinhThanhTien()
+Tính thành 
+tiền
+.
+4
+XoaChiTiet()
+Xóa sản phẩm khỏi hóa 
+đơn
+.
+7. Bảng Inventory – Tồn kho
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+InventoryID
+INT
+Mã tồn kho, khóa chính
+2
+ProductID
+INT
+Mã sản phẩm, khóa ngoại
+3
+Quantity
+INT
+Số lượng tồn kho
+4
+MinQuantity
+INT
+Mức tồn kho tối thiểu
+5
+UpdatedAt
+DATE
+TIME
+Thời điểm cập nhật
+Bảng phương thức
+STT
+Phương thức
+Mô tả
+1
+CapNhatTonKho()
+Cập nhật tồn 
+kho
+.
+2
+TangSoLuong()
+Tăng số lượng khi 
+nhập
+.
+3
+GiamSoLuong()
+Giảm số lượng khi 
+bán
+.
+4
+KiemTraTonKho()
+Kiểm tra tồn 
+kho
+.
+5
+CanhBaoTonKho()
+Cảnh báo hàng sắp hết
+ hàng.
+8. Bảng Supplier – Nhà cung cấp
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+SupplierID
+INT
+Mã nhà cung cấp, khóa chính
+2
+SupplierName
+NVARCHAR(150)
+Tên nhà cung cấp
+3
+Phone
+VARCHAR(15)
+Số điện thoại
+4
+Email
+VARCHAR(100)
+Email
+5
+Address
+NVARCHAR(255)
+Địa chỉ
+6
+Status
+BIT
+Trạng thái hoạt động
+Bảng phương thức
+STT
+Phương thức
+Mô tả
+1
+ThemNhaCungCap()
+Thêm nhà cung 
+cấp
+.
+2
+SuaNhaCungCap()
+Cập nhật thông 
+tin
+.
+3
+XoaNhaCungCap()
+Xóa nhà cung 
+cấp
+.
+4
+TimKiemNhaCungCap()
+Tìm kiếm nhà cung 
+cấp
+.
+9. Bảng ImportReceipt – Phiếu nhập hàng
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+ImportID 
+INT
+Mã phiếu nhập, khóa chính
+2
+SupplierID
+INT
+Nhà cung cấp, khóa ngoại
+3
+UserID
+INT
+Nhân viên nhập hàng
+4
+ImportDate
+DATETIME
+Ngày nhập hàng
+5
+TotalAmount
+DECIMAL(18,2)
+Tổng tiền nhập
+6
+Status
+VARCHAR(30)
+Trạng thái phiếu nhập
+Bảng phương thức
+STT
+Phương thức
+Mô tả
+1
+TaoPhieuNhap()
+Tạo phiếu nhập
+ hàng.
+2
+ThemChiTietNhap
+()
+Thêm 
+chi
+ tiết vào phiếu nhập hàng.
+3
+TinhTongTien()
+Tính tổng tiền 
+nhập
+.
+4
+XacNhanNhap()
+Xác nhận nhập 
+hàng
+.
+5
+HuyPhieuNhap()
+Hủy phiếu 
+nhập
+.
+10. Bảng ImportDetail – Chi tiết nhập hàng
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+ImportDetailID
+INT
+Mã chi tiết, khóa chính
+2
+ImportID
+INT
+Mã phiếu nhập, khóa ngoại
+3
+ProductID
+INT
+Mã sản phẩm, khóa ngoại
+4
+Quantity
+INT
+Số lượng nhập
+5
+UnitPrice
+DECIMAL(18,2)
+Giá nhập
+6
+SubTotal
+DECIMAL(18,2)
+Thành tiền
+Bảng phương thức
+STT
+Phương thức
+Mô tả
+1
+ThemChiTiet()
+Thêm sản phẩm nhập
+ hàng.
+2
+CapNhatSoLuong()
+Cập nhật số lượng
+ nhập hàng.
+3
+TinhThanhTien()
+Tính thành 
+tiền
+.
+4
+XoaChiTiet()
+Xóa chi tiết
+ nhập hàng
+11. Bảng SalesReport – Báo cáo doanh thu
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+ReportID
+INT
+Mã báo cáo, khóa chính
+2
+FromDate
+DATE
+Ngày bắt đầu thống kê
+3
+ToDate
+DATE
+Ngày kết thúc thống kê
+4
+TotalOrders
+INT
+Tổng số đơn hàng
+5
+TotalRevenue
+DECIMAL(18,2)
+Tổng doanh thu
+6
+CreatedAt
+DATE
+TIME
+Thời điểm tạo báo cáo
+7
+CreatedBy
+INT
+Người tạo báo cáo
+Bảng phương thức
+STT
+Phương thức
+Mô tả
+1
+TaoBaoCao()
+Tạo báo cáo
+ doanh thu.
+2
+TinhDoanhThu()
+Tính 
+toán
+ 
+doanh 
+thu
+.
+3
+ThongKeDonHang()
+Thống kê số 
+lượng
+ 
+đơn
+ hàng.
+4
+ 
+PhanTichSanPham()
+Xác định sản phẩm bán chạy/bán 
+chậm
+.
+5
+XemBaoCao()
+Hiển thị báo cáo
+ doanh thu bán hàng.
+12. Bảng phục vụ truy vấn AI
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+QueryID
+INT
+Mã truy vấn, khóa chính
+2
+UserID
+INT
+Người thực hiện truy vấn
+3
+Question
+NVARCHAR(1000)
+Câu hỏi gửi đến AI
+4
+Response
+NVARCHAR(MAX)
+Câu trả lời của AI
+5
+CreatedAt
+DATETIME
+Thời điểm truy vấn
+Bảng phương thức
+STT
+Phương thức
+Mô tả
+1
+TaoTruyVan()
+Tạo yêu cầu gửi 
+AI
+.
+2
+KiemTraDuLieu()
+Kiểm tra dữ liệu đầu 
+vào
+.
+3
+GuiYeuCauAI()
+Gửi yêu cầu đến AI 
+Service
+.
+4
+NhanKetQuaAI()
+Nhận kết quả từ 
+AI
+.
+5
+HienThiKetQua()
+Hiển thị kết quả cho người 
+dùng
+.
+6
+LuuLichSu()
+Lưu lịch sử truy 
+vấn
+.
+13
+.
+ Bảng 
+Permission
+ –
+ 
+P
+hân quyền
+STT
+Tên thuộc tính
+Kiểu dữ liệu
+Mô tả
+1
+MaQuyen
+INT
+Mã quyền, khóa chính.
+2
+TenQuyen
+NVARCHAR(50)
+Tên quyền.
+3
+MoTa
+NVARCHAR(255)
+Mô tả quyền của người dùng.
+4
+TrangThai
+BIT
+Trạng thái quyền của người dùng.
+Bảng phương thức
+STT
+Phương thức
+Mô tả
+1
+ThemQuyen
+()
+Thêm
+ quyền cho tài khoản người dùng.
+2
+SuaQuyen
+()
+Cập
+ nhật quyền của tài khoản.
+3
+XoaQuyen
+()
+Xóa
+ quyền tài khoản người dùng.
+4
+GanQuyen
+()
+Gán
+ quyền cho người dùng.
+5
+KiemTraQuyen
+()
+Kiểm
+ tra quyền truy cập.
+2.6. Thiết kế cơ sở dữ liệu
+Căn cứ vào các yêu cầu nghiệp vụ, các tác nhân, use case và các lớp đã được xác định ở mục 2.5, cơ sở dữ liệu của hệ thống được thiết kế nhằm đáp ứng các nghiệp vụ chính gồm: quản lý tài khoản và phân quyền, quản lý danh 
+mục và sản phẩm laptop, quản lý khách hàng, lập hóa đơn bán hàng, quản lý tồn kho, quản lý nhà cung cấp và nhập hàng, thống kê – báo cáo doanh thu, đồng thời cung cấp dữ liệu đầu vào cho các chức năng AI.
+Cơ sở dữ liệu được thiết kế theo mô hình quan hệ, bảo đảm tính 
+toàn vẹn, nhất quán, hạn chế dư thừa dữ liệu và thuận lợi cho việc truy vấn, thống kê và mở rộng hệ thống
+. Các bảng được liên kết với nhau thông qua khóa chính và khóa ngoại, phản ánh các quan hệ nghiệp vụ đã phân tích ở mục 2.5.
+2.6.1. Xác định các thực thể
+Từ các lớp phân tích ở mục 2.5, tiến hành chuyển đổi các đối tượng có dữ liệu cần lưu trữ thành các thực thể trong cơ sở dữ liệu.
+ 
+Trong đó
+, Invoice và InvoiceDetail được thiết kế thành hai thực thể riêng biệt. Invoice lưu thông tin chung của một giao dịch bán hàng, trong khi InvoiceDetail lưu từng
+ sản phẩm thuộc hóa đơn đó. 
+Cách thiết kế này phù hợp với mô hình dữ liệu quan hệ và cho phép một hóa đơn chứa nhiều sản phẩm.
+ 
+Tương tự, nghiệp vụ nhập hàng được phân thành ImportReceipt và ImportDetail, trong đó ImportReceipt lưu thông tin của phiếu nhập và ImportDetail lưu danh sách sản phẩm được nhập.
+Đối với các chức năng AI, dữ liệu từ các bảng nghiệp vụ như Product, Inventory, Customer, Invoice, InvoiceDetail và SalesReport được sử dụng làm nguồn dữ liệu đầu vào cho AI. Các dữ liệu này phục vụ chức năng tư vấn sản phẩm và phân tích, nhận xét báo cáo doanh thu, giúp AI đưa ra kết quả phù hợp dựa trên dữ liệu thực tế của hệ thống. Hệ thống không
+ lưu trữ lịch sử câu hỏi và kết quả tương tác với AI.
+ 
+Hệ thống gồm các thực thể chính sau:
+STT
+Thực thể
+Ý nghĩa
+1
+UserAccount
+Lưu thông tin tài khoản người dùng, nhân viên, quản lý và quản trị viên
+.
+2
+Permission
+Lưu thông tin các quyền được cấp trong hệ thống
+.
+3
+Category
+Lưu danh mục sản phẩm
+.
+4
+Product
+Lưu thông tin sản
+.
+5
+Customer
+Lưu thông tin khách hàng
+.
+6
+Invoice
+Lưu thông tin chung của hóa đơn bán hàng
+.
+7
+InvoiceDetail
+Lưu các sản phẩm và số lượng trong từng hóa đơn
+.
+8
+Inventory
+Theo dõi số lượng tồn kho của sản phẩm
+.
+9
+Supplier
+Lưu thông tin nhà cung cấp
+.
+10
+ImportReceipt
+Lưu thông tin phiếu nhập hàng
+.
+11
+ImportDetail
+Lưu chi tiết các sản phẩm trong phiếu nhập
+.
+12
+SalesReport
+Lưu thông tin báo cáo doanh thu
+.
+2.6.2. Biểu đồ thực thể – liên kết (ERD)
+ 
+ VẼ LẠI DỰA VÀO CÁC BẢNG
+2.6.3. Thiết kế các bảng dữ liệu
+1. 
+Bảng UserAccount – Tài khoản người dùng
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+UserID
+INT
+Mã tài khoản, khóa chính
+2
+Username
+VARCHAR(50)
+Tên đăng nhập
+3
+PasswordHash
+VARCHAR(255)
+Mật khẩu đã mã hóa
+4
+FullName
+NVARCHAR(100)
+Họ và tên người dùng
+5
+Email
+VARCHAR(100)
+Địa chỉ email
+6
+Phone
+VARCHAR(15)
+Số điện thoại
+7
+Role
+VARCHAR(30)
+Vai trò: Admin, Nhân 
+viên
+...
+8
+Status
+BIT
+Trạng thái hoạt động
+9
+CreatedAt
+DATETIME
+Thời điểm tạo tài khoản
+2. Bảng Category – Danh mục sản phẩm
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+CategoryID
+INT
+Mã danh mục, khóa chính
+2
+CategoryName
+NVARCHAR(100)
+Tên danh mục
+3
+Description
+NVARCHAR(255)
+Mô tả danh mục
+4
+Status
+BIT
+Trạng thái sử dụng
+3. Bảng Product – Sản phẩm
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+ProductID
+INT
+Mã sản phẩm, khóa chính
+2
+CategoryID
+INT
+Mã danh mục, khóa ngoại
+3
+ProductName
+NVARCHAR(150)
+Tên sản phẩm
+4
+Brand
+NVARCHAR(50)
+Thương hiệu
+5
+CPU
+NVARCHAR(100)
+Thông tin CPU
+6
+RAM
+NVARCHAR(50)
+Dung lượng RAM
+7
+Storage
+NVARCHAR(100)
+Thông tin ổ lưu trữ
+8
+GPU
+NVARCHAR(
+100
+)
+Thông tin card đồ họa
+9
+Screen
+NVARCHAR(100)
+Thông tin màn hình
+10
+Price
+DECIMAL(18,2)
+Giá bán
+11
+Description
+NVARCHAR(500)
+Mô tả sản phẩm
+12
+ImageURL
+VARCHAR(255)
+Đường dẫn hình ảnh
+13
+Status
+BIT
+Trạng thái kinh doanh
+4. Bảng Customer – Khách hàng
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+CustomerID
+INT
+Mã khách hàng, khóa chính
+2
+CustomerName
+NVARCHAR(100)
+Tên khách hàng
+3
+Phone
+VARCHAR(15)
+Số điện thoại
+4
+Email
+VARCHAR(100)
+Email khách hàng
+5
+Address
+NVARCHAR(255)
+Địa chỉ
+6
+CreatedAt
+DATETIME
+Ngày tạo tông tin
+5. Bảng Order – Hóa đơn/đơn hàng
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+OrderID
+INT
+Mã đơn hàng, khóa chính
+2
+CustomerID
+INT
+Khách hàng, khóa ngoại
+3
+UserID
+INT
+Nhân viên lập đơn, khóa ngoại
+4
+OrderDate
+DATETIME
+Thời điểm lập đơn
+5
+TotalAmount
+DECIMAL(18,2)
+Tổng giá trị đơn hàng
+6
+PaymentMethod
+VARCHAR(30)
+Phương thức thanh toán
+7
+OrderStatus
+VARCHAR(30)
+Trạng thái đơn hàng
+6. Bảng OrderDetail – Chi tiết đơn hàng
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+OrderDetailID
+INT
+Mã chi tiết, khóa chính
+2
+OrderID
+INT
+Mã đơn hàng, khóa ngoại
+3
+ProductID
+INT
+Mã sản phẩm, khóa ngoại
+4
+Quantity
+INT
+Số lượng sản phẩm
+5
+UnitPrice
+DECIMAL(18,2)
+Đơn giá tại thời điểm bán
+6
+SubTotal
+DECIMAL(18,2)
+Thành tiền
+7. Bảng Inventory – Tồn kho
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+InventoryID
+INT
+Mã tồn kho, khóa chính
+2
+ProductID
+INT
+Mã sản phẩm, khóa ngoại
+3
+Quantity
+INT
+Số lượng tồn kho
+4
+MinQuantity
+INT
+Mức tồn kho tối thiểu
+5
+UpdatedAt
+DATATIME
+Thời điểm cập nhật
+8. Bảng Supplier – Nhà cung cấp
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+SupplierID
+INT
+Mã nhà cung cấp, khóa chính
+2
+SupplierName
+NVARCHAR(150)
+Tên nhà cung cấp
+3
+Phone
+VARCHAR(15)
+Số điện thoại
+4
+Email
+VARCHAR(100)
+Email
+5
+Address
+NVARCHAR(255)
+Địa chỉ
+6
+Status
+BIT
+Trạng thái hoạt động
+9. Bảng ImportReceipt – Phiếu nhập hàng
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+ImportID 
+INT
+Mã phiếu nhập, khóa chính
+2
+SupplierID
+INT
+Nhà cung cấp, khóa ngoại
+3
+UserID
+INT
+Nhân viên nhập hàng
+4
+ImportDate
+DATETIME
+Ngày nhập hàng
+5
+TotalAmount
+DECIMAL(18,2)
+Tổng tiền nhập
+6
+Status
+VARCHAR(30)
+Trạng thái phiếu nhập
+10. Bảng ImportDetail – Chi tiết nhập hàng
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+ImportDetailID
+INT
+Mã chi tiết, khóa chính
+2
+ImportID
+INT
+Mã phiếu nhập, khóa ngoại
+3
+ProductID
+INT
+Mã sản phẩm, khóa ngoại
+4
+Quantity
+INT
+Số lượng nhập
+5
+UnitPrice
+DECIMAL(18,2)
+Giá nhập
+6
+SubTotal
+DECIMAL(18,2)
+Thành tiền
+11. Bảng SalesReport – Báo cáo doanh thu
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+ReportID
+INT
+Mã báo cáo, khóa chính
+2
+FromDate
+DATE
+Ngày bắt đầu thống kê
+3
+ToDate
+DATE
+Ngày kết thúc thống kê
+4
+TotalOrders
+INT
+Tổng số đơn hàng
+5
+TotalRevenue
+DECIMAL(18,2)
+Tổng doanh thu
+6
+CreatedAt
+DATATIME
+Thời điểm tạo báo cáo
+7
+CreatedBy
+INT
+Người tạo báo cáo
+12. Bảng phục vụ truy vấn AI
+STT
+Tên trường
+Kiểu dữ liệu
+Ý nghĩa
+1
+QueryID
+INT
+Mã truy vấn, khóa chính
+2
+UserID
+INT
+Người thực hiện truy vấn
+3
+Question
+NVARCHAR(1000)
+Câu hỏi gửi đến AI
+4
+Response
+NVARCHAR(MAX)
+Câu trả lời của AI
+5
+CreatedAt
+DATETIME
+Thời điểm truy vấn
+13
+.
+ Bảng 
+Permission
+ –
+ 
+P
+hân quyền
+STT
+Tên thuộc tính
+Kiểu dữ liệu
+Mô tả
+1
+MaQuyen
+INT
+Mã quyền, khóa chính.
+2
+TenQuyen
+NVARCHAR(50)
+Tên quyền.
+3
+MoTa
+NVARCHAR(255)
+Mô tả quyền của người dùng.
+4
+TrangThai
+BIT
+Trạng thái quyền của người dùng.
+2.6.4. Khóa chính và khóa ngoại
+Trong cơ sở dữ liệu của hệ thống, khóa chính được sử dụng để xác định duy nhất mỗi bản ghi trong từng bảng, trong khi khóa ngoại được sử dụng để thiết lập mối liên kết giữa các bảng và đảm bảo tính toàn vẹn tham chiếu của dữ liệu. Các khóa chính và khóa ngoại được thiết kế như sau:
+Bảng
+Khóa chính
+Khóa ngoại
+Tham chiếu
+UserAccount
+UserID
+–
+–
+Permission
+PermissionID
+–
+–
+Category
+CategoryID
+–
+–
+Product
+ProductID
+CategoryID
+Category(CategoryID)
+Customer
+CustomerID
+Invoice
+InvoiceID
+CustomerID, UserID
+Customer(CustomerID), UserAccount(UserID)
+InvoiceDetail
+InvoiceDetailID
+InvoiceID, ProductID
+Invoice(InvoiceID), Product(ProductID)
+Inventory
+InventoryID
+ProductID
+Product(ProductID)
+Supplier
+SupplierID
+–
+–
+ImportReceipt
+ImportID
+SupplierID, UserID
+Supplier(SupplierID), UserAccount(UserID)
+ImportDetail
+ImportDetailID
+ImportID, ProductID
+ImportReceipt(ImportID), Product(ProductID)
+SalesReport
+ReportID
+CreatedBy
+UserAccount(UserID)
+Các mối quan hệ chính được hình thành từ hệ thống khóa trên gồm: một Category có thể có nhiều Product; một Customer có thể có nhiều Invoice; một UserAccount có thể lập nhiều Invoice và ImportReceipt; một Invoice có nhiều InvoiceDetail; một Product có thể xuất hiện trong nhiều InvoiceDetail và ImportDetail; một Supplier có thể có nhiều ImportReceipt; một ImportReceipt có nhiều ImportDetail. Đối với tồn kho, mỗi Product được quản lý bởi một bản ghi Inventory tương ứng để theo dõi số lượng tồn hiện tại.
+Việc sử dụng khóa chính và khóa ngoại giúp cơ sở dữ liệu duy trì tính duy nhất, tính toàn vẹn tham chiếu và sự nhất quán giữa các bảng, đồng thời tạo cơ sở cho việc truy vấn, thống kê và khai thác dữ liệu phục vụ các chức năng quản lý và AI của hệ thống.
+2.6.5. Các ràng buộc dữ liệu
+Để đảm bảo cơ sở dữ liệu hoạt động chính xác, nhất quán và hạn chế dữ liệu không hợp lệ, hệ thống áp dụng các ràng buộc dữ liệu trên các bảng. Các 
+ràng buộc được thiết kế dựa trên đặc điểm nghiệp vụ của hệ thống quản lý bán 
+hàng
+:
+Ràng buộc khóa chính:
+ 
+Mỗi bảng phải có một khóa chính để xác định duy nhất từng bản ghi. Các trường khóa chính như UserID, PermissionID, CategoryID, ProductID, CustomerID, InvoiceID, InvoiceDetailID, InventoryID, SupplierID, ImportID, ImportDetailID và ReportID không được phép trùng lặp và không được nhận giá trị NULL.
+Ràng buộc khóa ngoại:
+ 
+Các khóa ngoại phải tham chiếu đến bản ghi tồn tại trong bảng được liên kết. Ví dụ, Product.CategoryID phải tồn tại trong Category; Invoice.CustomerID phải tồn tại trong Customer; Invoice.UserID phải tồn tại trong UserAccount; InvoiceDetail.InvoiceID và InvoiceDetail.ProductID lần lượt phải tồn tại trong Invoice và Product. Tương tự, các khóa ngoại của ImportReceipt, ImportDetail và SalesReport phải đảm bảo tham chiếu đến dữ liệu hợp lệ.
+Ràng buộc miền giá trị:
+ 
+Các trường số lượng như Quantity, MinQuantity phải là số nguyên và không được nhỏ hơn 0. Các trường tiền tệ như Price, UnitPrice, SubTotal, TotalAmount và TotalRevenue sử dụng kiểu DECIMAL(18,2) và không được nhận giá trị âm trong các nghiệp vụ thông thường. Các trường trạng thái sử dụng kiểu BIT hoặc tập giá trị được quy định trước nhằm tránh phát sinh trạng thái không hợp lệ.
+Ràng buộc dữ liệu bắt buộc:
+ 
+Các thông tin như tên sản phẩm, tên khách hàng, tên danh mục, giá bán, số lượng và các thông tin định danh của hóa đơn phải được cung cấp khi tạo dữ liệu. Những trường không bắt buộc như mô tả sản phẩm hoặc hình ảnh có thể cho phép giá trị NULL tùy theo nghiệp vụ.
+Ràng buộc duy nhất:
+ 
+Các thông tin có tính chất định danh hoặc không được phép trùng lặp, chẳng hạn Username của tài khoản người dùng, cần được thiết lập ràng buộc UNIQUE. Đối với sản phẩm, có thể áp dụng ràng buộc phù hợp đối với mã sản phẩm hoặc các thuộc tính dùng để phân biệt sản phẩm.
+Ràng buộc nghiệp vụ:
+ 
+Hệ thống phải đảm bảo số lượng sản phẩm bán ra không vượt quá số lượng tồn kho. Khi hóa đơn được xác nhận thành công, số lượng tồn kho của sản phẩm tương ứng được giảm theo số lượng bán. Khi phiếu nhập được xác nhận, số lượng tồn kho được tăng tương ứng với số lượng nhập. Thành tiền của InvoiceDetail được xác định dựa trên số lượng và đơn giá; tổng 
+tiền của Invoice được tổng hợp từ các chi tiết hóa đơn theo nghiệp vụ bán hàng. Tương tự, tổng tiền của ImportReceipt được tính từ các ImportDetail.
+Các ràng buộc trên giúp đảm bảo dữ liệu trong hệ thống có tính chính xác, nhất quán, toàn vẹn và phù hợp với nghiệp vụ quản lý bán hàng, đồng thời tạo nền tảng dữ liệu đáng tin cậy cho các chức năng thống kê và AI.
+2.6.6. Thiết kế dữ liệu phục vụ chức năng AI
+Cơ sở dữ liệu cung cấp dữ liệu thực tế cho các chức năng AI của hệ thống, chủ yếu từ các bảng Product, Category, Customer, Invoice, InvoiceDetail, Inventory và SalesReport. Cụ thể:
+AI tư vấn sản phẩm:
+ sử dụng thông tin sản phẩm, thông số kỹ thuật, giá bán và tồn kho để đề xuất sản phẩm phù hợp với nhu cầu khách hàng. 
+AI phân tích doanh thu:
+ sử dụng dữ liệu hóa đơn, chi tiết hóa đơn và báo cáo doanh thu để phân tích doanh thu, sản phẩm bán chạy/bán chậm và xu hướng kinh doanh. 
+AI nhận xét tình hình kinh doanh:
+ sử dụng dữ liệu doanh thu, sản phẩm và tồn kho để sinh nhận xét, đánh giá và hỗ trợ người quản lý ra quyết định. 
+Dữ liệu trước khi cung cấp cho AI được lọc và kiểm soát, chỉ sử dụng những thông tin cần thiết, hạn chế dữ liệu dư thừa và bảo vệ thông tin cá nhân của khách hàng. Thiết kế này giúp AI đưa ra kết quả dựa trên dữ liệu kinh doanh thực tế của hệ thống.
+2.7. Thiết kế kiến trúc hệ thống
+2.7.1. Kiến trúc tổng thể
+2.7.
+2
+. 
+Kiến trúc Frontend – Backend – Database
+2
+.7.
+3
+. 
+Thiết kế API
+2.7.
+4
+. 
+Luồng dữ liệu giữa các thành phần
+2.8. Thiết kế giao diện
+ (chờ web hoàn thành r chụp ảnh của web làm giao diện)
+2.8.1. Giao diện đăng nhập và đăng xuất
+2.8.
+2
+. Giao diện quản lý sản phẩm
+2.8.
+3
+. Giao diện quản lý khách hàng
+2.8.
+4
+. Giao diện lập và quản lý hóa đơn
+2.8.
+5
+. Giao diện quản lý nhập hàng và tồn kho
+2.8.
+6
+. Giao diện tìm kiếm, lọc và tra cứu dữ liệu
+2.8.
+7
+. Giao diện thống kê và báo cáo doanh thu
+2.8.
+8
+. Giao diện xuất báo cáo
+2.8.
+9
+. Giao diện AI tư vấn sản phẩm
+2.8.
+10
+. Giao diện AI phân tích và nhận xét báo cáo doanh thu
+2.8.
+11
+. Giao diện AI hỏi đáp dữ liệu bán hàng
+2.8.
+1
+2. Giao diện quản lý người dùng và phân quyền
+2.9. Thiết kế chức năng AI
+2.9.1. Kiến trúc tích hợp AI
+2.9.2. Luồng dữ liệu hệ thống – AI
+2.9.3. Thiết kế Prompt Template
+2
+.9.4. AI tư vấn sản phẩm
+2.9.5. AI phân tích doanh thu
+2.9.6. AI hỏi đáp dữ liệu
+2.9.7. Kiểm soát dữ liệu đầu vào
+2.9.8. Xử lý lỗi và giới hạn API
+2.9.9. Bảo mật dữ liệu AI
+2.10. Thiết kế phân quyền và bảo mật
+2.10.1. Phân quyền Admin
+2.10.2. Phân quyền Nhân viên
+2.10.3. Phân quyền Quản lý
+2.10.4. Phân quyền Khách hàng
+2.10.
+5
+. Bảo vệ API
+ và dữ liệu nhạy cảm
+CHƯƠNG 3. XÂY DỰNG CHƯƠNG TRÌNH
+3.1. Môi trường và công cụ phát triển
+3.2. Xây dựng cơ sở dữ liệu
+3.3. Xây dựng Backend
+3.4. Xây dựng giao diện
+3.5. Tích hợp chức năng AI
+3.5.1. Cấu hình kết nối AI API
+3.5.2. Xây dựng Prompt Temlate
+3.5.3. Xây dựng chức năng AI tư vấn sản phẩm
+3.5.4. Xây dựng chức năng AI phân tích và nhận xét báo cáo
+3.5.5. Xây dựng chức năng AI hỏi đáp dữ liệu bán hàng
+3.5.6. Kiểm soát dữ liệu và xử lý lỗi AI
+3.6. Kiểm thử hệ thống
+3.6.1. Kiểm thử chức năng nghiệp vụ
+ 
+3.6.2. Kiểm thử phân quyền
+ 
+3.6.3. Kiểm thử chức năng AI
+ 
+3.6.4. Kiểm thử xử lý lỗi
+3.7. Triển khai và hướng dẫn sử dụng
+3
+.7.1. Cấu hình môi trường
+3.7.2. Cấu hình biến môi trường và API Key
+3.7.3. Khởi chạy hệ thống
+3.7.4. Hướng dẫn sử dụng theo từng vai trò
+3.8. Kết quả thực nghiệm
+KẾT LUẬN
+TÀI LIỆU THAM KHẢO
+Đỗ Phúc, Giáo trình khai phá dữ liệu (Data mining), NXB Đại học Quốc gia TP. Hồ Chí Minh, 2017.
+Nguyễn Hà Nam, Nguyễn Trí Thành, Hà Quang Thụy, Giáo trình khai phá dữ liệu, NXB Đại học Quốc gia Hà Nội, 2013
+.
+Orange Data Mining
+, 
+Online: 
+https://orangedatamining.com/download/
+ 
+#windows, Truy cập ngày 15/08/2021
+.
+Heart disease 
+prediction
+;
+ 
+Online: 
+https://github.com/chayandatta/
+ 
+Heart_disease_prediction
+; Truy cập ngày 15/08/2021
+.
+Cách đổi mmol/l sang mg/dl và ngược lại
+; 
+Online: 
+https://sonapharm.vn/
+ 
+cach-
+doi-mmol-l-sang-mg-dl/
+; 
+T
+ruy cập ngày 02/09/2021.
