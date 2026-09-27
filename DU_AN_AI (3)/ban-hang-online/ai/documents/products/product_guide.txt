@@ -1,0 +1,14 @@
+HƯỚNG DẪN SỬ DỤNG VÀ BẢO QUẢN LAPTOP
+
+1. LẦN ĐẦU SỬ DỤNG:
+- Cắm sạc liên tục từ 3-4 tiếng cho lần sạc đầu tiên để ổn định cell pin.
+- Đảm bảo máy được đặt trên mặt phẳng cứng, thoáng mát để hệ thống tản nhiệt hoạt động tốt.
+
+2. CÁCH BẢO QUẢN PIN:
+- Không nên để pin cạn kiệt dưới 10% rồi mới sạc, nên sạc khi pin còn khoảng 20-30%.
+- Không vừa sạc vừa dùng tác vụ quá nặng (trừ laptop gaming có thiết kế dùng sạc liên tục).
+- Hạn chế cắm sạc qua đêm thường xuyên.
+
+3. VỆ SINH MÁY:
+- Nên vệ sinh máy định kỳ 6 tháng - 1 năm một lần để làm sạch bụi bẩn ở khe tản nhiệt và thay keo tản nhiệt mới.
+- Dùng khăn mềm và dung dịch vệ sinh chuyên dụng để lau màn hình, không xịt dung dịch trực tiếp lên màn hình.
