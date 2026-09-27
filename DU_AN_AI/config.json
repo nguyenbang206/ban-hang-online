@@ -1,0 +1,5 @@
+{
+  "_comment": "DÁN API KEY CỦA BẠN VÀO gemini_api_key BÊN DƯỚI. Nếu muốn thay đổi API Key, chỉ cần thay đổi giá trị này hoặc nhập trên giao diện web (Cài đặt).",
+  "gemini_api_key": "AQ.Ab8RN6JCXlO9xdup1XGH0UaqzD-M-UW8ossETwL4TmsXDReThw",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+}

@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống quản lý bán hàng tích hợp AI • ICTU 2026</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body class="dark-theme">
+    <!-- ================= AUTHENTICATION SCREEN (UC01: ĐĂNG NHẬP / ĐĂNG KÝ) ================= -->
+    <div class="auth-screen" id="authScreen">
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="auth-logo-icon">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <h2>Cyber<span>Core</span>System</h2>
+                <p class="auth-subtitle">Hệ thống quản lý bán hàng có tích hợp trí tuệ nhân tạo</p>
+                <div class="auth-badge">ĐH CNTT & TRUYỀN THÔNG THÁI NGUYÊN • ICTU 2026</div>
+            </div>
+
+            <!-- Live Server / VS Code Notice -->
+            <div class="auth-notice" id="authNotice"
+                style="display:none; margin-bottom: 16px; padding: 10px 14px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.4); border-radius: 8px; font-size: 12px; color: #93c5fd; text-align: center;">
+                <i class="fa-solid fa-circle-check text-success"></i> Đang mở qua VS Code. Hệ thống đã tự động kết nối
+                Backend Flask tại <strong>http://localhost:5000</strong>!
+            </div>
+
+            <!-- Auth Tabs -->
+            <div class="auth-tabs">
+                <button class="auth-tab-btn active" id="tabLoginBtn" onclick="switchAuthTab('login')">
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i> ĐĂNG NHẬP
+                </button>
+                <button class="auth-tab-btn" id="tabRegisterBtn" onclick="switchAuthTab('register')">
+                    <i class="fa-solid fa-user-plus"></i> ĐĂNG KÝ MỚI
+                </button>
+            </div>
+
+            <!-- LOGIN FORM -->
+            <form class="auth-form active" id="loginForm" onsubmit="handleLoginSubmit(event)">
+                <div class="auth-form-group">
+                    <label><i class="fa-solid fa-user"></i> Tên đăng nhập</label>
+                    <input type="text" id="loginUsername" required
+                        placeholder="Nhập username (vd: admin, manager, staff...)">
+                </div>
+                <div class="auth-form-group">
+                    <label><i class="fa-solid fa-lock"></i> Mật khẩu</label>
+                    <div class="password-input-wrap">
+                        <input type="password" id="loginPassword" required placeholder="Nhập mật khẩu">
+                        <button type="button" class="password-toggle" onclick="togglePasswordVisibility('loginPassword', this)" aria-label="Hiện hoặc ẩn mật khẩu">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-auth-submit" id="btnLoginSubmit">
+                    <i class="fa-solid fa-right-to-bracket"></i> ĐĂNG NHẬP VÀO HỆ THỐNG
+                </button>
+
+            </form>
+
+            <!-- REGISTER FORM -->
+            <form class="auth-form" id="registerForm" onsubmit="handleRegisterSubmit(event)">
+                <div class="auth-form-row">
+                    <div class="auth-form-group">
+                        <label><i class="fa-solid fa-id-card"></i> Họ và tên *</label>
+                        <input type="text" id="regFullname" required minlength="5" placeholder="Tối thiểu 5 ký tự (VD: Nguyễn Văn A)">
+                    </div>
+                    <div class="auth-form-group">
+                        <label><i class="fa-solid fa-phone"></i> Số điện thoại *</label>
+                        <input type="tel" id="regPhone" required inputmode="numeric" pattern="0[0-9]{9}" minlength="10"
+                            maxlength="10" placeholder="10 số, bắt đầu 0 (VD: 0987654321)">
+                    </div>
+                </div>
+
+                <div class="auth-form-row">
+                    <div class="auth-form-group">
+                        <label><i class="fa-solid fa-envelope"></i> Email *</label>
+                        <input type="email" id="regEmail" required placeholder="VD: example@gmail.com">
+                    </div>
+                    <div class="auth-form-group">
+                        <label><i class="fa-solid fa-location-dot"></i> Địa chỉ *</label>
+                        <input type="text" id="regAddress" required minlength="5" placeholder="Tối thiểu 5 ký tự (Số nhà, tên đường...)">
+                    </div>
+                </div>
+
+                <div class="auth-form-group">
+                    <label><i class="fa-solid fa-user"></i> Tên đăng nhập *</label>
+                    <input type="text" id="regUsername" required minlength="5" maxlength="50" placeholder="Tối thiểu 5 ký tự (phải có dấu, được cách)">
+                </div>
+
+                <div class="auth-form-row">
+                    <div class="auth-form-group">
+                        <label><i class="fa-solid fa-lock"></i> Mật khẩu *</label>
+                        <div class="password-input-wrap">
+                            <input type="password" id="regPassword" required minlength="6" placeholder="Tối thiểu 6 ký tự">
+                            <button type="button" class="password-toggle" onclick="togglePasswordVisibility('regPassword', this)" aria-label="Hiện hoặc ẩn mật khẩu">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="auth-form-group">
+                        <label><i class="fa-solid fa-shield-halved"></i> Xác thực lại mật khẩu *</label>
+                        <div class="password-input-wrap">
+                            <input type="password" id="regConfirmPassword" required minlength="6" placeholder="Nhập lại mật khẩu">
+                            <button type="button" class="password-toggle" onclick="togglePasswordVisibility('regConfirmPassword', this)" aria-label="Hiện hoặc ẩn mật khẩu">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-auth-submit btn-register" id="btnRegisterSubmit">
+                    <i class="fa-solid fa-user-plus"></i> ĐĂNG KÝ TÀI KHOẢN MỚI
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <small>Sinh viên thực hiện: Nguyễn Đình Bằng • Vàng Thị Dẳm | GVHD: Ngô Hữu Huy</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="app-container" id="appContainer" style="display:none;">
+        <!-- ================= SIDEBAR ================= -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <div class="logo-text">
+                    <h2>Cyber core system<span>Store</span></h2>
+                    <p>ICTU • NHÓM 01</p>
+                </div>
+                <button class="menu-toggle-btn sidebar-menu-toggle" id="sidebarToggleBtn"
+                    title="Thu gọn hoặc mở rộng thanh điều hướng" aria-label="Thu gọn hoặc mở rộng thanh điều hướng">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="role-badge-container">
+                <div class="current-role-badge" id="sidebarRoleBadge">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span id="sidebarRoleText">Admin</span>
+                </div>
+                <span class="status-indicator online" title="Hệ thống trực tuyến"></span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section-title">QUẢN TRỊ NGHIỆP VỤ</div>
+                <a href="#dashboard" class="nav-item active" data-page="dashboard" id="nav-dashboard">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Tổng quan (KPI)</span>
+                </a>
+                <a href="#pos" class="nav-item" data-page="pos" id="nav-pos">
+                    <i class="fa-solid fa-cash-register"></i>
+                    <span>Bán hàng POS</span>
+                    <span class="nav-tag hot">LIVE</span>
+                </a>
+                <a href="#products" class="nav-item" data-page="products" id="nav-products">
+                    <i class="fa-solid fa-laptop"></i>
+                    <span>Sản phẩm & Kho</span>
+                </a>
+                <a href="#customers" class="nav-item" data-page="customers" id="nav-customers">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Khách hàng</span>
+                </a>
+                <a href="#imports" class="nav-item" data-page="imports" id="nav-imports">
+                    <i class="fa-solid fa-boxes-packing"></i>
+                    <span>Nhập hàng</span>
+                </a>
+                <a href="#invoices" class="nav-item" data-page="invoices" id="nav-invoices">
+                    <i class="fa-solid fa-receipt"></i>
+                    <span>Lịch sử Hóa đơn</span>
+                </a>
+                <a href="#reports" class="nav-item" data-page="reports" id="nav-reports">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                    <span>Thống kê & Xuất file</span>
+                </a>
+
+                <div class="nav-section-title">PHÂN HỆ TRÍ TUỆ NHÂN TẠO</div>
+                <a href="#ai-hub" class="nav-item ai-nav" data-page="ai-hub" id="nav-ai-hub">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>Trợ lý AI Bán hàng</span>
+                    <span class="nav-tag ai">3 Chức năng</span>
+                </a>
+
+                <div class="nav-section-title admin-only">HỆ THỐNG</div>
+                <a href="#users" class="nav-item admin-only" data-page="users" id="nav-users">
+                    <i class="fa-solid fa-user-shield"></i>
+                    <span>Phân quyền & Tài khoản</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="system-info">
+                    <i class="fa-solid fa-circle-nodes"></i>
+                    <div>
+                        <small>Hệ thống AI Demo v2.0</small>
+                        <small class="text-muted">ĐH CNTT & TT Thái Nguyên</small>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <main class="main-wrapper">
+            <!-- TOPBAR -->
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="menu-toggle-btn mobile-menu-toggle" id="menuToggleBtn" title="Mở thanh điều hướng"
+                        aria-label="Mở thanh điều hướng">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="page-breadcrumb">
+                        <span id="breadcrumbCategory">Trang chủ</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <span class="active" id="breadcrumbCurrent">Tổng quan</span>
+                    </div>
+                </div>
+
+                <div class="topbar-right">
+                    <!-- Quick Role Switcher -->
+                    <div class="role-switcher-box">
+                        <label><i class="fa-solid fa-user-gear"></i> Vai trò hiện tại:</label>
+                        <select id="roleSelect" class="role-select" disabled>
+                            <option value="Admin" selected>Admin</option>
+                            <option value="Manager">Quản lý</option>
+                            <option value="Staff">Nhân viên</option>
+                            <option value="Customer">Khách hàng</option>
+                        </select>
+                    </div>
+
+                    <!-- AI API Settings -->
+                    <button class="topbar-btn admin-only" id="openSettingsBtn" title="Cấu hình Google Gemini API Key">
+                        <i class="fa-solid fa-key"></i>
+                        <span class="btn-label">API Key</span>
+                    </button>
+
+                    <!-- Alert Low Stock Bell -->
+                    <div class="notification-box" id="lowStockNotifBox" title="Cảnh báo tồn kho">
+                        <button class="topbar-btn notif-btn">
+                            <i class="fa-solid fa-bell"></i>
+                            <span class="badge" id="lowStockBadge">0</span>
+                        </button>
+                    </div>
+
+                    <!-- Theme Toggle Button -->
+                    <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()"
+                        title="Chuyển đổi giao diện Sáng / Tối" aria-label="Chuyển đổi giao diện">
+                        <i class="fa-solid fa-sun icon-sun"></i>
+                        <i class="fa-solid fa-moon icon-moon"></i>
+                    </button>
+
+                    <div class="user-profile-widget">
+                        <div class="avatar" id="topbarAvatar">B</div>
+                        <div class="user-info">
+                            <strong id="topbarUserName">Nguyễn Đình Bằng</strong>
+                            <small id="topbarUserRole">Quản trị viên (Admin)</small>
+                        </div>
+                    </div>
+
+                    <!-- Logout Button -->
+                    <button class="topbar-btn btn-logout" onclick="handleLogout()" title="Đăng xuất khỏi hệ thống">
+                        <i class="fa-solid fa-arrow-right-from-bracket text-danger"></i>
+                        <span class="btn-label">Đăng xuất</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- PAGE CONTENT VIEWS -->
+            <div class="content-body">
+
+                <!-- 1. DASHBOARD PAGE -->
+                <section class="page-view active" id="page-dashboard">
+                    <div class="page-header">
+                        <div>
+                            <h1>Bảng điều khiển Tổng quan (KPIs)</h1>
+                            <p class="subtitle">Giám sát các chỉ số kinh doanh, doanh số và trạng thái kho hàng theo
+                                thời gian thực.</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-secondary" id="dashboardExportCsv" onclick="exportReportCSV()">
+                                <i class="fa-solid fa-file-excel"></i> Xuất Báo cáo CSV
+                            </button>
+                            <button class="btn btn-ai" id="dashboardAiRevenue"
+                                onclick="switchPage('ai-hub', 'revenue-tab')">
+                                <i class="fa-solid fa-brain"></i> AI Nhận xét Doanh thu
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- KPI METRICS GRID -->
+                    <div class="metrics-grid">
+                        <div class="metric-card primary">
+                            <div class="metric-icon"><i class="fa-solid fa-wallet"></i></div>
+                            <div class="metric-details">
+                                <span class="metric-title">TỔNG DOANH THU</span>
+                                <h3 class="metric-value" id="kpiTotalRevenue">0 đ</h3>
+                                <span class="metric-trend up"><i class="fa-solid fa-arrow-trend-up"></i> Doanh thu thực
+                                    thu</span>
+                            </div>
+                        </div>
+
+                        <div class="metric-card success">
+                            <div class="metric-icon"><i class="fa-solid fa-file-invoice"></i></div>
+                            <div class="metric-details">
+                                <span class="metric-title">HÓA ĐƠN HOÀN THÀNH</span>
+                                <h3 class="metric-value" id="kpiTotalInvoices">0</h3>
+                                <span class="metric-trend up"><i class="fa-solid fa-circle-check"></i> Đơn hàng đã xuất
+                                    kho</span>
+                            </div>
+                        </div>
+
+                        <div class="metric-card info">
+                            <div class="metric-icon"><i class="fa-solid fa-laptop"></i></div>
+                            <div class="metric-details">
+                                <span class="metric-title">SẢN PHẨM KINH DOANH</span>
+                                <h3 class="metric-value" id="kpiTotalProducts">0</h3>
+                                <span class="metric-trend neutral"><i class="fa-solid fa-tags"></i> Model Laptop & Phụ
+                                    kiện</span>
+                            </div>
+                        </div>
+
+                        <div class="metric-card warning">
+                            <div class="metric-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                            <div class="metric-details">
+                                <span class="metric-title">CẢNH BÁO TỒN KHO</span>
+                                <h3 class="metric-value" id="kpiLowStock">0</h3>
+                                <span class="metric-trend down"><i class="fa-solid fa-bell"></i> Sắp hết / Cần nhập
+                                    hàng</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CHARTS ROW -->
+                    <div class="charts-row">
+                        <div class="chart-card card-large">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-chart-area"></i> <span id="revenueChartTitle">Biểu đồ Doanh thu 7 ngày gần nhất</span></h3>
+                                <div class="revenue-period-tabs">
+                                    <button class="rev-tab-btn active" data-period="7days" onclick="switchRevenuePeriod('7days', this)">7 Ngày</button>
+                                    <button class="rev-tab-btn" data-period="week" onclick="switchRevenuePeriod('week', this)">Tuần</button>
+                                    <button class="rev-tab-btn" data-period="month" onclick="switchRevenuePeriod('month', this)">Tháng</button>
+                                    <button class="rev-tab-btn" data-period="quarter" onclick="switchRevenuePeriod('quarter', this)">Quý</button>
+                                    <button class="rev-tab-btn" data-period="year" onclick="switchRevenuePeriod('year', this)">Năm</button>
+                                </div>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="dailyRevenueChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="chart-card card-small">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-chart-pie"></i> Cơ cấu hãng máy đã bán</h3>
+                                <span class="badge-pill">Số lượng & tỷ trọng</span>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="categoryChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TOP SELLERS TABLE -->
+                    <div class="card table-card">
+                        <div class="card-header">
+                            <h3><i class="fa-solid fa-crown text-warning"></i> Top 5 Sản phẩm Laptop Bán chạy Nhất</h3>
+                            <button class="btn btn-sm btn-outline" onclick="switchPage('products')">Xem toàn bộ
+                                kho</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Sản phẩm</th>
+                                        <th>Thương hiệu</th>
+                                        <th>Đã bán</th>
+                                        <th>Doanh thu đóng góp</th>
+                                        <th>Trạng thái</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="topSellersTableBody">
+                                    <tr>
+                                        <td colspan="5" class="text-center py-4">Đang tải dữ liệu...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. POS SALES COUNTER PAGE (UC04) -->
+                <section class="page-view" id="page-pos">
+                    <div class="pos-layout">
+                        <!-- Left Catalog Column -->
+                        <div class="pos-catalog-column">
+                            <div class="catalog-heading">
+                                <!-- <div>
+                                    <span class="catalog-eyebrow">LAPTOP AI STORE</span>
+                                    <h2>Laptop & thiết bị công nghệ</h2>
+                                </div> -->
+                                <span class="catalog-count" id="posProductCount">0 sản phẩm</span>
+                            </div>
+                            <div class="pos-search-bar">
+                                <div class="search-input-wrap">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <input type="text" id="posSearchInput"
+                                        placeholder="Tìm kiếm nhanh tên máy, chip CPU, mã sản phẩm...">
+                                </div>
+                                <div class="category-filter-group">
+                                    <div class="category-nav-label"><i class="fa-solid fa-layer-group"></i> Danh mục sản
+                                        phẩm</div>
+                                    <div class="category-pills" id="posCategoryPills">
+                                        <button class="pill active" data-cat="all">Tất cả</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product Cards Grid -->
+                            <div class="pos-product-grid" id="posProductGrid">
+                                <!-- Dynamically loaded -->
+                            </div>
+                            <div class="pos-pagination" id="posPagination" aria-label="Phân trang sản phẩm"></div>
+                        </div>
+
+                        <!-- Right Order Cart Column -->
+                        <div class="pos-cart-column">
+                            <div class="cart-card">
+                                <div class="cart-header">
+                                    <h3><i class="fa-solid fa-credit-card"></i> Thanh toán giỏ hàng</h3>
+                                    <button class="btn btn-sm btn-clear-cart" onclick="clearCart()"
+                                        title="Làm mới giỏ hàng">
+                                        <i class="fa-solid fa-trash-can"></i> Xóa
+                                    </button>
+                                </div>
+
+                                <!-- Customer Selector -->
+                                <div class="cart-customer-selector" id="cartCustomerSelector">
+                                    <label><i class="fa-solid fa-user-tag"></i> Chọn Khách hàng:</label>
+                                    <select id="posCustomerSelect" class="form-select">
+                                        <option value="">Khách lẻ vãng lai</option>
+                                    </select>
+                                </div>
+
+                                <!-- Cart Items List -->
+                                <div class="cart-items-wrap" id="posCartItemsList">
+                                    <div class="empty-cart-state">
+                                        <i class="fa-solid fa-cart-arrow-down"></i>
+                                        <p>Chưa có sản phẩm trong đơn hàng</p>
+                                        <small>Nhấn chọn các mẫu laptop bên trái hoặc sử dụng Trợ lý AI để thêm
+                                            máy.</small>
+                                    </div>
+                                </div>
+
+                                <!-- Order Summary Calculations -->
+                                <div class="cart-summary-box">
+                                    <div class="summary-row" id="cartDiscountRow">
+                                        <span>Tiền hàng:</span>
+                                        <strong id="posSubTotal">0 đ</strong>
+                                    </div>
+                                    <div class="summary-row">
+                                        <span>Chiết khấu (%):</span>
+                                        <div class="discount-control">
+                                            <input type="number" id="posDiscountPercent" min="0" max="15" value="0"
+                                                class="discount-input">
+                                            <span class="text-muted" id="posDiscountAmount">- 0 đ</span>
+                                        </div>
+                                    </div>
+                                    <div class="summary-row total-highlight">
+                                        <span>TỔNG THANH TOÁN:</span>
+                                        <span class="final-amount" id="posFinalTotal">0 đ</span>
+                                    </div>
+
+                                    <div class="payment-method-group">
+                                        <label><i class="fa-solid fa-credit-card"></i> Phương thức thanh toán:</label>
+                                        <div class="method-options">
+                                            <label class="method-option active">
+                                                <input type="radio" name="payMethod" value="Tiền mặt" checked>
+                                                <span><i class="fa-solid fa-money-bill-wave"></i> Tiền mặt</span>
+                                            </label>
+                                            <label class="method-option">
+                                                <input type="radio" name="payMethod" value="QR">
+                                                <span><i class="fa-solid fa-qrcode"></i> Quét QR</span>
+                                            </label>
+
+                                        </div>
+                                    </div>
+
+                                    <button class="btn btn-checkout" id="posCheckoutBtn" onclick="processCheckout()">
+                                        <i class="fa-solid fa-check-double"></i> XÁC NHẬN THANH TOÁN & IN HÓA ĐƠN
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. PRODUCTS & INVENTORY PAGE (UC02, UC05) -->
+                <section class="page-view" id="page-products">
+                    <div class="page-header">
+                        <div>
+                            <h1 id="productsPageTitle">Quản lý Danh mục & Sản phẩm Laptop</h1>
+                            <p class="subtitle" id="productsPageSubtitle">Theo dõi thông số kỹ thuật, giá thành, cấu
+                                hình và số lượng tồn kho thực tế.</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary" id="addProductBtn" onclick="openAddProductModal()">
+                                <i class="fa-solid fa-plus"></i> Thêm Sản phẩm Mới
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="filter-toolbar">
+                        <select id="productBrandFilter" class="form-select">
+                            <option value="all">Tất cả hãng máy</option>
+                        </select>
+                        <select id="productCategoryFilter" class="form-select">
+                            <option value="all">Tất cả danh mục</option>
+                        </select>
+                        <select id="productStockFilter" class="form-select">
+                            <option value="all">Tất cả trạng thái kho</option>
+                            <option value="in_stock">Còn hàng</option>
+                            <option value="low_stock">Sắp hết hàng</option>
+                            <option value="out_of_stock">Hết hàng</option>
+                        </select>
+                    </div>
+
+                    <div class="card table-card">
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Mã SP</th>
+                                        <th>Tên máy & Cấu hình</th>
+                                        <th>Danh mục</th>
+                                        <th id="productCostHeader">Giá nhập</th>
+                                        <th>Giá bán</th>
+                                        <th>Tồn kho</th>
+                                        <th>Trạng thái</th>
+                                        <th id="productActionHeader">Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="productsTableBody">
+                                    <!-- Dynamic -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. CUSTOMERS PAGE (UC03) -->
+                <section class="page-view" id="page-customers">
+                    <div class="page-header">
+                        <div>
+                            <h1>Quản lý Thông tin Khách hàng</h1>
+                            <p class="subtitle">Phân hạng theo tổng chi tiêu tích lũy: Thân thiết, Bạc, Vàng, Kim cương
+                                và Ruby.</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary" id="addCustomerBtn" onclick="openAddCustomerModal()">
+                                <i class="fa-solid fa-user-plus"></i> Thêm Khách hàng
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card table-card">
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Mã KH</th>
+                                        <th>Họ và Tên</th>
+                                        <th>Số điện thoại</th>
+                                        <th>Email</th>
+                                        <th>Địa chỉ</th>
+                                        <th>Phân hạng</th>
+                                        <th>Tổng chi tiêu</th>
+                                        <th>Thao tác</th>
+                                        <th>Tài khoản</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="customersTableBody">
+                                    <!-- Dynamic -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. STOCK IMPORTS PAGE (UC05) -->
+                <section class="page-view" id="page-imports">
+                    <div class="page-header">
+                        <div>
+                            <h1>Quản lý Nhập hàng & Nhà cung cấp</h1>
+                            <p class="subtitle">Lập phiếu nhập kho từ các nhà phân phối (Synnex FPT, DGW, Viễn Sơn) và
+                                tự động cộng dồn tồn kho.</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary" id="addImportBtn" onclick="openAddImportModal()">
+                                <i class="fa-solid fa-dolly"></i> Tạo Phiếu Nhập Hàng
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card table-card">
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Mã phiếu</th>
+                                        <th>Nhà cung cấp</th>
+                                        <th>Người lập phiếu</th>
+                                        <th>Ngày nhập</th>
+                                        <th>Số mặt hàng</th>
+                                        <th>Tổng tiền nhập</th>
+                                        <th>Trạng thái</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="importsTableBody">
+                                    <!-- Dynamic -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 6. INVOICES PAGE (UC04) -->
+                <section class="page-view" id="page-invoices">
+                    <div class="page-header">
+                        <div>
+                            <h1>Lịch sử Hóa đơn Bán hàng</h1>
+                            <p class="subtitle">Danh sách các giao dịch bán lẻ đã phát sinh, cho phép xem lại chi tiết
+                                và in lại hóa đơn.</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-secondary" onclick="exportReportCSV()">
+                                <i class="fa-solid fa-download"></i> Tải danh sách CSV
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card table-card">
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Mã Hóa Đơn</th>
+                                        <th>Thời gian lập</th>
+                                        <th>Khách hàng</th>
+                                        <th>Nhân viên lập</th>
+                                        <th>Số lượng món</th>
+                                        <th>Tổng thanh toán</th>
+                                        <th>Hình thức</th>
+                                        <th>Chi tiết</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="invoicesTableBody">
+                                    <!-- Dynamic -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 7. REPORTS & EXPORT (UC07, UC08) -->
+                <section class="page-view" id="page-reports">
+                    <div class="page-header">
+                        <div>
+                            <h1>Thống kê & Xuất Báo cáo Doanh thu</h1>
+                            <p class="subtitle">Chọn kỳ thống kê, xem danh sách giao dịch và xuất báo cáo được định dạng
+                                sẵn.</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-secondary" onclick="exportReportCSV()">
+                                <i class="fa-solid fa-file-csv"></i> Xuất CSV
+                            </button>
+                            <button class="btn btn-danger" onclick="exportReportFile('pdf')">
+                                <i class="fa-solid fa-file-pdf"></i> Xuất PDF
+                            </button>
+                            <!-- <button class="btn btn-success" onclick="exportReportFile('xlsx')">
+                                <i class="fa-solid fa-file-excel"></i> Xuất Excel
+                            </button> -->
+                        </div>
+                    </div>
+
+                    <div class="report-filter-card card">
+                        <div class="report-filter-heading">
+                            <div>
+                                <h3><i class="fa-solid fa-calendar-days text-info"></i> Khoảng thời gian thống kê</h3>
+                                <p class="text-muted">Tuần được tính từ thứ Hai; quý được tính theo lịch dương.</p>
+                            </div>
+                            <span id="reportPeriodLabel" class="report-period-label">Đang tải...</span>
+                        </div>
+                        <div class="report-filter-grid">
+                            <label class="form-group">Kiểu thời gian
+                                <select id="reportPeriod" class="form-control">
+                                    <option value="month" selected>Tháng</option>
+                                    <option value="week">Tuần</option>
+                                    <option value="day">Ngày</option>
+                                    <option value="quarter">Quý</option>
+                                    <option value="year">Năm</option>
+                                    <option value="custom">Tùy chọn khoảng ngày</option>
+                                    <option value="all">Toàn bộ thời gian</option>
+                                </select>
+                            </label>
+                            <label class="form-group">Ngày tham chiếu
+                                <input id="reportDate" class="form-control" type="date">
+                            </label>
+                            <label class="form-group report-custom-date">Từ ngày
+                                <input id="reportFrom" class="form-control" type="date">
+                            </label>
+                            <label class="form-group report-custom-date">Đến ngày
+                                <input id="reportTo" class="form-control" type="date">
+                            </label>
+                            <div class="report-filter-action">
+                                <button class="btn btn-primary" onclick="loadReportData()">
+                                    <i class="fa-solid fa-filter"></i> Xem thống kê
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metrics-grid report-metrics-grid">
+                        <div class="metric-card primary">
+                            <div class="metric-icon"><i class="fa-solid fa-coins"></i></div>
+                            <div class="metric-details"><span class="metric-title">DOANH THU KỲ NÀY</span>
+                                <h3 id="reportRevenue" class="metric-value">0 đ</h3>
+                            </div>
+                        </div>
+                        <div class="metric-card success">
+                            <div class="metric-icon"><i class="fa-solid fa-receipt"></i></div>
+                            <div class="metric-details"><span class="metric-title">HÓA ĐƠN HOÀN THÀNH</span>
+                                <h3 id="reportInvoiceCount" class="metric-value">0</h3>
+                            </div>
+                        </div>
+                        <div class="metric-card info">
+                            <div class="metric-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                            <div class="metric-details"><span class="metric-title">SẢN PHẨM ĐÃ BÁN</span>
+                                <h3 id="reportProductCount" class="metric-value">0</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reports-container">
+                        <div class="card table-card">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-list-check text-info"></i> Danh sách giao dịch trong kỳ</h3>
+                                <span id="reportRowCount" class="text-muted">0 giao dịch</span>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="data-table report-data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã hóa đơn</th>
+                                            <th>Ngày lập</th>
+                                            <th>Khách hàng</th>
+                                            <th>Nhân viên</th>
+                                            <th>Số món</th>
+                                            <th>Thực thu</th>
+                                            <th>Thanh toán</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="reportInvoicesTableBody">
+                                        <tr>
+                                            <td colspan="7" class="text-center py-4 text-muted">Chọn kỳ để xem dữ liệu
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 8. AI HUB (UC09, UC10, UC11) -->
+                <section class="page-view" id="page-ai-hub">
+                    <div class="ai-hub-container">
+                        <div class="ai-hub-header">
+                            <div class="ai-title-wrap">
+                                <div class="ai-avatar-pulse">
+                                    <i class="fa-solid fa-brain"></i>
+                                </div>
+                                <div>
+                                    <h1>Trợ lý Trí tuệ Nhân tạo Thông minh (AI Studio)</h1>
+                                    <p class="subtitle">Tích hợp 3 Use Case cốt lõi: Tư vấn sản phẩm, Phân tích doanh số
+                                        và Hỏi đáp dữ liệu bán hàng bằng ngôn ngữ tự nhiên.</p>
+                                </div>
+                            </div>
+                            <div class="ai-badge-status">
+                                <span class="ai-active-tag"><i class="fa-solid fa-sparkles"></i> Hệ thống Level 3: Dual Engine (SQL) & RAG (Vector Search)</span>
+                            </div>
+                        </div>
+
+                        <!-- AI Sub Navigation Tabs -->
+                        <div class="ai-tabs-nav">
+                            <button class="ai-tab-btn active" data-tab="advisor-tab" id="btn-tab-advisor">
+                                <i class="fa-solid fa-comments-dollar"></i> UC09: AI Tư vấn Laptop
+                            </button>
+                            <button class="ai-tab-btn manager-only" data-tab="revenue-tab" id="btn-tab-revenue">
+                                <i class="fa-solid fa-chart-line"></i> UC10: AI Phân tích Doanh thu
+                            </button>
+                            <button class="ai-tab-btn manager-only" data-tab="qa-tab" id="btn-tab-qa">
+                                <i class="fa-solid fa-circle-question"></i> UC11: AI Hỏi đáp Dữ liệu
+                            </button>
+                        </div>
+
+                        <!-- TAB 1: AI ADVISOR (UC09) -->
+                        <div class="ai-tab-content active" id="tab-advisor">
+                            <div class="ai-card">
+                                <h3><i class="fa-solid fa-microchip text-ai"></i> Tiếp nhận Nhu cầu Khách hàng</h3>
+                                <p class="text-muted">Nhập mong muốn của khách (ngân sách, mục đích sử dụng, dung lượng
+                                    RAM, thương hiệu...). AI sẽ đối soát kho hàng và gợi ý tối đa 3 máy tối ưu nhất kèm
+                                    nút thêm nhanh vào hóa đơn.</p>
+
+                                <div class="ai-input-wrap mt-3">
+                                    <textarea id="aiAdvisorQuery" rows="3"
+                                        placeholder="Ví dụ: Khách hàng cần một chiếc laptop gaming dưới 35 triệu, card đồ họa RTX 4060, màn hình 16 inch để vừa học CNTT vừa chơi game nặng mượt mà..."></textarea>
+                                    <button class="btn btn-ai-run" id="btnRunAdvisor" onclick="runAiAdvisor()">
+                                        <i class="fa-solid fa-wand-magic-sparkles"></i> Phân tích & Đề xuất ngay
+                                    </button>
+                                </div>
+
+                                <div class="prompt-chips">
+                                    <span class="chip-label">Câu hỏi mẫu gợi ý:</span>
+                                    <button class="chip"
+                                        onclick="fillAdvisorPrompt('Cần mua laptop gaming dưới 35 triệu, có card rời RTX, pin ổn định')">🎮
+                                        Gaming dưới 35tr</button>
+                                    <button class="chip"
+                                        onclick="fillAdvisorPrompt('Laptop văn phòng mỏng nhẹ cho sinh viên, pin trâu từ 12-18 tiếng, dưới 25 triệu')">💼
+                                        Văn phòng pin trâu</button>
+                                    <button class="chip"
+                                        onclick="fillAdvisorPrompt('Máy trạm đồ họa render 3D, Premiere dựng video 4K, RAM 32GB màn hình chuẩn màu')">🎨
+                                        Đồ họa Render 3D</button>
+                                    <button class="chip"
+                                        onclick="fillAdvisorPrompt('Laptop Apple MacBook Air hoặc Pro cho lập trình viên')">🍎
+                                        Dòng Apple MacBook</button>
+                                </div>
+                            </div>
+
+                            <!-- Advisor Results Box -->
+                            <div class="ai-result-panel hidden" id="advisorResultPanel">
+                                <div class="result-header">
+                                    <h4><i class="fa-solid fa-robot text-ai"></i> Nhận xét & Đánh giá từ Trợ lý AI:</h4>
+                                </div>
+                                <div class="result-body markdown-styled" id="advisorAnalysisText"></div>
+
+                                <h4 class="mt-4 mb-3"><i class="fa-solid fa-table-columns text-info"></i> Bảng So sánh &
+                                    Danh sách Sản phẩm Đề xuất:</h4>
+                                <div class="advisor-cards-grid" id="advisorCardsGrid"></div>
+                            </div>
+                        </div>
+
+                        <!-- TAB 2: AI REVENUE ANALYST (UC10) -->
+                        <div class="ai-tab-content" id="tab-revenue">
+                            <div class="ai-card">
+                                <h3><i class="fa-solid fa-magnifying-glass-chart text-success"></i> Phân tích Chuyên sâu
+                                    Dữ liệu Kinh doanh</h3>
+                                <p class="text-muted">Hệ thống sẽ tổng hợp số liệu hóa đơn, biên lợi nhuận, sản phẩm bán
+                                    chạy, sản phẩm luân chuyển chậm và hàng chạm ngưỡng tồn kho để đưa ra bản nhận xét
+                                    quản trị hoàn chỉnh.</p>
+
+                                <div class="mt-3">
+                                    <button class="btn btn-ai-run" id="btnRunRevenueAnalysis"
+                                        onclick="runAiRevenueAnalysis()">
+                                        <i class="fa-solid fa-chart-line"></i> Khởi chạy Phân tích Dữ liệu Toàn diện
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="ai-result-panel hidden" id="revenueResultPanel">
+                                <div class="result-header">
+                                    <h4><i class="fa-solid fa-file-lines text-ai"></i> Báo cáo Quản trị từ AI:</h4>
+                                    <button class="btn btn-sm btn-outline" onclick="printAiReport()">
+                                        <i class="fa-solid fa-print"></i> In Báo cáo
+                                    </button>
+                                </div>
+                                <div class="result-body markdown-styled" id="revenueAnalysisText"></div>
+                            </div>
+                        </div>
+
+                        <!-- TAB 3: AI SALES QA (UC11) -->
+                        <div class="ai-tab-content" id="tab-qa">
+                            <div class="chat-container-card">
+                                <div class="chat-header">
+                                    <div class="chat-bot-info">
+                                        <div class="avatar-small"><i class="fa-solid fa-robot"></i></div>
+                                        <div>
+                                            <strong>Trợ lý Hỏi đáp Dữ liệu Kho & Doanh số</strong>
+                                            <small class="text-success d-block">● Trực tuyến - Dữ liệu thực từ
+                                                SQLite</small>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline" onclick="clearChat()">Làm mới đoạn
+                                        chat</button>
+                                </div>
+
+                                <div class="chat-messages-wrap" id="chatMessagesWrap">
+                                    <div class="chat-message bot">
+                                        <div class="msg-avatar"><i class="fa-solid fa-robot"></i></div>
+                                        <div class="msg-content">
+                                            Xin chào Quản lý! Tôi là Trợ lý AI Bán hàng. Quản lý có thể hỏi tôi bất kỳ
+                                            câu hỏi nào về tình hình kinh doanh, doanh thu các dòng máy, sản phẩm bán
+                                            chậm hoặc cảnh báo tồn kho. Tôi sẽ đối chiếu và trả lời trực tiếp từ dữ liệu
+                                            thực tế của cửa hàng.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="chat-prompt-chips">
+                                    <button class="chip"
+                                        onclick="sendQuickQuestion('Tháng này mặt hàng nào bán chậm nhất?')">🐢 Mặt hàng
+                                        nào bán chậm?</button>
+                                    <button class="chip"
+                                        onclick="sendQuickQuestion('Doanh thu toàn hệ thống hiện tại là bao nhiêu?')">💰
+                                        Tổng doanh thu?</button>
+                                    <button class="chip"
+                                        onclick="sendQuickQuestion('Những sản phẩm nào sắp hết hàng trong kho?')">⚠️ Sản
+                                        phẩm sắp hết hàng?</button>
+                                    <button class="chip"
+                                        onclick="sendQuickQuestion('Khách hàng nào mua nhiều nhất và đã chi tiêu bao nhiêu?')">👑
+                                        Top khách hàng chi tiêu cao nhất</button>
+                                </div>
+
+                                <div class="chat-input-bar">
+                                    <input type="text" id="chatQuestionInput"
+                                        placeholder="Nhập câu hỏi của Quản lý tại đây... (Nhấn Enter để gửi)">
+                                    <button class="btn btn-send-chat" id="btnSendChat" onclick="sendChatQuestion()">
+                                        <i class="fa-solid fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 9. USER MANAGEMENT PAGE (UC12 - ADMIN ONLY) -->
+                <section class="page-view admin-only" id="page-users">
+                    <div class="page-header">
+                        <div>
+                            <h1>Quản trị Người dùng & Phân quyền</h1>
+                            <p class="subtitle">Quản lý các tài khoản nhân viên, thiết lập vai trò (Admin, Quản lý, Nhân
+                                viên, Khách hàng) và bảo mật quyền truy cập.</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary" onclick="openAddUserModal()">
+                                <i class="fa-solid fa-user-plus"></i> Tạo Tài khoản Mới
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="user-stats-grid" id="userStatsGrid">
+                        <div class="user-stat-card">
+                            <div class="user-stat-icon blue"><i class="fa-solid fa-users"></i></div>
+                            <div><span>Tổng tài khoản</span><strong id="userStatTotal">0</strong></div>
+                        </div>
+                        <div class="user-stat-card">
+                            <div class="user-stat-icon green"><i class="fa-solid fa-circle-check"></i></div>
+                            <div><span>Đang hoạt động</span><strong id="userStatActive">0</strong></div>
+                        </div>
+                        <div class="user-stat-card">
+                            <div class="user-stat-icon red"><i class="fa-solid fa-lock"></i></div>
+                            <div><span>Đã khóa</span><strong id="userStatLocked">0</strong></div>
+                        </div>
+                        <div class="user-stat-card">
+                            <div class="user-stat-icon amber"><i class="fa-solid fa-user-shield"></i></div>
+                            <div><span>Quản trị viên</span><strong id="userStatAdmins">0</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="card table-card">
+                        <div class="user-table-toolbar">
+                            <div class="user-search-wrap"><i class="fa-solid fa-magnifying-glass"></i><input
+                                    id="userSearchInput" class="form-input" type="search"
+                                    placeholder="Tìm theo tên đăng nhập, họ tên, email..."
+                                    aria-label="Tìm kiếm tài khoản"></div>
+                            <select id="userRoleFilter" class="form-select" aria-label="Lọc theo vai trò">
+                                <option value="all">Tất cả vai trò</option>
+                                <option value="Admin">Admin</option>
+                                <option value="Manager">Quản lý</option>
+                                <option value="Staff">Nhân viên</option>
+                                <option value="Customer">Khách hàng</option>
+                            </select>
+                            <select id="userStatusFilter" class="form-select" aria-label="Lọc theo trạng thái">
+                                <option value="all">Tất cả trạng thái</option>
+                                <option value="1">Hoạt động</option>
+                                <option value="0">Đã khóa</option>
+                            </select>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table user-management-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Tên đăng nhập</th>
+                                        <th>Họ và Tên</th>
+                                        <th>Phân quyền</th>
+                                        <th>Email & SĐT</th>
+                                        <th>Trạng thái</th>
+                                        <th>Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="usersTableBody">
+                                    <tr>
+                                        <td colspan="7" class="user-table-state"><i
+                                                class="fa-solid fa-spinner fa-spin"></i> Đang tải tài khoản...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="user-table-footer"><span id="userResultSummary">Đang tải...</span>
+                            <div id="userPagination" class="user-pagination"></div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- ================= MODALS ================= -->
+
+    <!-- Modal 1: In Hóa đơn & VietQR Checkout Preview -->
+    <div class="modal-overlay" id="receiptModal">
+        <div class="modal-box receipt-box">
+            <div class="modal-header no-print">
+                <h3><i class="fa-solid fa-receipt text-success"></i> Hóa đơn Bán hàng Thành công</h3>
+                <button class="close-btn" onclick="closeModal('receiptModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="receipt-print-area" id="receiptPrintArea">
+                    <div class="receipt-header">
+                        <h2>CỬA HÀNG MÁY TÍNH LAPTOP AI</h2>
+                        <p>Đề tài: Hệ thống Quản lý Bán hàng tích hợp AI</p>
+                        <p>Địa chỉ: Đường Z115, Quyết Thắng, TP. Thái Nguyên</p>
+                        <p>Điện thoại: 0987.654.321 • Hotline hỗ trợ kỹ thuật</p>
+                        <div class="divider-dashed"></div>
+                        <h3 class="receipt-title">HÓA ĐƠN THANH TOÁN</h3>
+                        <p id="rcInvoiceCode">Mã HĐ: HD-2026-000</p>
+                        <p id="rcInvoiceDate">Ngày: 13/09/2026</p>
+                        <p id="rcStaffName">Thu ngân: Nguyễn Đình Bằng</p>
+                        <p id="rcCustomerName">Khách hàng: Khách lẻ vãng lai</p>
+                    </div>
+
+                    <table class="receipt-table">
+                        <thead>
+                            <tr>
+                                <th>Mặt hàng</th>
+                                <th>SL</th>
+                                <th>Đơn giá</th>
+                                <th>T.Tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rcItemsBody">
+                            <!-- Items -->
+                        </tbody>
+                    </table>
+
+                    <div class="divider-dashed"></div>
+
+                    <div class="receipt-totals">
+                        <div class="r-row"><span>Tiền hàng:</span><span id="rcSubTotal">0 đ</span></div>
+                        <div class="r-row"><span>Chiết khấu:</span><span id="rcDiscount">0 đ</span></div>
+                        <div class="r-row total"><span>THANH TOÁN:</span><span id="rcFinalTotal">0 đ</span></div>
+                        <div class="r-row"><span>Hình thức:</span><span id="rcPaymentMethod">Tiền mặt</span></div>
+                    </div>
+
+                    <div class="receipt-qr-section" id="receiptQrWrap">
+                        <p class="qr-note">Quét mã VietQR để thanh toán nhanh:</p>
+                        <img id="rcVietQrImg" src="" alt="Mã VietQR Ngân hàng" class="qr-img">
+                    </div>
+
+                    <div class="receipt-footer">
+                        <p>Cảm ơn Quý khách đã mua sắm tại LAPTOP AI!</p>
+                        <p>Bảo hành chính hãng 12-24 tháng theo tiêu chuẩn nhà sản xuất.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer no-print">
+                <button class="btn btn-secondary" onclick="closeModal('receiptModal')">Đóng</button>
+                <button class="btn btn-primary" onclick="window.print()">
+                    <i class="fa-solid fa-print"></i> In Hóa đơn (K80 / A4)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Thêm sản phẩm mới -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-laptop text-primary"></i> Thêm Sản phẩm Laptop Mới</h3>
+                <button class="close-btn" onclick="closeModal('productModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="productForm" onsubmit="handleProductSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Tên sản phẩm Laptop *</label>
+                            <input type="text" id="pFormName" required placeholder="VD: ASUS ROG Zephyrus G16">
+                        </div>
+                        <div class="form-group">
+                            <label>Thương hiệu *</label>
+                            <input type="text" id="pFormBrand" required placeholder="VD: ASUS, Dell, Lenovo, Apple">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Danh mục *</label>
+                            <select id="pFormCategory" required class="form-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>Mã sản phẩm</label>
+                            <input type="text" id="pFormCode" placeholder="Để trống hệ thống tự sinh mã">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Vi xử lý CPU</label>
+                            <input type="text" id="pFormCpu" placeholder="VD: Intel Core Ultra 7, Apple M3">
+                        </div>
+                        <div class="form-group">
+                            <label>Dung lượng RAM</label>
+                            <input type="text" id="pFormRam" placeholder="VD: 16GB LPDDR5X, 32GB">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Card đồ họa GPU</label>
+                            <input type="text" id="pFormGpu" placeholder="VD: NVIDIA RTX 4060 8GB">
+                        </div>
+                        <div class="form-group">
+                            <label>Ổ cứng & Màn hình</label>
+                            <input type="text" id="pFormStorage" placeholder="VD: 512GB SSD, Màn 16 inch 2.5K">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Giá nhập dự kiến (VNĐ)</label>
+                            <input type="number" id="pFormCostPrice" value="20000000" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label>Giá bán niêm yết (VNĐ) *</label>
+                            <input type="number" id="pFormPrice" value="24990000" required min="100000">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Số lượng nhập kho ban đầu</label>
+                            <input type="number" id="pFormQty" value="5" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label>Ngưỡng cảnh báo sắp hết hàng</label>
+                            <input type="number" id="pFormMinTh" value="3" min="1">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Đường dẫn hình ảnh (URL)</label>
+                        <input type="text" id="pFormImg" placeholder="https://images.unsplash.com/...">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mô tả nổi bật</label>
+                        <textarea id="pFormDesc" rows="2"
+                            placeholder="Điểm mạnh về thiết kế, thời lượng pin, công nghệ tản nhiệt..."></textarea>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            onclick="closeModal('productModal')">Hủy</button>
+                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Lưu Sản
+                            phẩm</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Cấu hình Gemini API Key -->
+    <div class="modal-overlay" id="settingsModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-key text-warning"></i> Cấu hình Google Gemini AI Key</h3>
+                <button class="close-btn" onclick="closeModal('settingsModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="text-muted">Hệ thống đã tích hợp sẵn bộ máy <strong>Ground-Truth AI Heuristic Engine</strong>
+                    giúp website hoạt động hoàn hảo 100% không cần key.</p>
+                <p class="text-muted mt-2">Nếu muốn kết nối mô hình ngôn ngữ lớn trực tiếp từ Google, vui lòng dán API
+                    Key của bạn bên dưới:</p>
+
+                <div class="form-group mt-3">
+                    <label>Google Gemini API Key:</label>
+                    <input type="password" id="geminiApiKeyInput" class="form-input" placeholder="AIzaSy...">
+                    <small class="text-muted" id="apiKeyStatusText">Trạng thái: Đang kiểm tra...</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('settingsModal')">Đóng</button>
+                <button class="btn btn-primary" onclick="saveGeminiApiKey()">
+                    <i class="fa-solid fa-check"></i> Lưu Cấu Hình
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: Thêm hoặc cập nhật khách hàng -->
+    <div class="modal-overlay" id="customerModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="customerModalTitle"><i class="fa-solid fa-user-plus text-primary"></i> Thêm Khách hàng Mới</h3>
+                <button class="close-btn" onclick="closeModal('customerModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="customerForm" onsubmit="handleCustomerSubmit(event)">
+                    <input type="hidden" id="customerEditId">
+                    <div class="form-group">
+                        <label>Họ và Tên khách hàng *</label>
+                        <input type="text" id="cFormName" required placeholder="VD: Hoàng Văn A">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Số điện thoại *</label>
+                            <input type="tel" id="cFormPhone" required inputmode="numeric" pattern="[0-9]{10}"
+                                minlength="10" maxlength="10" placeholder="VD: 0987123456">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="cFormEmail" required placeholder="khachhang@gmail.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Địa chỉ</label>
+                        <input type="text" id="cFormAddr" placeholder="VD: TP. Thái Nguyên">
+                    </div>
+                    <div id="customerAccountFields">
+                        <div class="form-group">
+                            <label>Tên đăng nhập Customer *</label>
+                            <input type="text" id="cFormUsername" placeholder="Ví dụ: khachhang01">
+                        </div>
+                        <div class="form-group">
+                            <label>Mật khẩu Customer *</label>
+                            <div class="password-input-wrap"><input type="password" id="cFormPassword" minlength="6"
+                                    placeholder="Tối thiểu 6 ký tự"><button type="button" class="password-toggle"
+                                    onclick="togglePasswordVisibility('cFormPassword', this)"
+                                    aria-label="Hiện hoặc ẩn mật khẩu"><i class="fa-solid fa-eye"></i></button></div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            onclick="closeModal('customerModal')">Hủy</button>
+                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-check"></i> <span
+                                id="customerSubmitLabel">Lưu Khách hàng</span></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="customerAccountModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-user-lock text-primary"></i> Tạo tài khoản Customer</h3><button
+                    class="close-btn" onclick="closeModal('customerAccountModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="text-muted" id="customerAccountName"></p>
+                <form id="customerAccountForm" onsubmit="handleCustomerAccountSubmit(event)"><input type="hidden"
+                        id="customerAccountId">
+                    <div class="form-group"><label>Tên đăng nhập *</label><input id="customerAccountUsername"
+                            class="form-input" required></div>
+                    <div class="form-group"><label>Mật khẩu *</label>
+                        <div class="password-input-wrap"><input id="customerAccountPassword" class="form-input"
+                                type="password" required minlength="6"><button type="button" class="password-toggle"
+                                onclick="togglePasswordVisibility('customerAccountPassword', this)"
+                                aria-label="Hiện hoặc ẩn mật khẩu"><i class="fa-solid fa-eye"></i></button></div>
+                    </div>
+                    <div class="modal-footer"><button type="button" class="btn btn-secondary"
+                            onclick="closeModal('customerAccountModal')">Hủy</button><button type="submit"
+                            class="btn btn-primary"><i class="fa-solid fa-check"></i> Tạo tài khoản</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5: Tạo Phiếu Nhập Hàng -->
+    <div class="modal-overlay" id="importModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-dolly text-primary"></i> Lập Phiếu Nhập Hàng (Tăng kho)</h3>
+                <button class="close-btn" onclick="closeModal('importModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="importForm" onsubmit="handleImportSubmit(event)">
+                    <div class="form-group">
+                        <label>Chọn Nhà cung cấp *</label>
+                        <select id="impFormSupplier" required class="form-select"></select>
+                    </div>
+                    <div class="form-group">
+                        <label>Chọn Sản phẩm nhập kho *</label>
+                        <select id="impFormProduct" required class="form-select"></select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Số lượng nhập *</label>
+                            <input type="number" id="impFormQty" required min="1" value="5">
+                        </div>
+                        <div class="form-group">
+                            <label>Đơn giá nhập mỗi máy (VNĐ) *</label>
+                            <input type="number" id="impFormPrice" required min="100000" value="20000000">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="closeModal('importModal')">Hủy</button>
+                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-check"></i> Hoàn thành Nhập
+                            Kho</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 6: Tạo hoặc sửa tài khoản -->
+    <div class="modal-overlay" id="userModal">
+        <div class="modal-box user-modal-box">
+            <div class="modal-header">
+                <h3 id="userModalTitle"><i class="fa-solid fa-user-plus text-primary"></i> Tạo tài khoản mới</h3><button
+                    class="close-btn" onclick="closeModal('userModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="userForm" onsubmit="handleUserSubmit(event)">
+                    <input type="hidden" id="userEditId">
+                    <div class="form-group"><label>Tên đăng nhập *</label><input id="userFormUsername"
+                            class="form-input" required></div>
+                    <div class="form-group"><label>Họ và tên *</label><input id="userFormFullname" class="form-input"
+                            required></div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Email *</label><input id="userFormEmail" class="form-input"
+                                type="email" required placeholder="example@gmail.com"></div>
+                        <div class="form-group"><label>Số điện thoại *</label><input id="userFormPhone"
+                                class="form-input" type="tel" required inputmode="numeric" pattern="[0-9]{10}"
+                                minlength="10" maxlength="10" placeholder="0987654321"></div>
+                    </div>
+                    <div class="form-group"><label>Vai trò *</label><select id="userFormRole" class="form-select"
+                            required>
+                            <option value="Admin">Admin</option>
+                            <option value="Manager">Quản lý</option>
+                            <option value="Staff">Nhân viên</option>
+                            <option value="Customer">Khách hàng</option>
+                        </select></div>
+                    <div class="form-group" id="userFormPasswordGroup"><label>Mật khẩu <span
+                                id="userPasswordHint">*</span></label>
+                        <div class="password-input-wrap"><input id="userFormPassword" class="form-input" type="password"
+                                minlength="6"><button type="button" class="password-toggle"
+                                onclick="togglePasswordVisibility('userFormPassword', this)"
+                                aria-label="Hiện hoặc ẩn mật khẩu"><i class="fa-solid fa-eye"></i></button></div>
+                    </div>
+                    <div class="modal-footer"><button type="button" class="btn btn-secondary"
+                            onclick="closeModal('userModal')">Hủy</button><button type="submit"
+                            class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> <span
+                                id="userFormSubmitLabel">Tạo tài khoản</span></button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="userStatusModal">
+        <div class="modal-box user-confirm-box">
+            <div class="modal-header">
+                <h3 id="userStatusModalTitle"><i class="fa-solid fa-lock text-warning"></i> Xác nhận thay đổi trạng thái
+                </h3><button class="close-btn" onclick="closeModal('userStatusModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="userStatusModalText"></p>
+                <div class="user-confirm-details" id="userStatusModalDetails"></div>
+            </div>
+            <div class="modal-footer"><button class="btn btn-secondary"
+                    onclick="closeModal('userStatusModal')">Hủy</button><button class="btn btn-primary"
+                    id="userStatusConfirmBtn">Xác nhận</button></div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- App JavaScript Logic -->
+    <script src="/static/js/app.js"></script>
+</body>
+
+</html>
