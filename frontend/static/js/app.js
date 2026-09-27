@@ -208,11 +208,17 @@ async function handleRegisterSubmit(e) {
     const address = document.getElementById('regAddress').value.trim();
     const username = document.getElementById('regUsername').value.trim();
     const password = document.getElementById('regPassword').value.trim();
+    // const confirmPassword = document.getElementById('regConfirmPassword').value.trim();
+
 
     if (!fullname || !address || !username || !password) {
         showToast("Vui lòng điền đầy đủ các trường bắt buộc!", 'warning');
         return;
     }
+    // if (password !== confirmPassword) {
+    //     showToast("Mật khẩu đăng nhập lại không khớp!", 'error');
+    //     return;
+    // }
     const contactError = validateContactInputs(phone, email, true, true);
     if (contactError) {
         showToast(contactError, 'error');
